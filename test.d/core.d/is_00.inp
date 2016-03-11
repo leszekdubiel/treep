@@ -1,0 +1,48 @@
+
+* testuj_typ (n v) 
+	(info "zmienna " (v) " ma typ " (n) "? ====> " (is (n) (v)))
+
+* testuj_wszystkie (v) 
+	(do 
+		(testuj_typ void (v))
+		(testuj_typ spac (v))
+		(testuj_typ tabu (v))
+		(testuj_typ line (v))
+		(testuj_typ lpar (v))
+		(testuj_typ rpar (v))
+		(testuj_typ numb (v))
+		(testuj_typ name (v))
+		(testuj_typ text (v))
+		(testuj_typ bool (v))
+		(testuj_typ node (v))
+		(testuj_typ tree (v))
+	)
+
+(testuj_wszystkie (void))
+(testuj_wszystkie (spac))
+(testuj_wszystkie (tabu))
+(testuj_wszystkie (line))
+(testuj_wszystkie (lpar))
+(testuj_wszystkie (rpar))
+(testuj_wszystkie -1.0)
+(testuj_wszystkie 0.0)
+(testuj_wszystkie +1.0)
+(testuj_wszystkie Alfa)
+(testuj_wszystkie A)
+(testuj_wszystkie "Alfa, beta, gamma...")
+(testuj_wszystkie "")
+(testuj_wszystkie (yes))
+(testuj_wszystkie (no))
+(testuj_wszystkie (new))
+(testuj_wszystkie (frst (ins (new) a +4.0)))
+(testuj_wszystkie (read)) 
+(testuj_wszystkie (read))
+(testuj_wszystkie (read))	
+(testuj_wszystkie (read)))
+(testuj_wszystkie (read))(
+(testuj_wszystkie (read))0.0
+(testuj_wszystkie (read))-10.0
+(testuj_wszystkie (read))+10.0
+(testuj_wszystkie (read))Alfa
+(testuj_wszystkie (read))"alfa beta gamma"
+

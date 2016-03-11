@@ -1,0 +1,8 @@
+(info "cannot wrte node")
+(as
+	x (frst (ins (new) alfa 0.0))
+	(do 
+		(info (x))
+		(wrte (x))
+	)
+)

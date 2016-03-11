@@ -1,0 +1,10 @@
+
+
+(info (abs 0.0))
+(info (abs +1.0) )
+(info (abs -1.0) )
+(info (abs (min)))
+(info (abs (ops (min))))
+(info (abs (max)))
+(info (abs (ops (max))))
+

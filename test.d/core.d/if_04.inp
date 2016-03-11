@@ -1,0 +1,4 @@
+
+(if (yes) (info "must be boolean"))
+(if 0.0 (info "must be boolean"))
+

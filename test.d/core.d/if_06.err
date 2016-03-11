@@ -1,0 +1,342 @@
+8 and 2
++8.0 less or equal Eight
++16.0 less or equal Sixteen
++32.0 less or equal Forty
++64.0 less or equal Seventy
++128.0 less or equal One million
++256.0 less or equal One million
++512.0 less or equal One million
++1024.0 less or equal One million
++2048.0 less or equal One million
++4096.0 less or equal One million
++8192.0 less or equal One million
++16384.0 less or equal One million
++32768.0 less or equal One million
++65536.0 less or equal One million
++131072.0 less or equal One million
++262144.0 less or equal One million
++524288.0 less or equal One million
++1048576.0 less or equal One billion
++2097152.0 less or equal One billion
++4194304.0 less or equal One billion
++8388608.0 less or equal One billion
++16777216.0 less or equal One billion
++33554432.0 less or equal One billion
++67108864.0 less or equal One billion
++134217728.0 less or equal One billion
++268435456.0 less or equal One billion
++536870912.0 less or equal One billion
++1073741824.0 less or equal One billion
++2147483648.0 less or equal One billion
++4294967296.0 less or equal One billion
++8589934592.0 less or equal One billion
++17179869184.0 less or equal One billion
++34359738368.0 less or equal One billion
++68719476736.0 less or equal One billion
++137438953472.0 less or equal One billion
++274877906944.0 less or equal One billion
++549755813888.0 less or equal One billion
+number too big...
+8 and 1.1
++8.0 less or equal Eight
++8.8 less or equal Nine
++9.68 less or equal Ten
++10.648 less or equal Eleven
++11.7128 less or equal Twelve
++12.88408 less or equal Thirteen
++14.172488 less or equal Fifteen
++15.5897368 less or equal Sixteen
++17.14871048 less or equal Eighteen
++18.863581528 less or equal Nineteen
++20.7499396808 less or equal Twenty-one ...
++22.82493364888 less or equal Thirty
++25.107427013768 less or equal Thirty
++27.6181697151448 less or equal Thirty
++30.37998668665928 less or equal Forty
++33.417985355325208 less or equal Forty
++36.7597838908577288 less or equal Forty
++40.4357622799435017 less or equal Fifty
++44.4793385079378519 less or equal Fifty
++48.9272723587316371 less or equal Fifty
++53.8199995946048008 less or equal Sixty
++59.2019995540652809 less or equal Sixty
++65.122199509471809 less or equal Seventy
++71.6344194604189899 less or equal Eighty
++78.7978614064608889 less or equal Eighty
++86.6776475471069778 less or equal Ninety
++95.3454123018176756 less or equal One hundred
++104.879953531999443 less or equal One million
++115.367948885199387 less or equal One million
++126.904743773719326 less or equal One million
++139.595218151091259 less or equal One million
++153.554739966200385 less or equal One million
++168.910213962820424 less or equal One million
++185.801235359102466 less or equal One million
++204.381358895012713 less or equal One million
++224.819494784513984 less or equal One million
++247.301444262965382 less or equal One million
++272.03158868926192 less or equal One million
++299.234747558188112 less or equal One million
++329.158222314006923 less or equal One million
++362.074044545407615 less or equal One million
++398.281448999948376 less or equal One million
++438.109593899943214 less or equal One million
++481.920553289937535 less or equal One million
++530.112608618931288 less or equal One million
++583.123869480824417 less or equal One million
++641.436256428906859 less or equal One million
++705.579882071797545 less or equal One million
++776.137870278977299 less or equal One million
++853.751657306875029 less or equal One million
++939.126823037562532 less or equal One million
++1033.03950534131879 less or equal One million
++1136.34345587545067 less or equal One million
++1249.97780146299574 less or equal One million
++1374.97558160929531 less or equal One million
++1512.47313977022484 less or equal One million
++1663.72045374724732 less or equal One million
++1830.09249912197205 less or equal One million
++2013.10174903416926 less or equal One million
++2214.41192393758619 less or equal One million
++2435.85311633134481 less or equal One million
++2679.43842796447929 less or equal One million
++2947.38227076092722 less or equal One million
++3242.12049783701994 less or equal One million
++3566.33254762072193 less or equal One million
++3922.96580238279412 less or equal One million
++4315.26238262107353 less or equal One million
++4746.78862088318088 less or equal One million
++5221.46748297149897 less or equal One million
++5743.61423126864887 less or equal One million
++6317.97565439551376 less or equal One million
++6949.77321983506514 less or equal One million
++7644.75054181857165 less or equal One million
++8409.22559600042882 less or equal One million
++9250.1481556004717 less or equal One million
++10175.1629711605189 less or equal One million
++11192.6792682765708 less or equal One million
++12311.9471951042279 less or equal One million
++13543.1419146146507 less or equal One million
++14897.4561060761158 less or equal One million
++16387.2017166837274 less or equal One million
++18025.9218883521001 less or equal One million
++19828.5140771873101 less or equal One million
++21811.3654849060411 less or equal One million
++23992.5020333966452 less or equal One million
++26391.7522367363097 less or equal One million
++29030.9274604099407 less or equal One million
++31934.0202064509348 less or equal One million
++35127.4222270960283 less or equal One million
++38640.1644498056311 less or equal One million
++42504.1808947861942 less or equal One million
++46754.5989842648136 less or equal One million
++51430.058882691295 less or equal One million
++56573.0647709604245 less or equal One million
++62230.3712480564669 less or equal One million
++68453.4083728621136 less or equal One million
++75298.749210148325 less or equal One million
++82828.6241311631575 less or equal One million
++91111.4865442794733 less or equal One million
++100222.635198707421 less or equal One million
++110244.898718578163 less or equal One million
++121269.388590435979 less or equal One million
++133396.327449479577 less or equal One million
++146735.960194427535 less or equal One million
++161409.556213870289 less or equal One million
++177550.511835257318 less or equal One million
++195305.56301878305 less or equal One million
++214836.119320661355 less or equal One million
++236319.731252727491 less or equal One million
++259951.70437800024 less or equal One million
++285946.874815800264 less or equal One million
++314541.56229738029 less or equal One million
++345995.718527118319 less or equal One million
++380595.290379830151 less or equal One million
++418654.819417813166 less or equal One million
++460520.301359594483 less or equal One million
++506572.331495553931 less or equal One million
++557229.564645109324 less or equal One million
++612952.521109620256 less or equal One million
++674247.773220582282 less or equal One million
++741672.55054264051 less or equal One million
++815839.805596904561 less or equal One million
++897423.786156595017 less or equal One million
++987166.164772254519 less or equal One million
++1085882.78124947997 less or equal One billion
++1194471.05937442797 less or equal One billion
++1313918.16531187077 less or equal One billion
++1445309.98184305785 less or equal One billion
++1589840.98002736364 less or equal One billion
++1748825.0780301 less or equal One billion
++1923707.58583311 less or equal One billion
++2116078.344416421 less or equal One billion
++2327686.1788580631 less or equal One billion
++2560454.79674386941 less or equal One billion
++2816500.27641825635 less or equal One billion
++3098150.30406008199 less or equal One billion
++3407965.33446609019 less or equal One billion
++3748761.86791269921 less or equal One billion
++4123638.05470396913 less or equal One billion
++4536001.86017436604 less or equal One billion
++4989602.04619180264 less or equal One billion
++5488562.2508109829 less or equal One billion
++6037418.47589208119 less or equal One billion
++6641160.32348128931 less or equal One billion
++7305276.35582941824 less or equal One billion
++8035803.99141236006 less or equal One billion
++8839384.39055359607 less or equal One billion
++9723322.82960895568 less or equal One billion
++10695655.1125698512 less or equal One billion
++11765220.6238268363 less or equal One billion
++12941742.6862095199 less or equal One billion
++14235916.9548304719 less or equal One billion
++15659508.6503135191 less or equal One billion
++17225459.515344871 less or equal One billion
++18948005.4668793581 less or equal One billion
++20842806.0135672939 less or equal One billion
++22927086.6149240233 less or equal One billion
++25219795.2764164256 less or equal One billion
++27741774.8040580682 less or equal One billion
++30515952.284463875 less or equal One billion
++33567547.5129102625 less or equal One billion
++36924302.2642012888 less or equal One billion
++40616732.4906214177 less or equal One billion
++44678405.7396835595 less or equal One billion
++49146246.3136519155 less or equal One billion
++54060870.9450171071 less or equal One billion
++59466958.0395188178 less or equal One billion
++65413653.8434706996 less or equal One billion
++71955019.2278177696 less or equal One billion
++79150521.1505995466 less or equal One billion
++87065573.2656595013 less or equal One billion
++95772130.5922254514 less or equal One billion
++105349343.651447997 less or equal One billion
++115884278.016592797 less or equal One billion
++127472705.818252077 less or equal One billion
++140219976.400077285 less or equal One billion
++154241974.040085014 less or equal One billion
++169666171.444093515 less or equal One billion
++186632788.588502867 less or equal One billion
++205296067.447353154 less or equal One billion
++225825674.192088469 less or equal One billion
++248408241.611297316 less or equal One billion
++273249065.772427048 less or equal One billion
++300573972.349669753 less or equal One billion
++330631369.584636728 less or equal One billion
++363694506.543100401 less or equal One billion
++400063957.197410441 less or equal One billion
++440070352.917151485 less or equal One billion
++484077388.208866634 less or equal One billion
++532485127.029753297 less or equal One billion
++585733639.732728627 less or equal One billion
++644307003.70600149 less or equal One billion
++708737704.076601639 less or equal One billion
++779611474.484261803 less or equal One billion
++857572621.932687983 less or equal One billion
++943329884.125956781 less or equal One billion
++1037662872.53855246 less or equal One billion
++1141429159.79240771 less or equal One billion
++1255572075.77164848 less or equal One billion
++1381129283.34881333 less or equal One billion
++1519242211.68369466 less or equal One billion
++1671166432.85206413 less or equal One billion
++1838283076.13727054 less or equal One billion
++2022111383.75099759 less or equal One billion
++2224322522.12609735 less or equal One billion
++2446754774.33870709 less or equal One billion
++2691430251.7725778 less or equal One billion
++2960573276.94983558 less or equal One billion
++3256630604.64481914 less or equal One billion
++3582293665.10930105 less or equal One billion
++3940523031.62023116 less or equal One billion
++4334575334.78225428 less or equal One billion
++4768032868.26047971 less or equal One billion
++5244836155.08652768 less or equal One billion
++5769319770.59518045 less or equal One billion
++6346251747.6546985 less or equal One billion
++6980876922.42016835 less or equal One billion
++7678964614.66218519 less or equal One billion
++8446861076.12840371 less or equal One billion
++9291547183.74124408 less or equal One billion
++10220701902.1153685 less or equal One billion
++11242772092.3269054 less or equal One billion
++12367049301.5595959 less or equal One billion
++13603754231.7155555 less or equal One billion
++14964129654.8871111 less or equal One billion
++16460542620.3758222 less or equal One billion
++18106596882.4134044 less or equal One billion
++19917256570.6547448 less or equal One billion
++21908982227.7202193 less or equal One billion
++24099880450.4922412 less or equal One billion
++26509868495.5414653 less or equal One billion
++29160855345.0956118 less or equal One billion
++32076940879.605173 less or equal One billion
++35284634967.5656903 less or equal One billion
++38813098464.3222593 less or equal One billion
++42694408310.7544852 less or equal One billion
++46963849141.8299337 less or equal One billion
++51660234056.0129271 less or equal One billion
++56826257461.6142198 less or equal One billion
++62508883207.7756418 less or equal One billion
++68759771528.553206 less or equal One billion
++75635748681.4085266 less or equal One billion
++83199323549.5493793 less or equal One billion
++91519255904.5043172 less or equal One billion
++100671181494.954749 less or equal One billion
++110738299644.450224 less or equal One billion
++121812129608.895246 less or equal One billion
++133993342569.784771 less or equal One billion
++147392676826.763248 less or equal One billion
++162131944509.439573 less or equal One billion
++178345138960.38353 less or equal One billion
++196179652856.421883 less or equal One billion
++215797618142.064071 less or equal One billion
++237377379956.270478 less or equal One billion
++261115117951.897526 less or equal One billion
++287226629747.087279 less or equal One billion
++315949292721.796007 less or equal One billion
++347544221993.975608 less or equal One billion
++382298644193.373169 less or equal One billion
++420528508612.710486 less or equal One billion
++462581359473.981535 less or equal One billion
++508839495421.379689 less or equal One billion
++559723444963.517658 less or equal One billion
++615695789459.869424 less or equal One billion
++677265368405.856366 less or equal One billion
++744991905246.442003 less or equal One billion
++819491095771.086203 less or equal One billion
++901440205348.194823 less or equal One billion
++991584225883.014305 less or equal One billion
+number too big...
+max and 0.1
++500000000000.0 less or equal One billion
++50000000000.0 less or equal One billion
++5000000000.0 less or equal One billion
++500000000.0 less or equal One billion
++50000000.0 less or equal One billion
++5000000.0 less or equal One billion
++500000.0 less or equal One million
++50000.0 less or equal One million
++5000.0 less or equal One million
++500.0 less or equal One million
++50.0 less or equal Fifty
++5.0 less or equal Five
++0.5 less or equal One
++0.05 less or equal One
++0.005 less or equal One
++0.0005 less or equal One
++0.00005 less or equal One
++0.000005 less or equal One
++0.0000005 less or equal One
++0.00000005 less or equal One
++0.000000005 less or equal One
++0.0000000005 less or equal One
++0.00000000005 less or equal One
++0.000000000005 less or equal One
++0.0000000000005 less or equal One
++0.00000000000005 less or equal One
++0.000000000000005 less or equal One
++0.0000000000000005 less or equal One
++0.00000000000000005 less or equal One
+0.0 less or equal Nought
+zero occured...

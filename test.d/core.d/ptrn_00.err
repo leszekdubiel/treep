@@ -1,0 +1,19 @@
+(ptrn "alfa") = (yes)
+(ptrn "b*eta") = (yes)
+(ptrn "[a-z]olo") = (yes)
+
+(ptrn "[a-z]olo))") = (yes)
+(ptrn "[a-z]olo((") = (no)
+
+(ptrn "alfa****beta") = (yes)
+(ptrn "[a-]") = (yes)
+(ptrn "[a-") = (no)
+
+(ptrn "$^") = (yes)
+(ptrn alfa) = (yes)
+(ptrn a) = (yes)
+(ptrn "\\") = (no)
+(ptrn "\\a") = (yes)
+(ptrn "\\!\"") = (yes)
+
+(ptrn "al(fa|ta)gam") = (yes)

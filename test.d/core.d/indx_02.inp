@@ -1,0 +1,2 @@
+(info (indx Alfa lf))
+(info (indx Alfa "lf")) "not the same type"

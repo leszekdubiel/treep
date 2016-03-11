@@ -1,0 +1,4 @@
+(dump "This is tab:")
+(wrte (tabu))
+(dump ".")
+

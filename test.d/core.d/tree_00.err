@@ -1,0 +1,4 @@
+(tree alfa 0.0 beta +1.0 delta +2.0)
+(node beta +1.0)
+(tree alfa 0.0 beta +1.0 delta +2.0)
+ta sama ref: (yes)

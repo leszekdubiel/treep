@@ -1,0 +1,32 @@
+
+* wypisz (x) 
+	(if 
+		(is name (x)) (wrte (x))
+		(is text (x)) (do 
+			(dump "\"")
+			(dump (escp (x)))
+			(dump "\"")
+		)
+		(is bool (x)) (if (x) 
+			(dump "yes")
+			(dump "no")
+		)
+		(do (info "zly typ...") (exit (no)))
+	)
+
+* na_dwa_sposoby (p q) 
+	(do 
+		(wypisz (p)) (wrte (line))
+		(wypisz (q)) (wrte (line))
+		(wypisz (same (p) (q))) (wrte (line))
+		(wrte (line))
+	)
+
+(na_dwa_sposoby alfa alfa)
+(na_dwa_sposoby alfa beta)
+(na_dwa_sposoby "what's that?" "what's that?")
+(na_dwa_sposoby "what's that?" "what's this?")
+(na_dwa_sposoby alfa Alfa)
+(na_dwa_sposoby "What's THAT?" "what's this?")
+(na_dwa_sposoby "What's THAT?" "what's that?")
+

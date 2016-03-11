@@ -1,0 +1,8 @@
+(info 0.0) (info (line))
+(info alfa) (info (line))
+(info "my text") (info (line))
+(info (spac))
+(info (lpar))
+(info (tabu))
+(info (rpar))
+(info (line))

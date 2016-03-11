@@ -1,0 +1,75 @@
+#!/bin/dash 
+
+exec 0</dev/null 2>&1 
+
+# this text is used to recognize place where to put treep library
+S="INSERT_TREEP_LIBRARY_HERE"
+
+# contains treep library in compressed form
+L="$(find ../libr.d -type f -exec cat '{}' ';' | sed -r '
+	# delete comments
+	s/#.*$// 
+	# expand notation with dot "(a.b.c)" -> "(get (get (a) b) c)"
+	:x; s/\(([A-Za-z](_?[A-Za-z0-9])*(\.[A-Za-z](_?[A-Za-z0-9])*)*)\.([A-Za-z](_?[A-Za-z0-9])*)\)/(get (\1) \5)/g; tx
+	# escape all backslashes for later sed usage
+	s/\\/\\\\/g; 
+	# insert line continuations for later sed usage
+	s/$/\\/
+')
+" 
+
+# from given paths find text files with extension "inp", insert Treep library
+# if necessary, run this file through Treep, check results
+for T in $(find "$@" -type f -a -name "*.inp" | sed 's/\.inp$//'); do 
+
+	if [ -t 1 ]; then 
+		echo -n "."
+	fi
+
+	# delete files from previous run
+	for E in inp out err sta; do 
+		if [ -f $T.$E.new ]; then 
+			rm $T.$E.new
+		fi
+	done
+
+	# build shell command and run it, save out files
+	sed "s#$S#$L#" <$T.inp >$T.inp.new
+	C="(cd .. && LC_ALL=C TZ=GMT ./treep) 0<\"$T.inp.new\" 1>\"$T.out.new\" 2>\"$T.err.new\""
+	dash -c "$C"
+	X="$?"
+	if [ "$X" -ne "0" ]; then 
+		printf "$X" >"$T.sta.new"
+	fi
+	for E in out.new err.new; do 
+		if [ ! -s $T.$E ]; then 
+			rm $T.$E
+		fi
+	done
+	rm $T.inp.new
+
+	# compare results and inform about differences
+	for E in out err sta; do 
+		if [ -f "$T.$E" -o -f "$T.$E.new" ]; then 
+			if [ -f "$T.$E" -a -f "$T.$E.new" ]; then 
+				if diff "$T.$E" "$T.$E.new" >$T.$E.dif; then 
+					rm "$T.$E.new" "$T.$E.dif"
+				else
+					echo
+					echo "$T"
+					cat "$T.$E.dif"
+					rm "$T.$E.dif"
+					echo
+				fi
+			else 
+				echo 
+				echo "$T"
+				cat "$T.$E" "$T.$E.new"
+				echo
+			fi
+		fi
+	done
+done 
+echo 
+find "$@" -type f -a -name "*.new"
+

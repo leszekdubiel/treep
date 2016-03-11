@@ -1,0 +1,17 @@
+
+(info (flo -12.0))
+(info (flo -12.1))
+(info (flo -12.3))
+(info (flo -12.5))
+(info (flo -12.6))
+(info (flo -12.9))
+
+(info (flo 0.0))
+
+(info (flo +12.0))
+(info (flo +12.1))
+(info (flo +12.3))
+(info (flo +12.5))
+(info (flo +12.6))
+(info (flo +12.9))
+

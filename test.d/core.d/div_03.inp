@@ -1,0 +1,6 @@
+
+* dwie_liczby (a b) 
+	(info (div (a) (b)))
+
+(dwie_liczby (max) 0.0)
+

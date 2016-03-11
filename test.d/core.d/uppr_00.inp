@@ -1,0 +1,22 @@
+
+* disp (t) 
+	(if (is name (t))
+		(t) 
+		(join "\"" (join (escp (t)) "\""))
+	)
+
+* pokaz_uppr (t) 
+	(info "(uppr " (disp (t)) ") = " (disp (uppr (t))))
+
+(pokaz_uppr "Alfa beta gamma delta")
+(pokaz_uppr "Alfa bEta g!m!a delta")
+(pokaz_uppr "Alfa -- beta -- tyle")
+(pokaz_uppr "beta")
+(pokaz_uppr "b")
+(pokaz_uppr "")
+(info)
+(pokaz_uppr PN_123132_02_Delta)
+(pokaz_uppr an)
+(pokaz_uppr a)
+
+

@@ -1,0 +1,9 @@
+(info (zer 0.0))
+(info (zer -1.0))
+(info (zer +1.0))
+(info (zer -1.1111111))
+(info (zer (min)))
+(info (zer (max)))
+(info (zer (ops (min))))
+(info (zer (ops (max))))
+

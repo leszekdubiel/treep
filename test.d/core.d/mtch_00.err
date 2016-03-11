@@ -1,0 +1,16 @@
+(mtch "alfa" "alf") = (yes)
+(mtch "alfa" "fa") = (yes)
+(mtch "alfa" "x") = (no)
+(mtch "fa" "fa$") = (yes)
+(mtch "alfa" "^al") = (yes)
+(mtch "lfal" "^al") = (no)
+(mtch "alfa beta" "(fa|be)") = (yes)
+(mtch "alfa beta" " (fa|be)") = (yes)
+
+(mtch "alllllllllllllffffa" "^al*f*a") = (yes)
+(mtch "aa" "^al*f*a") = (yes)
+(mtch "aa" "^al+f+a") = (no)
+(mtch "alfffffa" "^al+f+a") = (yes)
+(mtch "ala" "^al+f+a") = (no)
+
+(mtch "Alfa Beta Gamma)))" "(a|b|g).*a)))") = (yes)

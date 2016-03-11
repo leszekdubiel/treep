@@ -1,0 +1,8 @@
+(wrte 0.0) (wrte (line))
+(wrte alfa) (wrte (line))
+(wrte "my text") (wrte (line))
+(wrte (spac))
+(wrte (lpar))
+(wrte (tabu))
+(wrte (rpar))
+(wrte (line))

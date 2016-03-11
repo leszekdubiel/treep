@@ -1,0 +1,17 @@
+
+(info "") 
+(info "(time) = " (time))
+(info "(repr (time)) = " (repr (time)))
+(info "(pars \"2011-09-30 01:23:45\") = " (pars "2011-09-30 01:23:45"))
+
+(info "") 
+(info "(rnd) = " (rnd))
+(info "(rnd) = " (rnd))
+(info "(rnd) = " (rnd))
+
+(info "") 
+(info "(iden Id) = " (iden Id))
+
+(info "") 
+(info "(vers) = " (vers))
+

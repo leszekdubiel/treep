@@ -1,0 +1,15 @@
+
+(as
+	t (new) 
+	(do 
+		(ins (t) alfa +1.0)
+		(ins (t) beta +2.0)
+		(ins (t) teta +3.0)
+		(info (node (t) beta))
+		(info (vlue (node (t) beta)))
+		(info (ref (node (t) beta) (root (t))))
+		(info (ref (node (t) alfa) (frst (t))))
+		(info (ref (node (t) teta) (last (t))))
+	)
+)
+

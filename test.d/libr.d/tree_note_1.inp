@@ -1,0 +1,47 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			t (do (skip) (tree_read))
+			n (do (skip) (note_read))
+			(do 
+				(tree_note (t) (n))
+				(tree_wrte (t))
+			)
+		)
+(
+	Prod_1 (Dysp DP1 Ile -4.0 Prod Alfa) (
+		zmontowac_Prod_1 (Dysp DP1 Ile +4.0 Uwagi "starannie" Prod Alfa) (
+			Elem1 (Dysp DP1 Ile -4.0 Jednostka "szt" Opis "czesc1" Prod Alfa) (
+			)
+			Elem2 (Dysp DP1 Ile -8.0 Jednostka "kg" Opis "srubki na kg" Prod Alfa) (
+				kupic_Elem_2 (Dysp DP1 Ile +2.0 Prod Alfa) (
+				)
+			)
+		)
+	)
+	Prod_2 (Dysp DP2 Ile -4.0 Prod Beta) (
+		zmontowac_Prod_2 (Dysp DP2 Ile +4.0 Uwagi "starannie" Prod Beta) (
+			Elem1 (Dysp DP2 Ile -4.0 Jednostka "szt" Opis "czesc1" Prod Beta) (
+			)
+			Elem2 (Dysp DP2 Ile -8.0 Jednostka "kg" Opis "srubki na kg" Prod Beta) (
+				kupic_Elem_2 (Dysp DP2 Ile +2.0 Prod Beta) (
+				)
+			)
+		)
+	)
+)
+(
+	Elem2 (
+		(Dysp DP2 Prod Beta) (Opis "XXXXXXXXXXXXX") (Index Note2)
+	)
+	Elem2 (
+		(Dysp DP1 Prod Alfa) (Opis "YYYYYYYYYYYYY") (Index Note2)
+	)
+	Elem1 (
+		(Dysp DP2 Prod Beta) (Opis "ZZZZZZZZZZZZZ") (Index Note2)
+	)
+) 
+	
+

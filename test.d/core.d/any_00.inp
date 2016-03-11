@@ -1,0 +1,12 @@
+
+(as
+	t (new) 
+	(do 
+		(info "czy nowe drzewo cos zawiera? " (any (t)))
+		(ins (t) alfa 0.0)
+		(info "czy po wlozeniu cos zawiera? " (any (t)))
+		(del (t) alfa)
+		(info "czy po skasowaniu cos zawiera? " (any (t)))
+		(info)
+	)
+)

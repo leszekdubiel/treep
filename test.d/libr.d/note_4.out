@@ -1,0 +1,57 @@
+
+list before: 
+(
+	Elem1 ()
+	Beta (dyspozycja ZM_123)
+	Ixi ()
+	Alfa (Uwagi "test" dyspozycja ZM_323)
+)
+
+list after: 
+(
+	Elem1 ()
+	Beta (Uwagi "yyy" dyspozycja ZM_123)
+	Ixi (a +4.5 b -99.0)
+	Alfa (Uwagi "not5" dyspozycja ZM_323)
+)
+
+original notes:
+(
+	Alfa (
+		(dyspozycja ZM_123) (Uwagi "not1") (Who "Jan Kowalski")
+		(dyspozycja ZM_923) (Uwagi "not2") (Info "not applicable")
+		(dyspozycja ZM_323) (Uwagi "not4") (Who "Jan Kowalski")
+		(dyspozycja ZM_323) (Uwagi "not5") (Info "not applicable")
+	)
+	Beta (
+		(dyspozycja ZM_123) (Uwagi "yyy") (Author "Kowalski Jan" When (D "14" M "01" Y "2010"))
+	)
+	Gamma (
+	)
+	Ixi (
+		() (a +4.5 b -99.0) ()
+	)
+)
+
+notes used: 
+(
+	Alfa (
+		(dyspozycja ZM_323) (Uwagi "not4") (Who "Jan Kowalski")
+		(dyspozycja ZM_323) (Uwagi "not5") (Info "not applicable")
+	)
+	Beta (
+		(dyspozycja ZM_123) (Uwagi "yyy") (Author "Kowalski Jan" When (D "14" M "01" Y "2010"))
+	)
+	Ixi (
+		() (a +4.5 b -99.0) ()
+	)
+)
+
+notes not used: 
+(
+	Alfa (
+		(dyspozycja ZM_123) (Uwagi "not1") (Who "Jan Kowalski")
+		(dyspozycja ZM_923) (Uwagi "not2") (Info "not applicable")
+	)
+)
+

@@ -1,0 +1,8 @@
+
+* alfa (a b) 
+	(info "alfa!!!!")
+
+(alfa 0.0 +1.0) 
+(info "not enough args")
+(alfa a)
+

@@ -1,0 +1,10 @@
+
+"define function" 
+* alfa () +1.0
+* beta (x) (add (x) +1.0)
+
+"call function" 
+(info (alfa))
+(info (beta 0.0))
+
+

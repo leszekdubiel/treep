@@ -1,0 +1,521 @@
+/* function: if
+ * parameters: any number of pairs boolean and value (condition, value for true), and last value (when all conditions false)
+ * description: evaluates condition; if true, then evaluates following expression; if false then skips expression, and evaluates following condition; if all conditions fail then evaluates last expression 
+ * examples: (if (yes) +1.0 +2.0) = +1.0, (if (no) +1.0 +2.0) = +2.0, (if (no) +1.0 (yes) +2.0 (no) +3.0 +4.0) = +2.0, (if (no) +1.0 (no) +2.0 (yes) +3.0 +4.0) = +3.0, (if (no) +1.0 (no) +2.0 (no) +3.0 +4.0) = +4.0, (if +12.0) = +12.0
+ */
+--
+/* function: as
+ * parameters: any number of pairs name and value, and expression to compute
+ * description: computes values and assigns them to names; then computes expression which can use these names as precomputed values
+ * examples: (as a +2.0 (mul (a) (mul (a) (a)))) = +8.0, (as a +2.0 b +3.0 (min (mul (a) (b)) (div (a) (b)))) = +0.66666666666666667, (as +4.0) = +4.0
+ */
+--
+/* function: do
+ * parameters: any types, any number, at least one
+ * description: value of last parameter
+ * examples: (do +1.0 +2.0) = +2.0
+ */
+--
+/* function: df
+ * parameters: one name
+ * description: tell if function is defined
+ * examples: (df add) = (yes), (df foobar) = (no)
+ */
+--
+/* function: is
+ * parameters: name and value of any type
+ * description: tell if value has a type described by name
+ * examples: (is numb +2.0) = (yes), (is numb "alfa beta") = (no)
+ */
+--
+/* function: inc
+ * parameters: one number
+ * description: number plus one
+ * examples: (inc +2.0) = 3.0, (inc -2.0) = -1.0
+ */
+--
+/* function: dec
+ * parameters: one number
+ * description: number minus one 
+ * examples: (dec +2.0) = +1.0, (dec -2.0) = -3.0
+ */
+--
+/* function: add
+ * parameters: two numbers
+ * description: sum of these numbers
+ * examples: (add +12.0 -3.0) = +9.0
+ */
+--
+/* function: sub
+ * parameters: two numbers
+ * description: difference between numbers
+ * examples: (sub +19.0 +4.0) = +15.0, (sub +19.0 -2.0) = +21.0
+ */
+--
+/* function: mul
+ * parameters: two numbers
+ * description: multiplication of these numbers
+ * examples: (mul +2.0 +3.0) = +6.0
+ */
+--
+/* function: div
+ * parameters: two numbers, second not zero
+ * description: division of numbers
+ * examples: (div +3.0 +2.0) = +1.5
+ */
+--
+/* function: rnd
+ * parameters: one number
+ * description: number rounded to integer
+ * examples: (rnd +2.1) = +2.0, (rnd -2.9) = -3.0
+ */
+--
+/* function: flo
+ * parameters: one number
+ * description: biggest int not bigger than number
+ * examples: (flo +2.9) = +2.0, (flo -2.1) = -3.0
+ */
+--
+/* function: cil
+ * parameters: one number
+ * description: smallest integer not bigger than number
+ * examples: (cil +2.1) = +3.0, (cil -2.2) = -1.0
+ */
+--
+/* function: min 
+ * parameters: none or two numbers
+ * description: mininimum representable positive number for no parameters or smaller number out of two 
+ * examples: (min) = +0.00000000000000001, (min +1.0 -2.9) = -2.9
+ */
+--
+/* function: max
+ * parameters: none or two numbers
+ * description: maximum representable number or bigger number out of two
+ * examples: (max) = +99999999999999999.9, (max +1.0 -2.0) = +1.0
+ */
+--
+/* function: ops
+ * parameters: one number
+ * description: number with opposite sign
+ * examples: (ops -2.0) = +2.0, (ops 0.0) = 0.0
+ */
+--
+/* function: abs
+ * parameters: one number
+ * description: absolute value of number
+ * examples: (abs +1.0) = +1.0, (abs -2.9) = +2.9
+ */
+--
+/* function: zer
+ * parameters: none or one number
+ * description: 0.0 for no parameters or if number is zero 
+ * examples: (zer) = 0.0, (zer +2.0) = (no), (zer 0.0) = (yes)
+ */
+--
+/* function: pos
+ * parameters: one number
+ * description: is number positive? 
+ * examples: (pos +2.5) = (yes), (pos 0.0) = (no), (pos -2.0) = (no)
+ */
+--
+/* function: neg
+ * parameters: one number
+ * description: is number negative?
+ * examples: (neg +2.0) = (no), (neg 0.0) = (no), (neg -2.0) = (yes)
+ */
+--
+/* function: equ
+ * parameters: two numbers
+ * description: are numbers equal? 
+ * examples: (equ +2.0 +1.0) = (no), (equ +2.0 +2.0) = (yes)
+ */
+--
+/* function: gre 
+ * parameters: two numbers 
+ * description: is first number greater than the second one? 
+ * examples: (gre +2.0 +1.0) = (yes), (gre +1.0 +2.0) = (no)
+ */
+--
+/* function: les
+ * parameters: two numbers
+ * description: is first number less than the second one? 
+ * examples: (les +2.0 +1.0) = (no), (les +1.0 +2.0) = (yes)
+ */
+--
+/* function: yes
+ * parameters: none
+ * description: boolean value "true", "yes"
+ * examples: (yes) = (yes)
+ */
+--
+/* function: no
+ * parameters: none
+ * description: boolean value "false", "no"
+ * examples: (no) = (no)
+ */
+--
+/* function: not
+ * parameters: one boolean 
+ * description: negation of boolean value
+ * examples: (not (yes)) = (no), (not (no)) = (yes)
+ */
+--
+/* function: and
+ * parameters: two booleans
+ * description: logical "and" of these
+ * examples: (and (yes) (yes)) = (yes), (and (no) (yes)) = (no)
+ */
+--
+/* function: or
+ * parameters: two booleans
+ * description: logical "or" or these
+ * examples: (or (yes) (no)) = (yes), (or (no) (no)) = (no)
+ */
+--
+/* function: numb
+ * parameters: one text
+ * description: get number from text, parse number from text
+ * examples: (numb "0.0") = 0.0, (numb "-2.0") = -2.0
+ */
+--
+/* function: name
+ * parameters: one text or one node of tree
+ * description: convert text to name or get name from node of tree
+ * examples: (name "alfa") = alfa, (name (root (ins (new) alfa +3.0))) = alfa
+ */
+--
+/* function: text
+ * parameters: one number or one text
+ * description: text representation of number or name
+ * examples: (text +2.34) = "+2.34", (text alfa) = "alfa"
+ */
+--
+/* function: leng
+ * parameters: one name or one text
+ * description: length of name or text, number of characters
+ * examples: (leng alfa) = +4.0, (leng "alfa beta") = +7.0
+ */
+--
+/* function: same
+ * parameters: two names or two texts
+ * description: does these names or text look the same? 
+ * examples: (same alfa alfa) = (yes), (same "alfa" "beta") = (no)
+ */
+--
+/* function: bfor
+ * parameters: two names or two texts
+ * description: does the first one sort before the second one? 
+ * examples: (bfor alfa beta) = (yes), (bfor alfa aaaa) = (no)
+ */
+--
+/* function: aftr
+ * parameters: two names or two texts
+ * description: does the first one sort after the second one
+ * examples: (aftr alfa aaaa) = (yes), (aftr alfa beta) = (no)
+ */
+--
+/* function: escp
+ * parameters: one text
+ * description: escape special chars in text
+ * examples: (escp "a\"b\\c") = "a\\\"b\\\\c"
+ */
+--
+/* function: unes
+ * parameters: one text
+ * description: unescape special chars in text
+ * examples: (unes "a\\\"b\\\\c") = "a\"b\\c"
+ */
+--
+/* function: uppr
+ * parameters: one name or one text
+ * description: convert letters to uppercase
+ * examples: (uppr Alfa) = ALFA
+ */
+--
+/* function: lowr
+ * parameters: one name or one text
+ * description: convert letters to lowercase
+ * examples: (lowr "ALFA beta") = "alfa beta"
+ */
+--
+/* function: head
+ * parameters: one text or one name, and one number
+ * description: beginning of text or name
+ * examples: (head alfa +2.0) = al, (head "alfa beta" +6.0) = "alfa b"
+ */
+--
+/* function: tail
+ * parameters: one text or one name, and one number
+ * description: get ending of text or name
+ * examples: (tail alfa +2.0) = fa, (tail "alfa beta" +6.0) = "a beta"
+ */
+--
+/* function: join
+ * parameters: two names or two texts
+ * description: join names with underscore, or concatenate texts
+ * examples: (join alfa beta) = alfa_beta, (join "alfa" "beta") = "alfabeta"
+ */
+--
+/* function: part
+ * parameters: two names or two texts
+ * description: does first one have a part as the second one
+ * examples: (part alfa lf) = (yes), (part alfa aa) = (no)
+ */
+--
+/* function: indx
+ * parameters: two names or two texts
+ * description: get index of part 
+ * examples: (indx alfa fa) = +2.0, (index alfa a) = 0.0
+ */
+--
+/* function: ptrn
+ * parameters: one text
+ * description: is text valid pattern (regular expression)? 
+ * examples: (ptrn "ab*c") = (yes), (ptrn "ab*[") = (no)
+ */
+--
+/* function: subs
+ * parameters: one text
+ * description: number of subespressions in pattern
+ * examples: (subs "a(lf)a") = +1.0, (subs "a(l(f(a)))") = +3.0
+ */
+--
+/* function: mtch
+ * parameters: one name or text, one text, optional number 
+ * description: matches regular expression against text or name; number tells what subexpression to look at (if not present looks at whole pattern)
+ * examples: (mtch alfa "a.*a") = (yes), (mtch alfa "a(lf|xy)a" +1.0) = (yes)
+ */
+--
+/* function: msta
+ * parameters: same as mtch
+ * description: starting index of matched text or name
+ * examples: (msta alfa "a.*a") = 0.0, (msta alfa "a(lf|xy)a" +1.0) = +1.0
+ */
+--
+/* function: mend
+ * parameters: same as mtch
+ * description: ending index of matched text or name
+ * examples: (mend alfa "a.*a") = +4.0, (mend alfa "a(lf|xy)a" +1.0) = +3.0
+ */
+--
+/* function: new
+ * parameters: none
+ * description: new, empty tree (object)
+ * examples: (new) = (tree ...)
+ */
+--
+/* function: ref
+ * parameters: two trees or two nodes of tree
+ * description: does both reference the same place in memory? 
+ * examples: (ref (new) (new)) = (no), (as t (new) (ref (t) (t))) = (yes)
+ */
+--
+/* function: any
+ * parameters: one tree
+ * description: are there any nodes in tree? 
+ * examples: (any (new)) = (no), (any (ins (new) alfa +1.0)) = (yes)
+ */
+--
+/* function: qty 
+ * parameters: one tree
+ * description: number of nodes in tree
+ * examples: (qty (new)) = 0.0, (qty (ins (new) alfa +1.0)) = +1.0
+ */
+--
+/* function: def
+ * parameters: one tree and one name
+ * description: is node of given name defined in tree? 
+ * examples: (def (new) alfa) = (no), (def (ins (new) alfa +1.0) alfa) = (yes) 
+ */
+--
+/* function: ins
+ * parameters: one tree, one name, and one of any type
+ * description: inserts into tree new node with given name and value; returns tree; error if name already defined
+ * examples: (ins (ins (new) alfa +1.0) beta +2.0) = (tree alfa +1.0 beta +2.0)
+ */
+--
+/* function: del 
+ * parameters: one tree, one name
+ * description: deletes from tree node of given name; error if node not defined
+ * examples: (del (ins (ins (new) alfa +1.0) beta +2.0) alfa) = (tree beta +2.0)
+ */
+--
+/* function: set
+ * parameters: one tree, one name, one value of any type; or one node and one value of any type
+ * description: in tree set node of given name to given value; error if node of that name not defined; or set value of given node
+ * examples: (set (ins (new) alfa +2.0) alfa -99.0) = (tree alfa -99.0), (as t (ins (new) alfa +2.0) (do (set (root (t)) +99.0) (t))) = (tree alfa +99.0)
+ */
+--
+/* function: get
+ * parameters: one tree and one name; or one node of tree
+ * description: get value from named node in given tree; or get value of node 
+ * examples: (as t (ins (new) alfa +2.0) (get (t) alfa)) = +2.0, (as t (ins (new) alfa +2.0) (get (root (t))))
+ */
+--
+/* function: root
+ * parameters: one tree
+ * description: root node of tree (top of AVL tree)
+ * examples: (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (root (t)))) = (node b +2.0)
+ */
+--
+/* function: frst
+ * parameters: one tree
+ * description: frst (leftmost) node of AVL tree
+ * examples: (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (frst (t)))) = (node a +1.0)
+ */
+--
+/* function: last
+ * parameters: one tree
+ * description: last (rightmost) node of AVL tree
+ * examples: (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (last (t)))) = (node c +3.0)
+ */
+--
+/* function: left
+ * parameters: one node of tree
+ * description: left child of node or (void) if not defined 
+ * examples: (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (left (root (t))))) = (node a +1.0)
+ */
+--
+/* function: rght
+ * parameters: one node of tree
+ * description: right child of node or (void) if not defined 
+ * examples: (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (rght (root (t))))) = (node c +3.0)
+ */
+--
+/* function: next
+ * parameters: one node of tree
+ * description: next node in tree after given node or (void) if current node is last one
+ * examples: (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (next (root (t))))) = (node c +3.0)
+ */
+--
+/* function: prev
+ * parameters: one node of tree
+ * description: previous node in tree before given node or (void) if current node is first one
+ * examples: (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (prev (root (t))))) = (node a +1.0)
+ */
+--
+/* function: vlue
+ * parameters: one node of tree
+ * description: value of given node
+ * examples: (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (vlue (root (t))))) = +2.0
+ */
+--
+/* function: tree
+ * parameters: one node of tree
+ * description: tree the node belongs to 
+ * examples: (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (tree (root (t))))) = (tree a +1.0 b +2.0 c +3.0)
+ */
+--
+/* function: main
+ * parameters: none
+ * description: a tree that is defined in treep at the beginning of computation; one can use this tree to store information throughout all computation; this is to hold data that must be accessible all the time
+ * examples: (do (ins (main) a +1.0) (ins (main) b +2.0) (ins (main) c +3.0) (main)) = (tree a +1.0 b +2.0 c +3.0)
+ */
+--
+/* function: read
+ * parameters: none
+ * description: read one piece of data from stdin; data can be number, name, text, left or right parenthesis, space, tabulator, new line char, or void on the end of file
+ * examples: (read)+2.0 = +2.0, (read) +1.0 = (spac), (do (read) (read)) "beta" = "beta"
+ */
+--
+/* function: back
+ * parameters: one value of any type that read returns
+ * description: cancels last "read" call; treep can remember only one such value
+ * examples: (as r (read) (do (read) (back (r)) (read)))+1.0+2.0 = +1.0
+ */
+--
+/* function: wrte
+ * parameters: one value of any type that read returns
+ * description: writes data to stdout; outputs nothing for (void)
+ * examples: (wrte "Hello World!") = "Hello World!"
+ */
+--
+/* function: dump
+ * parameters: one text
+ * description: writes to stdout contents of text (without quotes, unescaped)
+ * examples: (dump "Hello World!") = Hello World!
+ */
+--
+/* function: time 
+ * parameters: none
+ * description: number of seconds since epoch 
+ * examples: (time) = +1318432558.0
+ */
+--
+/* function: repr
+ * parameters: one number
+ * description: ISO representation of time given as number of seconds
+ * examples: (repr (time)) = "2011-10-12 17:17:43"
+ */
+--
+/* function: pars
+ * parameters: one text
+ * description: parse text as ISO date format and return number of seconds
+ * examples:  (pars "1999-01-01 12:34:56") = +915190496.0
+ */
+--
+/* function: rand
+ * parameters: none
+ * description: random number in range from 0.0 to +1.0
+ * examples: (rand) = +0.32514742745934555
+ */
+--
+/* function: iden
+ * parameters: one name
+ * description: uniqe identifier starting with given name
+ * examples: (iden My_Id) = My_Id_20111012_172117_957613416
+ */
+--
+/* function: vers
+ * parameters: none
+ * description: version of treep
+ * examples: (vers) = "2011-10-12"
+ */
+--
+/* function: void
+ * parameters: none
+ * description: value of type "void"
+ * examples: (void) = (void)
+ */
+--
+/* function: spac
+ * parameters: none
+ * description: value of type "spac"; this is space
+ * examples: (spac) = (spac)
+ */
+--
+/* function: tabu
+ * parameters: none
+ * description: vlue of type "tabu", this is tabulator
+ * examples: (tabu) = (tabu)
+ */
+--
+/* function: line
+ * parameters: none
+ * description: vlue of type "line", this is new line character
+ * examples: (line) = (line)
+ */
+--
+/* function: lpar
+ * parameters: none
+ * description: this is value of type "lpar", this is left parenthesis
+ * examples: (lpar) = (lpar), (wrte (lpar)) = (
+ */
+--
+/* function: rpar
+ * parameters: none
+ * description: value of type "rapr", this is right parenthesis
+ * examples: (rpar) = (rpar), (wrte (rpar)) = )
+ */
+--
+/* function: info
+ * parameters: any number of values of any types
+ * description: write information about values on stderr; texts are output without quotes and unescaped
+ * examples: (info +2.4 alfa "a\"b\\c") = +2.4alfaa"b\c
+ */
+--
+/* function: exit
+ * parameters: one boolean
+ * description: exits computation with success for (yes) and failure for (no)
+ * examples: (exit (no)) = failure, (exit (yes)) = success
+ */

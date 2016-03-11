@@ -1,0 +1,56 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+(do (reln_dump (do (skip) (reln_pass))) (wrte (line)))
+(
+	make_vanila_shake (Info "mix for 8 min" Prog +4.0) (
+		vanila (Info "from Madagaskar") (Qty -8.0 Unit "bean") 
+		milk (Type "EN 123Q, 3%") (Qty -1.55 Unit "litre")
+		vanila_shake () (Qty +7.0 Unit "one glass")
+	) 
+	make_banana_shake (Info "mix for 10 min" Prog +3.0) (
+		banana (Info "any type") (Qty -3.0 Unit "kg")
+		milk (Type "EN 123Q, 3%") (Qty -2.0 Unit "litre")
+		banana_shake () (Qty +8.0 Unit "one glass")
+	)
+)
+
+(do (reln_dump (do (skip) (reln_pass))) (wrte (line)))
+(
+	TASK2 (Info "this is TASK2") (
+		RSRCB (Info "this is RSRCB") (Info "2-B link")
+		RSRCA (Info "this is RSRCA") (Info "2-A link")
+	)
+	TASK1 (Info "this is TASK1") (
+		RSRCA (Info "this is RSRCA") (Info "1-A link")
+		RSRCB (Info "this is RSRCB") (Info "1-B link")
+	)
+)
+
+(do (reln_dump (do (skip) (reln_pass))) (wrte (line)))
+(
+	a (x 0.0) ()
+	b (y 0.0) () 
+)
+
+(do (reln_dump (do (skip) (reln_pass))) (wrte (line)))
+()
+
+(do (reln_dump (do (skip) (reln_pass))) (wrte (line)))
+(a () ())
+
+(do (reln_dump (do (skip) (reln_pass))) (wrte (line)))
+(a () (b () ()))
+
+(do (reln_dump (do (skip) (reln_pass))) (wrte (line)))
+(
+	a () (
+		b () () 
+		c () ()
+	) 
+	p () (
+		b () ()
+		c () () 
+	)
+)
+

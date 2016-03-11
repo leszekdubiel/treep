@@ -1,0 +1,59 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			n (do (skip) (note_read))
+			l (do (skip) (list_read))
+			(do 
+				(wrte (line)) 
+				(dump "list before: ") (wrte (line))
+				(list_wrte (l)) (wrte (line))
+
+				(list_note (l) (n))
+
+				(wrte (line)) 
+				(dump "list after: ") (wrte (line))
+				(list_wrte (l)) (wrte (line))
+
+				(wrte (line)) 
+				(dump "original notes:") (wrte (line))
+				(note_wrte (n)) (wrte (line))
+			
+				(wrte (line))
+				(dump "notes used: ") (wrte (line))
+				(note_wrte (note_used (n) (yes))) (wrte (line))
+
+				(wrte (line))
+				(dump "notes not used: ") (wrte (line))
+				(note_wrte (note_used (n) (no))) (wrte (line))
+
+				(wrte (line))
+			)
+		)
+		(
+			Alfa ( 
+				(dyspozycja ZM_123) (Uwagi "not1") (Who "Jan Kowalski")
+				(dyspozycja ZM_923) (Uwagi "not2") (Info "not applicable")
+			)
+			Beta (
+				(dyspozycja ZM_123) (Uwagi "yyy") (When (Y "2010" M "01" D "14") Author "Kowalski Jan") 
+			)
+			Alfa ( 
+				(dyspozycja ZM_323) (Uwagi "not4") (Who "Jan Kowalski")
+				(dyspozycja ZM_323) (Uwagi "not5") (Info "not applicable")
+			)
+			Gamma (
+			)
+			Ixi (
+				() (a +4.5 b -99.0) ()
+			)
+		)
+		(
+			Elem1 ()
+			Beta (dyspozycja ZM_123)
+			Ixi ()
+			Alfa (dyspozycja ZM_323 Uwagi "test")
+		)
+	
+

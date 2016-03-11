@@ -1,0 +1,55 @@
+
+list before: 
+(
+	alfa ()
+	beta (info ta xxx +3.0)
+	gamma ()
+	delta ()
+)
+
+list after: 
+(
+	alfa ()
+	beta (info ta uwagi bbb xxx +3.0)
+	gamma ()
+	delta ()
+)
+
+original notes:
+(
+	alfa (
+		(info fa) (uwagi aaa) ()
+	)
+	beta (
+		(info ta) (uwagi bbb) ()
+	)
+	delta (
+		(info el) (uwagi ddd) ()
+	)
+	dixi (
+	)
+	ixi (
+		() () ()
+	)
+)
+
+notes used: 
+(
+	beta (
+		(info ta) (uwagi bbb) ()
+	)
+)
+
+notes not used: 
+(
+	alfa (
+		(info fa) (uwagi aaa) ()
+	)
+	delta (
+		(info el) (uwagi ddd) ()
+	)
+	ixi (
+		() () ()
+	)
+)
+

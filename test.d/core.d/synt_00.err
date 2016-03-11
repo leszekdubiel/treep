@@ -1,0 +1,72 @@
+0.0
+0.0
+0.0
+0.0
+
+a
+a
+a
++2.0
+-401.2
+0.0
++3.0
+got yes!
+got no!
+got no!
+got no!
+got no!
+got yes!
+got yes!
+got no!
+got no!
+0.0
++2.0
+-10.0
++10.0
++10.0
+(tree)
+(tree a +3.0)
+(tree a +3.0 v +8.0)
++2.0
+alfa, czy tekst? (yes)
+"alfa"
+(lowr PN_123132_02_DElta) = pn_123132_02_delta
+(lowr AN) = an
+(lowr A) = a
++4.0
++8.0
++6.0
++2.0
++4.0
++6.0
++2.0
++3.0
++4.0
+(line)
+alfa
+beta
+0.0
+(line)
+(spac)
+(spac)
+(spac)
+(lpar)
+(rpar)
+(tabu)
+(tabu)
+(lpar)
+(rpar)
+(line)
+(line)
+(line)
+stop_the_way
+0.0
++1.0
+manyargs
+0.0
+0.0
++1.0
++3.0
++3.0
+must get err
+Can not compute "if" call. Wrong number of parameters.

@@ -1,0 +1,10 @@
+(lowr "Alfa beta GAMMA delta") = "alfa beta gamma delta"
+(lowr "Alfa bEta g!m!a DeLtA") = "alfa beta g!m!a delta"
+(lowr "Alfa -- beta -- tyle") = "alfa -- beta -- tyle"
+(lowr "BEtA") = "beta"
+(lowr "B") = "b"
+(lowr "") = ""
+
+(lowr PN_123132_02_DElta) = pn_123132_02_delta
+(lowr AN) = an
+(lowr A) = a

@@ -1,0 +1,9 @@
+(info (pos 0.0))
+(info (pos -1.0))
+(info (pos +1.0))
+(info (pos -1.1111111))
+(info (pos (min)))
+(info (pos (max)))
+(info (pos (ops (min))))
+(info (pos (ops (max))))
+

@@ -1,0 +1,29 @@
+
+* test (x) 
+	(if 
+		(zer (x)) (info (x) " is zero")
+		(pos (x)) (info (x) " is positive")
+		(neg (x)) (info (x) " is negative")
+		(info "error occured -- don't know if number is zero, positive or negative")
+	)
+
+(test 0.0)
+(test (zer))
+(test (mul (min) (max)))
+(test (mul (ops (min)) (max)))
+(test (ops (mul (ops (min)) (max))))
+
+* multi (x y) 
+	(do 
+		(test (x))
+		(if 
+			(zer (x)) (do (info "zero occured...") (void))
+			(gre (abs (x)) (div (max) +2.0)) (do (info "number too big...") (void))
+			(multi (mul (x) (y)) (y))
+		)
+	)
+
+(multi +99999.0 -0.5)
+(multi (sub (max) +9999999999999999.0) -0.0001)
+(multi -99999.0 +2.5)
+

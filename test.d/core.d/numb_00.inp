@@ -1,0 +1,4 @@
+(info (numb "+2.0"))
+(info (numb "-4.2"))
+(info (numb 0.0))
+

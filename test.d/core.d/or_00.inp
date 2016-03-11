@@ -1,0 +1,5 @@
+(info (or (yes) (yes)))
+(info (or (yes) (no)))
+(info (or (no) (yes)))
+(info (or (no) (no)))
+

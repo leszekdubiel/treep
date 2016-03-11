@@ -1,0 +1,21 @@
+(mtch "alfa beta gamma delta" "alf") = (yes)
+
+(mtch "alfa beta gamma delta" "(alfa)|(beta)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(alfa)|(beta)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(alfa)|(beta)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(alfa)|(beta)|(gamma)|(delta)") = (yes)
+
+(mtch "alfa beta gamma delta" "(xlfa)|(beta)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(xlfa)|(beta)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(xlfa)|(beta)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(xlfa)|(beta)|(gamma)|(delta)") = (yes)
+
+(mtch "alfa beta gamma delta" "(alfa1)|(beta)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(alfa1)|(beta)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(alfa1)|(beta)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(alfa1)|(beta)|(gamma)|(delta)") = (yes)
+
+(mtch "alfa beta gamma delta" "(alfa)|(b)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(alfa)|(b)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(alfa)|(b)|(gamma)|(delta)") = (yes)
+(mtch "alfa beta gamma delta" "(alfa)|(b)|(gamma)|(delta)") = (yes)

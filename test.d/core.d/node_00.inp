@@ -1,0 +1,12 @@
+
+(as
+	t (new)
+	(do 
+		(info (node (t) alfa))
+		(info (node (t) beta))
+		(ins (t) alfa +1.0)
+		(info (node (t) alfa))
+		(info (node (t) beta))
+	)
+)
+

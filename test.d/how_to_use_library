@@ -1,0 +1,19 @@
+#!/bin/bash 
+
+{ 
+	find -L ../libr.d -type f -print0 | sort -z | xargs -0r cat | sed -r ':x; s/\(([A-Za-z](_?[A-Za-z0-9])*(\.[A-Za-z](_?[A-Za-z0-9])*)*)\.([A-Za-z](_?[A-Za-z0-9])*)\)/(get (\1) \5)/g; tx; s/#.*//; ' 
+	echo '
+		(do (reln_wrte (do (skip) (reln_read))) (wrte (line)))
+		(
+			TASK2 (Info "this is TASK2") (
+				RSRCB (Info "this is RSRCB") (Info "2-B link")
+				RSRCA (Info "this is RSRCA") (Info "2-A link")
+			)
+			TASK1 (Info "this is TASK1") (
+				RSRCA (Info "this is RSRCA") (Info "1-A link")
+				RSRCB (Info "this is RSRCB") (Info "1-B link")
+			)
+		)
+	 '
+} | ../treep 
+

@@ -1,0 +1,2 @@
+(info "cannot write bool")
+(wrte (yes))

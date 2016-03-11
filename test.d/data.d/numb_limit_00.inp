@@ -1,0 +1,12 @@
+
+(info (sub (max) +0.9))
+(info (sub (max) +0.8))
+(info (sub (max) +0.7))
+(info (sub (max) +0.6))
+(info (sub (max) +0.5))
+(info (sub (max) +0.4))
+(info (sub (max) +0.3))
+(info (sub (max) +0.2))
+(info (sub (max) +0.1))
+(info (sub (max) 0.0))
+

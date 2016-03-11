@@ -1,0 +1,17 @@
+
+(info (int -12.0))
+(info (int -12.1))
+(info (int -12.3))
+(info (int -12.5))
+(info (int -12.6))
+(info (int -12.9))
+
+(info (int 0.0))
+
+(info (int +12.0))
+(info (int +12.1))
+(info (int +12.3))
+(info (int +12.5))
+(info (int +12.6))
+(info (int +12.9))
+

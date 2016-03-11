@@ -1,0 +1,12 @@
+
+* oblicz (n) 
+	(do 
+		(dump "(int ")
+		(wrte (n))
+		(dump ") = ")
+		(wrte (int (n)))
+		(wrte (line)) 
+	)
+
+(oblicz (ops (min)))
+

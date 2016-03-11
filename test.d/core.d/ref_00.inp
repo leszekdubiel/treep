@@ -1,0 +1,16 @@
+
+(as
+	a (new)
+	b (new)
+	(as 
+		aref (a)
+		bref (b)
+		(do 
+			(info (ref (a) (b)))
+			(info (ref (a) (aref)))
+			(info (ref (b) (b)))
+			(info (ref (bref) (b)))
+		)
+	)
+)
+

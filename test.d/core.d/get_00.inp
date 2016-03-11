@@ -1,0 +1,15 @@
+
+(as
+	t (new) 
+	(do 
+		(ins (t) alfa +1.0) 
+		(ins (t) beta +2.0) 
+		(info (get (t) alfa))
+		(info (get (t) beta))
+		(info (get (root (t))))
+		(set (root (t)) +4.0)
+		(info (get (root (t))))
+		(info (t))
+	)
+)
+

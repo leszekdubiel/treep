@@ -1,0 +1,10 @@
+"funkcja text przeksztalca nazwe lub liczbe na tekst"
+
+(wrte (text 0.0)) (wrte (line))
+(wrte (text +1.0)) (wrte (line))
+(wrte (text (min))) (wrte (line))
+(wrte (text (max))) (wrte (line))
+
+(wrte alfa) (wrte (line))
+(wrte beta) (wrte (line))
+

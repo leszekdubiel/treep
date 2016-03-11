@@ -1,0 +1,31 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			n (do (skip) (note_read))
+			(do 
+				(note_wrte (n))
+				(wrte (line))
+			)
+		)
+		(
+			Alfa ( 
+				(dyspozycja ZM_123) (Uwagi "not1") (Who "Jan Kowalski")
+				(dyspozycja ZM_923) (Uwagi "not2") (Info "not applicable")
+			)
+			Beta (
+				(dyspozycja ZM_123) (Uwagi "yyy") (When (Y "2010" M "01" D "14") Author "Kowalski Jan") 
+			)
+			Alfa ( 
+				(dyspozycja ZM_323) (Uwagi "not4") (Who "Jan Kowalski")
+				(dyspozycja ZM_323) (Uwagi "not5") (Info "not applicable")
+			)
+			Gamma (
+			)
+			Ixi (
+				() () ()
+			)
+		)
+	
+

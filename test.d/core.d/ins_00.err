@@ -1,0 +1,5 @@
+puste: (tree)
+z alfa: (tree alfa 0.0)
+z beta: (tree alfa 0.0 beta +1.0)
+z poddrzewem: (tree alfa 0.0 beta +1.0 sub (tree ...))
+z iksem w poddrzewie: (tree alfa 0.0 beta +1.0 sub (tree ...))

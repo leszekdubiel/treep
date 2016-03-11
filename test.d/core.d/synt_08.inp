@@ -1,0 +1,5 @@
+
+"not enough args" 
+* f (a b c) 0.0
+(f 0.0 +1.0)
+

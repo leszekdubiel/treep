@@ -1,0 +1,29 @@
+
+* disp (t) 
+	(if 
+		(is name (t)) (t) 
+		(is text (t)) (join "\"" (join (escp (t)) "\""))
+		(is numb (t)) (t) 
+		(if (t) "(yes)" "(no)")
+	)
+* test (txt re) 
+	(info "(mtch " (disp (txt)) " " (disp (re)) ") = " (disp (do (ptrn (re)) (mtch (txt)))))
+
+(test "alfa" "alf")
+(test "alfa" "fa")
+(test "alfa" "x")
+(test "fa" "fa$")
+(test "alfa" "^al")
+(test "lfal" "^al")
+(test "alfa beta" "(fa|be)")
+(test "alfa beta" " (fa|be)")
+(info)
+(test "alllllllllllllffffa" "^al*f*a")
+(test "aa" "^al*f*a")
+(test "aa" "^al+f+a")
+(test "alfffffa" "^al+f+a")
+(test "ala" "^al+f+a")
+(info) 
+(test "Alfa Beta Gamma)))" "(a|b|g).*a)))")
+
+

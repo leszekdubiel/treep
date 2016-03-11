@@ -1,0 +1,24 @@
+
+* porownaj (t a b) 
+	(do 
+		(info (t))
+		(info "(gre " (a) " " (b) ") = " (gre (a) (b)))
+		(info "(gre " (b) " " (a) ") = " (gre (b) (a)))
+		(info)
+	)
+
+
+(porownaj "(zer), 0.0" (zer) 0.0)
+(porownaj "(min), +0.00000000000000001" (min) +0.00000000000000001)
+(porownaj "(max), +99999999999999999.9" (max) +99999999999999999.9)
+
+(porownaj "(min), (mul +1.0 (min))" (min) (mul +1.0 (min)))
+(porownaj "(max), (mul +1.0 (max))" (max) (mul +1.0 (max)))
+(porownaj "+1.0, (mul (max) (min))" +1.0 (mul (max) (min)))
+
+(porownaj "(min), (div +1.0 (max))" (min) (div +1.0 (max)))
+
+(info "(div +1.0 (min)) to jest o jeden za duzo niz wartosc maksymalna, wiec porownamy na liczbach 10 razy wiekszych")
+(porownaj "(div +1.0 (mul +10.0 (min))), (sub (div (max) +10.0) +1.0)" (div +1.0 (mul +10.0 (min))) (add (div (max) +10.0) +0.01))
+
+

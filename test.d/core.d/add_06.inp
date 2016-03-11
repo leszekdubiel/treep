@@ -1,0 +1,6 @@
+
+* dwie_liczby (a b) 
+	(info (add (a) (b)))
+
+(dwie_liczby (max) (min))
+

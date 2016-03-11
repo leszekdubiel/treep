@@ -1,0 +1,15 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			e (do (skip) (tree_read))
+			(do 
+				(tree_wrte (e))
+				(wrte (line))
+			)
+		)
+ 	( 
+ 	) 
+	
+

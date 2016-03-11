@@ -1,0 +1,12 @@
+Pierwsza lista: (
+)
+Druga lista: (
+	b1 (info "pierwszy element listy b")
+	b2 ()
+	b3 ()
+)
+Polaczenie list: (
+	b1 (info "pierwszy element listy b")
+	b2 ()
+	b3 ()
+)

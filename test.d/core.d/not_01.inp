@@ -1,0 +1,9 @@
+(if (not (gre +2.0 0.0))
+	(info "dwa nie jest wieksze niz zero")
+	(info "dwa jest wieksze niz zero")
+)
+(if (not (pos (min)))
+	(info "minimum nie jest dodatnie")
+	(info "minimum jest dodatnie")
+)
+

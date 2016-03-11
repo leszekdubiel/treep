@@ -1,0 +1,12 @@
+
+
+"Treep will skip blank characters above until double quotes are encountered, then it will read this text, evaluate it (text will become the same text). Then it will proceed to read more data." 
+
+"Then treep will this text, evaluate, forget result. Then it will read number below \"+2.0\", evaluate it. Result will be the same number and it will be discarded. Finally treep will read name \"Alfa\", evaluate it. No output will be printed."
+
++2.0 
+
+Alfa
+
+
+

@@ -1,0 +1,34 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		* oznacz_liste (l u) 
+			(if (is void (l)) 
+				(void) 
+				(do 
+					(ins (get (l) parm) (u) "")
+					(oznacz_liste (get (l) next) (u))
+				)
+			)
+		(as 
+			l (do (skip) (list_read))
+			(as
+				c (list_copy (l))
+				(do 
+					(oznacz_liste (l) this_is_l)
+					(oznacz_liste (c) this_is_c)
+					(list_wrte (l))
+					(wrte (line))
+					(list_wrte (c))
+					(wrte (line))
+				)
+			)
+		)
+ 	( 
+ 		A (Info "list element A" X +4.5)
+ 		B (Info "list element B" Y -5.0)
+ 		C (Info "list element C" Z +2.0)
+		D () 
+ 	) 
+	
+

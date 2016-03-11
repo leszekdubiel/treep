@@ -1,0 +1,253 @@
+
+"value of last parameter"
+(info (do 0.0 +1.0 +2.0))
+
+"check if value is of given type"
+(info (is name Alfa))
+(info (is numb 0.0))
+
+"increment number by one"
+(info (inc 0.0))
+
+"decrement number by one"
+(info (dec 0.0))
+
+"add two or more numbers"
+(info (add +4.0 -2.0))
+
+"subtract two or more numbers"
+(info (sub +4.0 -2.0))
+
+"multiply two or more numbers"
+(info (mul +4.0 -2.0))
+
+"divide two or more numbers"
+(info (div +4.0 -2.0))
+
+"round number to the nearest integer"
+(info (int -4.0))
+
+"compute floor of the number"
+(info (flo -4.0))
+
+"compute ceiling of the number"
+(info (cil -4.0))
+
+"minimum number or minimum of two or more numbers"
+(info (min))
+(info (min -4.0 +2.0))
+
+"maximum number or maximum of two or more numbers"
+(info (max))
+(info (max -4.0 +2.0))
+
+"opossite of number (negation of number)"
+(info (ops -4.0))
+
+"absolute value of number"
+(info (abs -4.0))
+
+"zero or check if zero"
+(info (zer))
+(info (zer +3.2))
+
+"check if number is positive"
+(info (pos +3.2))
+
+"check if number is negative"
+(info (neg +3.2))
+
+"check if numbers are equal"
+(info (equ +4.0 +6.0))
+
+"check if one number is greater than another"
+(info (gre +4.0 +6.0))
+
+"check is one number is less then another"
+(info (les +4.0 +6.0))
+
+"boolean true"
+(info (yes))
+
+"boolean false"
+(info (no))
+
+"negation of boolean value"
+(info (not (yes)))
+
+"conjunction of two or more boolean values"
+(info (and (yes) (no)))
+
+"alternative of two or more boolean values"
+(info (or (yes) (no)))
+
+"convert text to number"
+(info (numb "0.0"))
+
+"convert text to name"
+(info (name "Alfa"))
+
+"convert number or name to text"
+(info (text 0.0))
+(info (text Alfa))
+
+"length of name or text"
+(info (leng Alfa))
+
+"check if names or texts are the same"
+(info (same Alfa Beta))
+
+"check one name or text sorts before another"
+(info (bfor Alfa Beta))
+
+"check one name or text sorts after another"
+(info (aftr Alfa Beta))
+
+"escape text"
+(info (escp "what\\about"))
+
+"unescape text"
+(info (unes "what\\\"about"))
+
+"text or name in upppercase"
+(info (uppr Alfa))
+
+"text or name in lowercase"
+(info (lowr Alfa))
+
+"beginning of name or text"
+(info (head Alfa +2.0))
+
+"end of name or text"
+(info (tail Alfa +2.0))
+
+"join names or texts"
+(info (join Alfa Beta))
+
+"check if one name or text is a part of another name or text"
+(info (part Alfa lf))
+
+"find index of one name or text in another name or text"
+(info (indx Alfa lf))
+
+"test if name or text is valid regex (pattern)"
+(info (ptrn "^m(y.r)e$"))
+
+"define pattern for matchin" 
+(ptrn "^m(y.r)e")
+
+"test if name or text matches regex"
+(info (mtch "my regular expression"))
+
+"starting index of matched substring"
+(info (msta))
+
+"starting index of matched substring"
+(info (mend))
+
+"new tree"
+(info (new))
+
+"true if both nodes or trees reference the same memory"
+(info (ref (new) (new)))
+
+"check if there are any nodes in tree"
+(info (any (new)))
+
+"number of nodes in tree"
+(info (qty (new)))
+
+"check if node of given name is defined in tree"
+(info (def (new) Alfa))
+
+"insert node to tree"
+(info (ins (new) Alfa +1.0))
+
+"delete node from tree"
+(info (del (ins (new) Alfa +2.0) Alfa))
+
+"set value of node in tree or set value of node itself"
+(info (set (ins (new) Alfa +2.0) Alfa +4.0))
+
+"get value of node or node in tree"
+(info (get (ins (new) Alfa +3.0) Alfa))
+
+"root of tree"
+(info (root (ins (new) Alfa +8.0)))
+
+"frst node of tree"
+(info (frst (ins (new) Alfa +9.0)))
+
+"last node of tree"
+(info (frst (ins (new) Alfa +2.1)))
+
+"left child"
+(info (left (frst (ins (new) Alfa +2.2))))
+
+"right child"
+(info (rght (frst (ins (new) Alfa +2.3))))
+
+"next node"
+(info (next (frst (ins (new) Alfa +2.3))))
+
+"previous node"
+(info (next (frst (ins (new) Alfa +2.3))))
+
+"value of node"
+(info (vlue (frst (ins (new) Alfa +2.3))))
+
+"tree for given node"
+(info (tree (frst (ins (new) Alfa +2.3))))
+
+"read vlalue"
+(info (read))Alfa
+
+"put value back for reading in future"
+(info (back Alfa))(info (read))
+
+"write value"
+(wrte Alfa)
+(wrte (line))
+
+"write value, but text write literally"
+(dump "my\"text")
+(wrte (line))
+
+"main tree"
+(ins (main) Alfa +99.0)
+(info (main))
+
+"current time as text"
+(info (text (time)))
+
+"but info writes time anyway" 
+(info (time))
+
+"unique identifier starting with given name"
+(info (iden Myid))
+
+"void value"
+(info (void))
+
+"space value"
+(info (spac))
+
+"tablulator value"
+(info (tabu))
+
+"new line value"
+(info (line))
+
+"left parenthesis value"
+(info (lpar))
+
+"right parenthesis value"
+(info (rpar))
+
+"write values to standard error"
+(info (info 0.0))
+
+"exit program"
+(info (exit (yes)))
+
+

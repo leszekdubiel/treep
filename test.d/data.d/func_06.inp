@@ -1,0 +1,8 @@
+
+* zeroarg () 
+	(info "zeroarg!!!!")
+
+(zeroarg)
+(info "too many args")
+(zeroarg a)
+

@@ -1,0 +1,256 @@
+(
+	Alice (Date_Of_Birth "1952-02-12") (
+		John (Surname "Kowalski") (Role "husband")
+		AdamX (Age "8 years") (Role "son")
+	)
+	Adam (Date_Of_Birth "1988-01-23") (
+		Alice9 (Maiden_Name "Nowak") (Role "mother")
+		John (City "Rabka") (Role "father")
+	)
+	make_vanila_shake (Info "mix for 8 min" Prog +4.0) (
+		vanila () (Qty -8.0)
+		milk () (Qty -1.55)
+		vanila_shake () (Qty +1.0)
+	)
+	make_banana_shake (Info "mix for 10 min" Prog +3.0) (
+		banana () (Qty -3.0)
+		milk () (Qty -2.0)
+		banana_shake () (Qty +2.0)
+	)
+	Alice (X +45.0) (
+		Xyz () ()
+	)
+	W () (
+	)
+	Alice (Date_Of_Birth "1952-02-12") (
+		John2 (Surname "Kowalski") (Role "husband")
+		AdamX2 (Age "8 years") (Role "son")
+	)
+	Adam (Date_Of_Birth "1988-01-23") (
+		Alice8 (Maiden_Name "Nowak") (Role "mother")
+		Johnw (City "Rabka") (Role "father")
+	)
+	make_vanila_shake (Info "mix for 8 min" Prog +4.0) (
+		vanila3 () (Qty -8.0)
+		milk3 () (Qty -1.55)
+		vanila_shake3 () (Qty +1.0)
+	)
+	make_banana_shake2 (Info "mix for 10 min" Prog +3.0) (
+		banana () (Qty -3.0)
+		milk () (Qty -2.0)
+		banana_shake () (Qty +2.0)
+	)
+	Alice2 (X +45.0) (
+		Xyz () ()
+	)
+	W2 () (
+	)
+)(
+	Adam (Date_Of_Birth "1988-01-23") (
+		Alice8 (Maiden_Name "Nowak") (Role "mother")
+		Alice9 (Maiden_Name "Nowak") (Role "mother")
+		John (City "Rabka" Surname "Kowalski") (Role "father")
+		Johnw (City "Rabka") (Role "father")
+	)
+	Alice (Date_Of_Birth "1952-02-12" X +45.0) (
+		AdamX (Age "8 years") (Role "son")
+		AdamX2 (Age "8 years") (Role "son")
+		John (City "Rabka" Surname "Kowalski") (Role "husband")
+		John2 (Surname "Kowalski") (Role "husband")
+		Xyz () ()
+	)
+	Alice2 (X +45.0) (
+		Xyz () ()
+	)
+	W () (
+	)
+	W2 () (
+	)
+	make_banana_shake (Info "mix for 10 min" Prog +3.0) (
+		banana () (Qty -3.0)
+		banana_shake () (Qty +2.0)
+		milk () (Qty -2.0)
+	)
+	make_banana_shake2 (Info "mix for 10 min" Prog +3.0) (
+		banana () (Qty -3.0)
+		banana_shake () (Qty +2.0)
+		milk () (Qty -2.0)
+	)
+	make_vanila_shake (Info "mix for 8 min" Prog +4.0) (
+		milk () (Qty -1.55)
+		milk3 () (Qty -1.55)
+		vanila () (Qty -8.0)
+		vanila3 () (Qty -8.0)
+		vanila_shake () (Qty +1.0)
+		vanila_shake3 () (Qty +1.0)
+	)
+)(
+	task (
+		Adam (
+			parm (Date_Of_Birth "1988-01-23") 
+			rsrc (
+				Alice8 (Role "mother")
+				Alice9 (Role "mother")
+				John (Role "father")
+				Johnw (Role "father")
+			)
+		)
+		Alice (
+			parm (Date_Of_Birth "1952-02-12" X +45.0) 
+			rsrc (
+				AdamX (Role "son")
+				AdamX2 (Role "son")
+				John (Role "husband")
+				John2 (Role "husband")
+				Xyz ()
+			)
+		)
+		Alice2 (
+			parm (X +45.0) 
+			rsrc (
+				Xyz ()
+			)
+		)
+		W (
+			parm () 
+			rsrc (
+			)
+		)
+		W2 (
+			parm () 
+			rsrc (
+			)
+		)
+		make_banana_shake (
+			parm (Info "mix for 10 min" Prog +3.0) 
+			rsrc (
+				banana (Qty -3.0)
+				banana_shake (Qty +2.0)
+				milk (Qty -2.0)
+			)
+		)
+		make_banana_shake2 (
+			parm (Info "mix for 10 min" Prog +3.0) 
+			rsrc (
+				banana (Qty -3.0)
+				banana_shake (Qty +2.0)
+				milk (Qty -2.0)
+			)
+		)
+		make_vanila_shake (
+			parm (Info "mix for 8 min" Prog +4.0) 
+			rsrc (
+				milk (Qty -1.55)
+				milk3 (Qty -1.55)
+				vanila (Qty -8.0)
+				vanila3 (Qty -8.0)
+				vanila_shake (Qty +1.0)
+				vanila_shake3 (Qty +1.0)
+			)
+		)
+	)
+	rsrc (
+		AdamX (
+			parm (Age "8 years") 
+			task (
+				Alice (Role "son")
+			)
+		)
+		AdamX2 (
+			parm (Age "8 years") 
+			task (
+				Alice (Role "son")
+			)
+		)
+		Alice8 (
+			parm (Maiden_Name "Nowak") 
+			task (
+				Adam (Role "mother")
+			)
+		)
+		Alice9 (
+			parm (Maiden_Name "Nowak") 
+			task (
+				Adam (Role "mother")
+			)
+		)
+		John (
+			parm (City "Rabka" Surname "Kowalski") 
+			task (
+				Adam (Role "father")
+				Alice (Role "husband")
+			)
+		)
+		John2 (
+			parm (Surname "Kowalski") 
+			task (
+				Alice (Role "husband")
+			)
+		)
+		Johnw (
+			parm (City "Rabka") 
+			task (
+				Adam (Role "father")
+			)
+		)
+		Xyz (
+			parm () 
+			task (
+				Alice ()
+				Alice2 ()
+			)
+		)
+		banana (
+			parm () 
+			task (
+				make_banana_shake (Qty -3.0)
+				make_banana_shake2 (Qty -3.0)
+			)
+		)
+		banana_shake (
+			parm () 
+			task (
+				make_banana_shake (Qty +2.0)
+				make_banana_shake2 (Qty +2.0)
+			)
+		)
+		milk (
+			parm () 
+			task (
+				make_banana_shake (Qty -2.0)
+				make_banana_shake2 (Qty -2.0)
+				make_vanila_shake (Qty -1.55)
+			)
+		)
+		milk3 (
+			parm () 
+			task (
+				make_vanila_shake (Qty -1.55)
+			)
+		)
+		vanila (
+			parm () 
+			task (
+				make_vanila_shake (Qty -8.0)
+			)
+		)
+		vanila3 (
+			parm () 
+			task (
+				make_vanila_shake (Qty -8.0)
+			)
+		)
+		vanila_shake (
+			parm () 
+			task (
+				make_vanila_shake (Qty +1.0)
+			)
+		)
+		vanila_shake3 (
+			parm () 
+			task (
+				make_vanila_shake (Qty +1.0)
+			)
+		)
+	)
+)

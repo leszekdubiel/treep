@@ -1,0 +1,30 @@
+INSERT_TREEP_LIBRARY_HERE
+
+(info (type (void)))
+(info (type (spac)))
+(info (type (tabu)))
+(info (type (line)))
+(info (type (lpar)))
+(info (type (rpar)))
+(info (type -1.0))
+(info (type 0.0))
+(info (type +1.0))
+(info (type Alfa))
+(info (type A))
+(info (type "Alfa, beta, gamma..."))
+(info (type ""))
+(info (type (yes)))
+(info (type (no)))
+(info (type (new)))
+(info (type (frst (ins (new) a +4.0))))
+(info (type (read))) 
+(info (type (read)))
+(info (type (read)))			
+(info (type (read))))
+(info (type (read)))(
+(info (type (read)))0.0
+(info (type (read)))-10.0
+(info (type (read)))+10.0
+(info (type (read)))Alfa
+(info (type (read)))"alfa beta gamma"
+

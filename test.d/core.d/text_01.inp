@@ -1,0 +1,4 @@
+"ale nie mozna przekazac samego tekstu, bo to znaczy, ze programista nie wie co przekazuje do funkcji -- po co konwertowac tekst na tekst? " 
+
+(wrte (text "asdfasdf sad f adfad")) (wrte (line))
+

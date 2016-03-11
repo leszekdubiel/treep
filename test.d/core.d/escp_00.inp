@@ -1,0 +1,13 @@
+
+(wrte (escp "alfa")) (wrte (line))
+(wrte (escp "alfa\\beta")) (wrte (line))
+(wrte (escp "")) (wrte (line))
+(wrte (escp "\\")) (wrte (line))
+(wrte (escp "\"")) (wrte (line))
+
+(dump (escp "alfa")) (wrte (line))
+(dump (escp "alfa\\beta")) (wrte (line))
+(dump (escp "")) (wrte (line))
+(dump (escp "\\")) (wrte (line))
+(dump (escp "\"")) (wrte (line))
+

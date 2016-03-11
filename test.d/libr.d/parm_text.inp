@@ -1,0 +1,27 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		* petla () 
+			(as
+				d (do (skip) (read))
+				(if (is void (d))
+					(void)
+					(as
+						p (do (back (d)) (skip) (parm_read))
+						(do 
+							(wrte (line))
+							(parm_wrte (p)) (wrte (line))
+							(wrte (parm_text (p))) (wrte (line))
+							(petla)
+						)
+					)
+				)
+			)
+		(petla)
+		()
+		(a +9.3)
+		(a alfabet z "hello world!")
+		(a 0.0 b (mytxt "hello\"world\\!"))
+	
+

@@ -1,0 +1,3 @@
+"rozne typy argumentow nie moga byc -- pierwszy przyklad zadziala, drugi nie"
+(info (same (name "alfa") alfa ))
+(info (same "alfa" alfa ))

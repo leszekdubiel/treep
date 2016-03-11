@@ -1,0 +1,20 @@
+
+(as 
+	alfa +2.0 
+	(info (mul (alfa) (alfa)))
+)
+
+
+
+(as
+	a +2.0
+	b +3.0 
+	c +4.0 
+	(do 
+		(info (mul (a) (b)))
+		(info (mul (a) (c)))
+		(info (mul (b) (c)))
+		(info (mul (mul (a) (b)) (c)))
+	)
+)
+

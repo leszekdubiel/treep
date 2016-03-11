@@ -1,0 +1,9 @@
+
+"define new function \"average\" that computes average of two numbers..."
+* average (x y) 
+	(div (add (x) (y)) +2.0)
+
+"... and compute some results..."
+(info (average +4.0 +6.0))
+(info (average +1.0 +8.0))
+

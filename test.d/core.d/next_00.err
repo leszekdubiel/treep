@@ -1,0 +1,6 @@
+(tree alfa a beta b delta d)
+(node beta b)
+(node alfa a)
+(node beta b)
+(node delta d)
+(void)

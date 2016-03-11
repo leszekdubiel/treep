@@ -1,0 +1,2 @@
+(info "many args not allowed ")
+(and (yes) (no) (yes) (no) (yes))

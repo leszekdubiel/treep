@@ -1,0 +1,4 @@
+
+"So how looks classical Hello World? Function \"wrte\" writes text including quote characters. We don't want do that -- we will use function \"dump\" which doesn't do that. We will write also new line character after text."
+(dump "Hello World!") (wrte (line))
+

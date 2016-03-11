@@ -1,0 +1,5 @@
+(
+	Alfa (Info "this is task vertex Alfa") (
+		Beta (Info "this is rsrc vertex Beta") (Info "relation Alfa-Beta")
+	)
+	Beta 

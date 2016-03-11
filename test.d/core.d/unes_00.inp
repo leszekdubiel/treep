@@ -1,0 +1,6 @@
+(wrte (unes "alfa\\\\beta")) (wrte (line))
+(wrte (unes "alfa")) (wrte (line))
+(wrte (unes "alfa\\\"ixi")) (wrte (line))
+(dump (unes "alfa\\\\beta")) (wrte (line))
+(dump (unes "alfa")) (wrte (line))
+(dump (unes "alfa\\\"ixi")) (wrte (line))

@@ -1,0 +1,7 @@
+(info (neg (div (min) +2.0)))
+(info (neg (div (min) -2.0)))
+(info (neg (div (min) +1.0)))
+(info (neg (div (min) -1.0)))
+(info (neg (div (min) (div +1.0 (max)))))
+(info (neg (div (min) (div +1.0 (max)))))
+

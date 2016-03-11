@@ -1,0 +1,4 @@
+(dump "This is left parenthesis:")
+(wrte (lpar))
+(dump ".")
+

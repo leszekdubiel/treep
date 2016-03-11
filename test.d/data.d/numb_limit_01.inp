@@ -1,0 +1,13 @@
+
+* test_add (y) 
+	(do
+		(info)
+		(info "(mul " (y) " " (min) ")")
+		(info (mul (min) (y)))
+		(info "(add " (max) " (mul " (y) " " (min) "))")
+		(info (add (max) (mul (min) (y))))
+		(test_add (mul (y) +10.0))
+	)
+
+(test_add +1.0)
+

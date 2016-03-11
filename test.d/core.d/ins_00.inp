@@ -1,0 +1,14 @@
+(as
+	t (new) 
+	(do 
+		(info "puste: " (t))
+		(ins (t) alfa 0.0)
+		(info "z alfa: " (t))
+		(ins (t) beta +1.0) 
+		(info "z beta: " (t))
+		(ins (t) sub (new))
+		(info "z poddrzewem: " (t))
+		(ins (get (t) sub) x "iks")
+		(info "z iksem w poddrzewie: " (t))
+	)
+)

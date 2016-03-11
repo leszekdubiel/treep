@@ -1,0 +1,26 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			n (do (skip) (note_read))
+			(do 
+				(note_wrte (n))
+				(wrte (line))
+			)
+		)
+		(
+			alfa (
+				() () ()
+				() () ()
+			)
+			beta (
+				() () ()
+			)
+			gamma (
+			)
+			alfa (
+				() () ()
+			)
+		)
+

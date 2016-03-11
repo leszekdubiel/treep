@@ -1,0 +1,15 @@
+
+(as
+	t (new) 
+	(do 
+		(info (root (t)))
+		(ins (t) a a)
+		(info (root (t)))
+		(ins (t) b b) 
+		(info (root (t)))
+		(ins (t) c c) 
+		(info (root (t)))
+		(ins (t) d d) 
+		(info (root (t)))
+	)
+)

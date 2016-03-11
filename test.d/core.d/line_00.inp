@@ -1,0 +1,4 @@
+(dump "This is line:")
+(wrte (line))
+(dump ".")
+

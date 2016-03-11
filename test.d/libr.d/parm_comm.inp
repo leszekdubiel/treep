@@ -1,0 +1,40 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+	
+(wrte ex1) (wrte (line))
+(do (parm_wrte (parm_comm (do (skip) (parm_read)) (do (skip) (parm_read)))) (wrte (line)))
+(alfa +4.0 beta +2.0 gamma +3.0) 
+(gamma +3.0 beta +2.0 delta +8.0 alfa -1.0)
+
+(wrte ex2) (wrte (line))
+(do (parm_wrte (parm_comm (do (skip) (parm_read)) (do (skip) (parm_read)))) (wrte (line)))
+() 
+()
+
+(wrte ex3) (wrte (line))
+(do (parm_wrte (parm_comm (do (skip) (parm_read)) (do (skip) (parm_read)))) (wrte (line)))
+(a +2.0 b 0.0 c X) 
+(a "" b 0.0 c "X")
+
+(wrte ex4) (wrte (line))
+(do (parm_wrte (parm_comm (do (skip) (parm_read)) (do (skip) (parm_read)))) (wrte (line)))
+(a +1.0 b () c +2.0) 
+(a +1.0 b (alfa 0.0) c +2.0) 
+
+(wrte ex5) (wrte (line))
+(do (parm_wrte (parm_comm (do (skip) (parm_read)) (do (skip) (parm_read)))) (wrte (line)))
+(a +1.0 b () c +2.0) 
+(a +1.0 b 0.0 c +2.0) 
+
+(wrte ex6) (wrte (line))
+(do (parm_wrte (parm_comm (do (skip) (parm_read)) (do (skip) (parm_read)))) (wrte (line)))
+(a +1.0 b (x +1.0) c +2.0) 
+(a +1.0 b (x +1.0 y -2.0) c +2.0) 
+
+(wrte ex7) (wrte (line))
+(do (parm_wrte (parm_comm (do (skip) (parm_read)) (do (skip) (parm_read)))) (wrte (line)))
+(a +1.0 b (alfa +2.0 beta x) c +2.0) 
+(a +1.0 b (alfa 0.0 gamma x beta x) c +2.0) 
+
+

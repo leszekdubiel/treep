@@ -1,0 +1,4 @@
+"po backslashu tylko backslash lub cudzyslow; pierwsze dwa ok, ostatnie blad"
+(dump (unes "backslash---\\\\--")) (wrte (line))
+(dump (unes "cudzyslow---\\\"--")) (wrte (line))
+(dump (unes "blad---\\x--")) (wrte (line))

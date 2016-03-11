@@ -1,0 +1,13 @@
+
+(info "(spac) = " (spac))
+(info "(tabu) = " (tabu))
+(info "(line) = " (line))
+(info "(lpar) = " (lpar))
+(info "(rpar) = " (rpar))
+(info "(is void (void)) = " (is void (void)))
+(info "(is spac (spac)) = " (is spac (spac)))
+(info "(is tabu (tabu)) = " (is tabu (tabu)))
+(info "(is line (line)) = " (is line (line)))
+(info "(is lpar (lpar)) = " (is lpar (lpar)))
+(info "(is rpar (rpar)) = " (is rpar (rpar)))
+

@@ -1,0 +1,214 @@
+(
+	make_vanila_shake (Info "mix for 8 min" Prog +4.0) (
+		vanila (Info "from Madagaskar") (Qty -8.0 Unit "bean")
+		milk (Type "EN 123Q, 3%") (Qty -1.55 Unit "litre")
+		vanila_shake () (Qty +7.0 Unit "one glass")
+	)
+	make_banana_shake (Info "mix for 10 min" Prog +3.0) (
+		banana (Info "any type") (Qty -3.0 Unit "kg")
+		milk (Type "EN 123Q, 3%") (Qty -2.0 Unit "litre")
+		banana_shake () (Qty +8.0 Unit "one glass")
+	)
+)(
+	task (
+		make_banana_shake (
+			parm (Info "mix for 10 min" Prog +3.0) 
+			rsrc (
+				banana (Qty -3.0 Unit "kg")
+				banana_shake (Qty +8.0 Unit "one glass")
+				milk (Qty -2.0 Unit "litre")
+			)
+		)
+		make_vanila_shake (
+			parm (Info "mix for 8 min" Prog +4.0) 
+			rsrc (
+				milk (Qty -1.55 Unit "litre")
+				vanila (Qty -8.0 Unit "bean")
+				vanila_shake (Qty +7.0 Unit "one glass")
+			)
+		)
+	)
+	rsrc (
+		banana (
+			parm (Info "any type") 
+			task (
+				make_banana_shake (Qty -3.0 Unit "kg")
+			)
+		)
+		banana_shake (
+			parm () 
+			task (
+				make_banana_shake (Qty +8.0 Unit "one glass")
+			)
+		)
+		milk (
+			parm (Type "EN 123Q, 3%") 
+			task (
+				make_banana_shake (Qty -2.0 Unit "litre")
+				make_vanila_shake (Qty -1.55 Unit "litre")
+			)
+		)
+		vanila (
+			parm (Info "from Madagaskar") 
+			task (
+				make_vanila_shake (Qty -8.0 Unit "bean")
+			)
+		)
+		vanila_shake (
+			parm () 
+			task (
+				make_vanila_shake (Qty +7.0 Unit "one glass")
+			)
+		)
+	)
+)
+(
+	TASK2 (Info "this is TASK2") (
+		RSRCB (Info "this is RSRCB") (Info "2-B link")
+		RSRCA (Info "this is RSRCA") (Info "2-A link")
+	)
+	TASK1 (Info "this is TASK1") (
+		RSRCA (Info "this is RSRCA") (Info "1-A link")
+		RSRCB (Info "this is RSRCB") (Info "1-B link")
+	)
+)(
+	task (
+		TASK1 (
+			parm (Info "this is TASK1") 
+			rsrc (
+				RSRCA (Info "1-A link")
+				RSRCB (Info "1-B link")
+			)
+		)
+		TASK2 (
+			parm (Info "this is TASK2") 
+			rsrc (
+				RSRCA (Info "2-A link")
+				RSRCB (Info "2-B link")
+			)
+		)
+	)
+	rsrc (
+		RSRCA (
+			parm (Info "this is RSRCA") 
+			task (
+				TASK1 (Info "1-A link")
+				TASK2 (Info "2-A link")
+			)
+		)
+		RSRCB (
+			parm (Info "this is RSRCB") 
+			task (
+				TASK1 (Info "1-B link")
+				TASK2 (Info "2-B link")
+			)
+		)
+	)
+)
+(
+	a (x 0.0) (
+	)
+	b (y 0.0) (
+	)
+)(
+	task (
+		a (
+			parm (x 0.0) 
+			rsrc (
+			)
+		)
+		b (
+			parm (y 0.0) 
+			rsrc (
+			)
+		)
+	)
+	rsrc (
+	)
+)
+(
+)(
+	task (
+	)
+	rsrc (
+	)
+)
+(
+	a () (
+	)
+)(
+	task (
+		a (
+			parm () 
+			rsrc (
+			)
+		)
+	)
+	rsrc (
+	)
+)
+(
+	a () (
+		b () ()
+	)
+)(
+	task (
+		a (
+			parm () 
+			rsrc (
+				b ()
+			)
+		)
+	)
+	rsrc (
+		b (
+			parm () 
+			task (
+				a ()
+			)
+		)
+	)
+)
+(
+	a () (
+		b () ()
+		c () ()
+	)
+	p () (
+		b () ()
+		c () ()
+	)
+)(
+	task (
+		a (
+			parm () 
+			rsrc (
+				b ()
+				c ()
+			)
+		)
+		p (
+			parm () 
+			rsrc (
+				b ()
+				c ()
+			)
+		)
+	)
+	rsrc (
+		b (
+			parm () 
+			task (
+				a ()
+				p ()
+			)
+		)
+		c (
+			parm () 
+			task (
+				a ()
+				p ()
+			)
+		)
+	)
+)

@@ -1,0 +1,11 @@
+
+(if (yes)
+	(info (yes))
+	(info (no))
+)
+
+(if (no)
+	(info (yes))
+	(info (no))
+)
+

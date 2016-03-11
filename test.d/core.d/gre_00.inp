@@ -1,0 +1,15 @@
+
+* porownaj (a b) 
+	(do 
+		(info "(gre " (a) " " (b) ") = " (gre (a) (b)))
+		(info "(gre " (b) " " (a) ") = " (gre (b) (a)))
+		(info)
+	)
+
+(porownaj 0.0 0.0)
+(porownaj 0.0 +1.0)
+(porownaj 0.0 -1.0)
+(porownaj +1.0 +1.0)
+(porownaj +1.0 -1.0)
+(porownaj -1.0 -1.0)
+

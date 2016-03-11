@@ -1,0 +1,4 @@
+(info (ptrn "Alfa") (mtch "A"))
+(info (ptrn Alfa) (mtch A))
+"frst arg must be name or text" 
+(info (ptrn 0.0))

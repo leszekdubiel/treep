@@ -1,0 +1,14 @@
+(as
+	t (new) 
+	(do 
+		(ins (t) beta b) 
+		(ins (t) alfa a)
+		(ins (t) delta d)
+		(info (t))
+		(info (root (t)))
+		(info (frst (t)))
+		(info (next (frst (t))))
+		(info (next (next (frst (t)))))
+		(info (next (next (next (frst (t))))))
+	)
+)

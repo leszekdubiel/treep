@@ -1,0 +1,22 @@
+(head "" 0.0) = ""
+(head "alfa beta" 0.0) = ""
+
+(head "alfa beta" +1.0) = "a"
+(head "alfa beta" +2.0) = "al"
+(head "alfa beta" +3.0) = "alf"
+(head "alfa beta" +4.0) = "alfa"
+(head "alfa beta" +5.0) = "alfa "
+(head "alfa beta" +6.0) = "alfa b"
+(head "alfa beta" +7.0) = "alfa be"
+(head "alfa beta" +8.0) = "alfa bet"
+(head "alfa beta" +9.0) = "alfa beta"
+
+(head Alfa_Beta +1.0) = A
+(head Alfa_Beta +2.0) = Al
+(head Alfa_Beta +3.0) = Alf
+(head Alfa_Beta +4.0) = Alfa
+(head Alfa_Beta +6.0) = Alfa_B
+(head Alfa_Beta +7.0) = Alfa_Be
+(head Alfa_Beta +8.0) = Alfa_Bet
+(head Alfa_Beta +9.0) = Alfa_Beta
+

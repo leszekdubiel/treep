@@ -1,0 +1,52 @@
+
+convert number to time and back again: 0.0 ----> 1970-01-01 00:00:00 -----> 0.0 ------> 1970-01-01 00:00:00
+convert number to time and back again: +1.0 ----> 1970-01-01 00:00:01 -----> +1.0 ------> 1970-01-01 00:00:01
+convert number to time and back again: +2.0 ----> 1970-01-01 00:00:02 -----> +2.0 ------> 1970-01-01 00:00:02
+convert number to time and back again: +3.0 ----> 1970-01-01 00:00:03 -----> +3.0 ------> 1970-01-01 00:00:03
+convert number to time and back again: +4.0 ----> 1970-01-01 00:00:04 -----> +4.0 ------> 1970-01-01 00:00:04
+convert number to time and back again: +5.0 ----> 1970-01-01 00:00:05 -----> +5.0 ------> 1970-01-01 00:00:05
+convert number to time and back again: +6.0 ----> 1970-01-01 00:00:06 -----> +6.0 ------> 1970-01-01 00:00:06
+convert number to time and back again: +7.0 ----> 1970-01-01 00:00:07 -----> +7.0 ------> 1970-01-01 00:00:07
+convert number to time and back again: +8.0 ----> 1970-01-01 00:00:08 -----> +8.0 ------> 1970-01-01 00:00:08
+convert number to time and back again: +9.0 ----> 1970-01-01 00:00:09 -----> +9.0 ------> 1970-01-01 00:00:09
+
+convert number to time and back again: 0.0 ----> 1970-01-01 00:00:00 -----> 0.0 ------> 1970-01-01 00:00:00
+convert number to time and back again: -1.0 ----> 1969-12-31 23:59:59 -----> -1.0 ------> 1969-12-31 23:59:59
+convert number to time and back again: -2.0 ----> 1969-12-31 23:59:58 -----> -2.0 ------> 1969-12-31 23:59:58
+convert number to time and back again: -3.0 ----> 1969-12-31 23:59:57 -----> -3.0 ------> 1969-12-31 23:59:57
+convert number to time and back again: -4.0 ----> 1969-12-31 23:59:56 -----> -4.0 ------> 1969-12-31 23:59:56
+convert number to time and back again: -5.0 ----> 1969-12-31 23:59:55 -----> -5.0 ------> 1969-12-31 23:59:55
+convert number to time and back again: -6.0 ----> 1969-12-31 23:59:54 -----> -6.0 ------> 1969-12-31 23:59:54
+convert number to time and back again: -7.0 ----> 1969-12-31 23:59:53 -----> -7.0 ------> 1969-12-31 23:59:53
+convert number to time and back again: -8.0 ----> 1969-12-31 23:59:52 -----> -8.0 ------> 1969-12-31 23:59:52
+convert number to time and back again: -9.0 ----> 1969-12-31 23:59:51 -----> -9.0 ------> 1969-12-31 23:59:51
+
+convert number to time and back again: +2.0 ----> 1970-01-01 00:00:02 -----> +2.0 ------> 1970-01-01 00:00:02
+convert number to time and back again: +21.0 ----> 1970-01-01 00:00:21 -----> +21.0 ------> 1970-01-01 00:00:21
+convert number to time and back again: +214.0 ----> 1970-01-01 00:03:34 -----> +214.0 ------> 1970-01-01 00:03:34
+convert number to time and back again: +2147.0 ----> 1970-01-01 00:35:47 -----> +2147.0 ------> 1970-01-01 00:35:47
+convert number to time and back again: +21474.0 ----> 1970-01-01 05:57:54 -----> +21474.0 ------> 1970-01-01 05:57:54
+convert number to time and back again: +214748.0 ----> 1970-01-03 11:39:08 -----> +214748.0 ------> 1970-01-03 11:39:08
+convert number to time and back again: +2147483.0 ----> 1970-01-25 20:31:23 -----> +2147483.0 ------> 1970-01-25 20:31:23
+convert number to time and back again: +21474836.0 ----> 1970-09-06 13:13:56 -----> +21474836.0 ------> 1970-09-06 13:13:56
+convert number to time and back again: +214748364.0 ----> 1976-10-21 12:19:24 -----> +214748364.0 ------> 1976-10-21 12:19:24
+convert number to time and back again: +2147483643.0 ----> 2038-01-19 03:14:03 -----> +2147483643.0 ------> 2038-01-19 03:14:03
+convert number to time and back again: +2147483644.0 ----> 2038-01-19 03:14:04 -----> +2147483644.0 ------> 2038-01-19 03:14:04
+convert number to time and back again: +2147483645.0 ----> 2038-01-19 03:14:05 -----> +2147483645.0 ------> 2038-01-19 03:14:05
+convert number to time and back again: +2147483646.0 ----> 2038-01-19 03:14:06 -----> +2147483646.0 ------> 2038-01-19 03:14:06
+convert number to time and back again: +2147483647.0 ----> 2038-01-19 03:14:07 -----> +2147483647.0 ------> 2038-01-19 03:14:07
+
+convert number to time and back again: -2.0 ----> 1969-12-31 23:59:58 -----> -2.0 ------> 1969-12-31 23:59:58
+convert number to time and back again: -21.0 ----> 1969-12-31 23:59:39 -----> -21.0 ------> 1969-12-31 23:59:39
+convert number to time and back again: -214.0 ----> 1969-12-31 23:56:26 -----> -214.0 ------> 1969-12-31 23:56:26
+convert number to time and back again: -2147.0 ----> 1969-12-31 23:24:13 -----> -2147.0 ------> 1969-12-31 23:24:13
+convert number to time and back again: -21474.0 ----> 1969-12-31 18:02:06 -----> -21474.0 ------> 1969-12-31 18:02:06
+convert number to time and back again: -214748.0 ----> 1969-12-29 12:20:52 -----> -214748.0 ------> 1969-12-29 12:20:52
+convert number to time and back again: -2147483.0 ----> 1969-12-07 03:28:37 -----> -2147483.0 ------> 1969-12-07 03:28:37
+convert number to time and back again: -21474836.0 ----> 1969-04-27 10:46:04 -----> -21474836.0 ------> 1969-04-27 10:46:04
+convert number to time and back again: -214748364.0 ----> 1963-03-13 11:40:36 -----> -214748364.0 ------> 1963-03-13 11:40:36
+convert number to time and back again: -2147483644.0 ----> 1901-12-13 20:45:56 -----> -2147483644.0 ------> 1901-12-13 20:45:56
+convert number to time and back again: -2147483645.0 ----> 1901-12-13 20:45:55 -----> -2147483645.0 ------> 1901-12-13 20:45:55
+convert number to time and back again: -2147483646.0 ----> 1901-12-13 20:45:54 -----> -2147483646.0 ------> 1901-12-13 20:45:54
+convert number to time and back again: -2147483647.0 ----> 1901-12-13 20:45:53 -----> -2147483647.0 ------> 1901-12-13 20:45:53
+convert number to time and back again: -2147483648.0 ----> 1901-12-13 20:45:52 -----> -2147483648.0 ------> 1901-12-13 20:45:52

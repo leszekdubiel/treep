@@ -1,0 +1,5 @@
+
+(info "(void) = " (void))
+(info "(void can have many parameters +1.0 \"Hello World!\") = " (void can have many parameters +1.0 "Hello World!"))
+(info "(is void (void)) = " (is void (void)))
+

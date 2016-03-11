@@ -1,0 +1,9 @@
+
+(info "(is numb 0.0) = " (is numb 0.0))
+(info "(is name 0.0) = " (is name 0.0))
+(info "(is name Alfa) = " (is name Alfa))
+(info "(is text \"Hello World!\") = " (is text "Hello World!"))
+(info "")
+(info "(is bool (yes)) = " (is bool (yes)))
+(info "(is tree (new)) = " (is tree (new)))
+

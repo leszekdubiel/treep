@@ -1,0 +1,17 @@
+
+(as
+	t (new)
+	(do 
+		(ins (t) a +1.0) 
+		(ins (t) b +2.0) 
+		(do 
+			(info "drzewo: " (t))
+			(info (ref (frst (t)) (last (t))))
+			(info (ref (frst (t)) (prev (last (t)))))
+			(info (ref (next (frst (t))) (last (t))))
+			(info "czy korzeniem jest pierwszy?" (ref (root (t)) (frst (t))))
+			(info "czy korzeniem jest ostatni?" (ref (root (t)) (last (t))))
+		)
+	)
+)
+

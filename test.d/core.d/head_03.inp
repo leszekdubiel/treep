@@ -1,0 +1,9 @@
+
+(wrte (head Alfa_Beta +1.0)) (wrte (line))
+(wrte (head Alfa_Beta +2.0)) (wrte (line))
+(wrte (head Alfa_Beta +3.0)) (wrte (line))
+(wrte (head Alfa_Beta +4.0)) (wrte (line))
+(wrte (head Alfa_Beta +5.0)) (wrte (line))
+(wrte (head Alfa_Beta +6.0)) (wrte (line))
+(wrte (head Alfa_Beta +7.0)) (wrte (line))
+

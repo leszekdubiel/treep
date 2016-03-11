@@ -1,0 +1,27 @@
+
+
+(if
+	(yes) (info "first")
+	(info "second")
+)
+
+(info "no second ok unless need to evaluate")
+(if
+	(no) "never"
+	(yes) (info "first")
+	(info "second")
+)
+(if
+	(no) "never"
+	(yes) (info "first")
+)
+(if
+	(no) "never"
+	(no) (info "first")
+	(info "second")
+)
+(if
+	(no) "never"
+	(no) (info "first")
+)
+

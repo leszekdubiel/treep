@@ -1,0 +1,8 @@
+
+"too many args for zero-arg fun" 
+* z () alfa
+
+(z beta)
+
+
+

@@ -1,0 +1,29 @@
+(as
+	t (new) 
+	(do 
+		(info "puste...")
+		(info (def (t) alfa) )
+		(info (def (t) beta))
+
+		(info "dodaje alfa")
+		(ins (t) alfa 0.0)
+		(info (def (t) alfa) )
+		(info (def (t) beta))
+
+		(info "dodaje beta")
+		(ins (t) beta 0.0)
+		(info (def (t) alfa) )
+		(info (def (t) beta))
+
+		(info "usuwam beta")
+		(del (t) beta)
+		(info (def (t) alfa))
+		(info (def (t) beta))
+
+		(info "usuwam alfa")
+		(del (t) alfa)
+		(info (def (t) alfa))
+		(info (def (t) beta))
+	)
+)
+

@@ -1,0 +1,5 @@
+(info (not (yes)))
+(info (not (no)))
+(info (if (not (yes)) +1.0 0.0))
+(info (if (not (no)) +1.0 0.0))
+

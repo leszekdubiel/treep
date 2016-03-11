@@ -1,0 +1,13 @@
+
+"names hide other names...."
+* f (a b c) 
+	(as 
+		a +4.0
+		(as
+			a +5.0
+			(info "a = " (a) ", b = " (b) ", c = " (c))
+		)
+	)
+
+(f alfa beta gamma)
+

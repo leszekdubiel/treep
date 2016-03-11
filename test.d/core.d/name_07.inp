@@ -1,0 +1,4 @@
+"funkcja name tez daje nazwe wezla" 
+
+(ins (main) alfa 0.0)
+(info (name (frst (main))))

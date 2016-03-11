@@ -1,0 +1,22 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			n (do (skip) (note_read))
+			l (do (skip) (list_read))
+			(do 
+				(list_note (l) (n))
+				(list_wrte (l))
+				(wrte (line))
+			)
+		)
+		(
+		)
+		(
+			Elem1 ()
+			Beta (dyspozycja ZM_123)
+			Ixi ()
+		)
+	
+

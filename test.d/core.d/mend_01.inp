@@ -1,0 +1,5 @@
+(info "to many args...")
+(ptrn Alfa)
+(mtch Alfa_Beta_Gamma)
+(info (mend))
+(info (mend X))

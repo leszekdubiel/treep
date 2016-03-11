@@ -1,0 +1,119 @@
+"this is to test completely basic treep processing "
+0.0 
+(info 0.0)
+(info (info (info 0.0)))
+(info)
+(info (info (info a)))
+* alfa () +2.0 
+(info (alfa))
+(info (add +23.23 -424.43))
+(info (if (yes) 0.0 +3.0))
+(info (if (no) 0.0 +3.0))
+(if (yes) (info "got yes!") (info "got no!"))
+(if (no) (info "got yes!") (info "got no!"))
+(info (if (no) (info "got yes!") (info "got no!")))
+(info (if (no) "got yes!" "got no!"))
+(info (if (yes) (info "got yes!") "got no!"))
+(info (if (no) (info "got yes!") (info "got no!")))
+
+* f1 () 0.0 
+(info (f1))
+
+* f2 (a b c) +2.0
+(info (f2 p q r))
+
+* f3 (a b c) -10.0
+(info (f3 +1.0 +2.0 +3.0))
+
+* f4 () (add +1.0 +9.0)
+(info (f4))
+
+* f5 (a) (add +1.0 +9.0)
+(info (f5 0.0))
+
+(as 
+	t (new)
+	(do 
+		(info (t))
+		(ins (t) a +3.0)
+		(info (t))
+		(ins (t) v +8.0)
+		(info (t))
+		(info (qty (t)))
+	)
+)
+
+
+* disp (t) 
+	(do 
+		(info (t) ", czy tekst? " (is text (t)))
+		(if 
+			(is name (t)) (t) 
+			(is text (t)) (join "\"" (join (escp (t)) "\""))
+			(if (t) "yes" "no")
+		)
+	)
+
+(info (disp "alfa"))
+
+
+* disp23 (t) 
+	(if (is name (t))
+		(t) 
+		(join "\"" (join (escp (t)) "\""))
+	)
+
+* pokaz_lowr (t) 
+	(info "(lowr " (disp23 (t)) ") = " (disp23 (lowr (t))))
+
+(pokaz_lowr PN_123132_02_DElta)
+(pokaz_lowr AN)
+(pokaz_lowr A)
+
+
+
+(info (as a +4.0 (a)))
+(info (as a +4.0 (add (a) (a))))
+(info (as a +4.0 b +2.0 (add (a) (b))))
+(info (as a +4.0 b +2.0 (b)))
+(info (as a +4.0 (as b +2.0 (a))))
+(info (as a +4.0 (as b +2.0 (add (a) (b)))))
+
+
+* read_all_the_way () 
+	(as
+		r (read) 
+		(do 
+			(wrte (r))
+			(info (r))
+			(if (is void (r))
+				(void)
+				(if (is name (r))
+					(if (same (r) stop_the_way)
+						(void)
+						(read_all_the_way)
+					)
+					(read_all_the_way)
+				)
+			)
+		)
+	)
+(read_all_the_way)+2.0+3.0+4.0
+alfa"beta"0.0
+   ()		()
+
+
+stop_the_way
+
+(info (if (yes) 0.0 +1.0))
+(info (if (no) 0.0 +1.0))
+
+(info many args)
+(info (if (yes) 0.0 (no) +1.0))
+(info (if (yes) 0.0 (yes) +1.0))
+(info (if (no) 0.0 (yes) +1.0))
+(info (if (no) 0.0 (no) +1.0 +3.0))
+(info (if (no) 0.0 (no) +1.0 (yes) +3.0))
+(info "must get err")
+(info (if (no) 0.0 (no) +1.0 (no) +3.0))
+

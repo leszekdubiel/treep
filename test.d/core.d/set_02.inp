@@ -1,0 +1,10 @@
+(info "set works for node...")
+(as
+	t (new) 
+	(do 
+		(ins (t) alfa 0.0) 
+		(info (t))
+		(set (root (t)) "to jest root")
+		(info (t))
+	)
+)

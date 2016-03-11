@@ -1,0 +1,2 @@
+(info "wrong arg")
+(def (new) 0.0)

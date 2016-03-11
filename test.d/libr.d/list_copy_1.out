@@ -1,0 +1,12 @@
+(
+	A (Info "list element A" X +4.5 this_is_l "")
+	B (Info "list element B" Y -5.0 this_is_l "")
+	C (Info "list element C" Z +2.0 this_is_l "")
+	D (this_is_l "")
+)
+(
+	A (Info "list element A" X +4.5 this_is_c "")
+	B (Info "list element B" Y -5.0 this_is_c "")
+	C (Info "list element C" Z +2.0 this_is_c "")
+	D (this_is_c "")
+)

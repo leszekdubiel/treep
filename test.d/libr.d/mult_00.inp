@@ -1,0 +1,33 @@
+
+INSERT_TREEP_LIBRARY_HERE
+	 
+		(info "arytmet3")
+		(info (add3 +80.0 +20.0 +5.0))
+		(info (sub3 +80.0 +20.0 +5.0))
+		(info (mul3 +80.0 +20.0 +5.0))
+		(info (div3 +80.0 +20.0 +5.0))
+
+		(info "arytmet5")
+		(info (add4 +80.0 +20.0 +5.0 +12.0))
+		(info (sub4 +80.0 +20.0 +5.0 +12.0))
+		(info (mul4 +80.0 +20.0 +5.0 +12.0))
+		(info (div4 +80.0 +20.0 +5.0 +12.0))
+
+		(info "bool")
+		(info (and3 (yes) (yes) (yes)))
+		(info (or3 (yes) (yes) (yes)))
+		(info (and3 (yes) (no) (yes)))
+		(info (or3 (yes) (yes) (no)))
+		(info (and5 (yes) (no) (yes) (no) (yes)))
+		(info (or5 (yes) (no) (yes) (no) (yes)))
+		(info (and5 (yes) (yes) (yes) (yes) (yes)))
+
+		(info "comp") 
+		(info (min4 +1.0 -2.0 +4.5 0.0))
+		(info (max4 +1.0 -2.0 +4.5 0.0))
+		(info (equ3 0.0 0.0 0.0))
+		(info (equ3 +3.0 +2.0 +1.0))
+		(info (same3 "alfa" "beta" "gamma"))
+		(info (same3 a a a))
+	 
+

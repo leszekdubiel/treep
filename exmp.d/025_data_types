@@ -1,0 +1,31 @@
+
+* type (v) 
+	(if 
+		(is void (v)) void
+		(is spac (v)) spac
+		(is tabu (v)) tabu
+		(is line (v)) line
+		(is lpar (v)) lpar
+		(is rpar (v)) rpar
+		(is numb (v)) numb
+		(is name (v)) name
+		(is text (v)) text
+		(is bool (v)) bool
+		(is node (v)) node
+		(is tree (v)) tree
+		(do (info "Can not compute \"type\" call. Wrong value.") (exit (no)))
+	)
+
+(info "(type (void)) = " (type (void)))
+(info "(type (spac)) = " (type (spac)))
+(info "(type (tabu)) = " (type (tabu)))
+(info "(type (line)) = " (type (line)))
+(info "(type (lpar)) = " (type (lpar)))
+(info "(type (rpar)) = " (type (rpar)))
+(info "(type 0.0) = " (type 0.0))
+(info "(type Alfa) = " (type Alfa))
+(info "(type \"Hello World!\") = " (type "Hello World!"))
+(info "(type (yes)) = " (type (yes)))
+(info "(type (frst (ins (new) alfa 0.0))) = " (type (frst (ins (new) alfa 0.0))))
+(info "(type (ins (new) alfa 0.0)) = " (type (ins (new) alfa 0.0)))
+

@@ -1,0 +1,217 @@
+
+# Tree is a set of nodes organized hierarhically. Every node has is an
+# object that has name ("name"), list of parameters ("parm"), reference to
+# the first child node ("chld"), reference to the next node ("next").
+#
+# Here is an example of three trees: 
+#
+# 	( 
+# 		A (Info "this is node A") (
+# 			B (Info "This is node B, parent is A") (
+# 			)
+# 			C (Info "This is node C, has 3 children") (
+# 				D (X +4.5 Y -5.0) (
+# 				)
+# 				E (X +4.9 Y -9.0) (
+# 				)
+# 				F (X +2.1 Y -12.0) (
+# 				)
+# 			)
+# 			G (Info "This is child G of node A") (
+# 			)
+# 		)
+# 		B (Info "This is node B") (
+# 		)
+# 		A (Info "this is another with name A") (
+# 			X () (
+# 			)
+# 			Y () (
+# 			)
+# 		)	
+# 	) .
+
+# Read and write tree.
+* tree_read ()
+	(do 
+		(if (is lpar (read)) 
+			(void) 
+			(do (info "Can not compute \"tree_read\" call. Parenthesis was expected.") (exit (no)))
+		)
+		(tree_read_loop (do (skip) (read)))
+	)
+	* tree_read_loop (n)
+		(if (is rpar (n))
+			(void)
+			(do 
+				(if (is name (n)) 
+					(void) 
+					(do (info "Can not compute \"tree_read\" call. Name of root was expected.") (exit (no)))
+				)
+				(as
+					e (new) 
+					(do 
+						(ins (e) name (n))
+						(ins (e) parm (do (skip) (parm_read)))
+						(ins (e) chld (do (skip) (tree_read)))
+						(ins (e) next (tree_read_loop (do (skip) (read))))
+						(e)
+					)
+				)
+			)
+		)
+* tree_wrte (t)
+	(do 
+		(wrte (lpar))
+		(wrte (line))
+		(tree_wrte_loop (t) +1.0)
+		(wrte (rpar))
+		(t)
+	)
+	* tree_wrte_loop (t i) 
+		(if (is void (t))
+			(void)
+			(do 
+				(tabs (i)) 
+				(wrte (get (t) name)) (wrte (spac))
+				(parm_wrte (get (t) parm)) (wrte (spac)) 
+				(wrte (lpar)) (wrte (line))
+				(tree_wrte_loop (get (t) chld) (add (i) +1.0))
+				(tabs (i)) (wrte (rpar)) (wrte (line))
+				(tree_wrte_loop (get (t) next) (i))
+			)
+		)
+* tree_pass ()
+	(tree_pass_root +1.0)
+	* tree_pass_root (i) 
+		(do 
+			(if (is lpar (read)) 
+				(do (wrte (lpar)) (wrte (line))) 
+				(do (info "Can not compute \"tree_pass\" call. Parenthesis was expected.") (exit (no)))
+			)
+			(tree_pass_loop (do (skip) (read)) (i))
+		)
+	* tree_pass_loop (n i)
+		(if (is rpar (n))
+			(do (tabs (sub (i) +1.0)) (wrte (rpar)) (void))
+			(do 
+				(if (is name (n)) 
+					(do (tabs (i)) (wrte (n)) (wrte (spac)))
+					(do (info "Can not compute \"tree_pass\" call. Name of root was expected.") (exit (no)))
+				)
+				(as
+					e (new) 
+					(do 
+						(ins (e) name (n))
+						(ins (e) parm (do (skip) (parm_pass))) (wrte (spac))
+						(ins (e) chld (do (skip) (tree_pass_root (add (i) +1.0)))) (wrte (line))
+						(ins (e) next (tree_pass_loop (do (skip) (read)) (i)))
+						(e)
+					)
+				)
+			)
+		)
+
+# In Tytan trees have two types of nodes that represent resources and tasks.
+# Resources are children of tasks, and tasks are children of resources. In
+# production plan root nodes are resources and in history root nodes are tasks.
+# Functions below convert tree to list in such a way, that only every second
+# level of tree nodes gets into a list. Function "tree_list_skip" skips root
+# nodes, then picks their children, then skips, then picks, and so on. Function
+# "tree_list_pick" first picks root nodes to list, then skips their children,
+# then picks, then skips, and so on. Parameters are not copied, but plugged
+# into list elements by reference.
+* tree_list_skip (t) 
+	(as 
+		# "i" is an object that keeps reference to first and last
+		# object of computed list
+		i (new) 
+		(do 
+			(tree_list_skip_indx (t) (i)) 
+			(if (def (i) frst) 
+				(i.frst) 
+				(void)
+			)
+		)
+	)
+	# skips current level of tree and picks next level of tree
+	* tree_list_skip_indx (t i) 
+		(if (is void (t))
+			(void)
+			(do 
+				(tree_list_pick_indx (t.chld) (i))
+				(tree_list_skip_indx (t.next) (i))
+			)
+		)
+* tree_list_pick (t) 
+	(as 
+		i (new) 
+		(do 
+			(tree_list_pick_indx (t) (i)) 
+			(if (def (i) frst) 
+				(i.frst) 
+				(void)
+			)
+		)
+	)
+	# picks current level of tree into list and skips next level
+	* tree_list_pick_indx (t i)
+		(if (is void (t))
+			(void)
+			(as 
+				# new list element
+				e (new) 
+				(do 
+					(ins (e) name (t.name))
+					(ins (e) parm (t.parm))
+					(ins (e) next (void))
+					(if (def (i) last) 
+						(do 
+							(set (i.last) next (e))
+							(set (i) last (e))
+						) 
+						(do 
+							(ins (i) frst (e))
+							(ins (i) last (e))
+						)
+					)
+					(tree_list_skip_indx (t.chld) (i))
+					(tree_list_pick_indx (t.next) (i))
+				)
+			)
+		)
+
+# Apply notes to tree.
+* tree_note (t n)
+	(if (is void (t))
+		(void)
+		(do 
+			(note_aply (n) (get (t) name) (get (t) parm))
+			(tree_note (get (t) chld) (n))
+			(tree_note (get (t) next) (n))
+			(t)
+		)
+	)
+
+# Join two trees.
+* tree_join (a b) 
+	(if (is void (a))
+		(b) 
+		(set (a) next (tree_join (get (a) next) (b)))
+	)
+
+# Make a copy of tree.
+* tree_copy (t) 
+	(if (is void (t))
+		(void) 
+		(as 
+			n (new) 
+			(do 
+				(ins (n) name (get (t) name))
+				(ins (n) parm (parm_copy (get (t) parm)))
+				(ins (n) chld (tree_copy (get (t) chld)))
+				(ins (n) next (tree_copy (get (t) next)))
+				(n) 
+			)
+		)
+	)
+

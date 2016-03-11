@@ -1,0 +1,122 @@
+
+# List is an ordered set of elements. Each element has a name and
+# parameters. Here is example of list:
+#
+# 	(
+# 		Lustro_Omni	(Qty -45.0 Who "Kowlaski Sp. z o.o")
+# 		Lustro_Atos	(Qty -4.0)
+# 		Lustro_Pluton	(Qty -9.0 When "2009-12-31")
+# 		Lustro_Helios	(Qty -1.0)
+# 	) .
+#
+# Every list element has fields "name", "parm" and "next".
+
+# Read or write list.
+* list_read ()
+	(do 
+		(if (is lpar (read))
+			(void) 
+			(do (info "Can not compute \"list_read\" call. Parenthesis was expected.") (exit (no)))
+		)
+		(list_read_elem (do (skip) (read)))
+	)
+	* list_read_elem (n)
+		(if (is rpar (n))
+			(void)
+			(do 
+				(if (is name (n)) 
+					(void) 
+					(do (info "Can not compute \"list_read\" call. Name of list element was expected.") (exit (no)))
+				)
+				(as
+					l (new) 
+					(do 
+						(ins (l) name (n))
+						(ins (l) parm (do (skip) (parm_read)))
+						(ins (l) next (list_read_elem (do (skip) (read))))
+						(l)
+					)
+				)
+			)
+		)
+* list_wrte (l)
+	(do 
+		(wrte (lpar))
+		(wrte (line))
+		(list_wrte_elem (l))
+		(l)
+	)
+	* list_wrte_elem (l) 
+		(if (is void (l))
+			(wrte (rpar))
+			(do 
+				(wrte (tabu))
+				(wrte (get (l) name))
+				(wrte (spac))
+				(parm_wrte (get (l) parm))
+				(wrte (line))
+				(list_wrte_elem (get (l) next))
+			)
+		)
+* list_pass ()
+	(do 
+		(if (is lpar (read))
+			(do (wrte (lpar)) (wrte (line)))
+			(do (info "Can not compute \"list_pass\" call. Parenthesis was expected.") (exit (no)))
+		)
+		(list_pass_elem (do (skip) (read)))
+	)
+	* list_pass_elem (n)
+		(if (is rpar (n))
+			(do (wrte (rpar)) (void))
+			(do 
+				(if (is name (n)) 
+					(do (wrte (tabu)) (wrte (n)) (wrte (spac)))
+					(do (info "Can not compute \"list_pass\" call. Name of list element was expected.") (exit (no)))
+				)
+				(as
+					l (new) 
+					(do 
+						(ins (l) name (n))
+						(ins (l) parm (do (skip) (parm_pass))) 
+						(wrte (line))
+						(ins (l) next (list_pass_elem (do (skip) (read))))
+						(l)
+					)
+				)
+			)
+		)
+
+# Apply notes to list.
+* list_note (l n)
+	(if (is void (l))
+		(void)
+		(do 
+			(note_aply (n) (get (l) name) (get (l) parm))
+			(list_note (get (l) next) (n))
+			(l)
+		)
+	)
+
+# Join two lists.
+* list_join (a b) 
+	(if (is void (a))
+		(b) 
+		(set (a) next (list_join (get (a) next) (b)))
+	)
+
+# Make a copy of list.
+* list_copy (l) 
+	(if (is void (l))
+		(void) 
+		(as 
+			n (new) 
+			(do 
+				(ins (n) name (get (l) name))
+				(ins (n) parm (parm_copy (get (l) parm)))
+				(ins (n) next (list_copy (get (l) next)))
+				(n) 
+			)
+		)
+	)
+

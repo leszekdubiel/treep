@@ -1,0 +1,3 @@
+(info (void))
+(info (void can have as many params as needed "because sometimes one want to replace info with void to omit printing to stderr"))
+

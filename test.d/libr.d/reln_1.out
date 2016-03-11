@@ -1,0 +1,49 @@
+(
+	make_banana_shake (Info "mix for 10 min" Prog +3.0) (
+		banana (Info "any type") (Qty -3.0 Unit "kg")
+		banana_shake () (Qty +8.0 Unit "one glass")
+		milk (Type "EN 123Q, 3%") (Qty -2.0 Unit "litre")
+	)
+	make_vanila_shake (Info "mix for 8 min" Prog +4.0) (
+		milk (Type "EN 123Q, 3%") (Qty -1.55 Unit "litre")
+		vanila (Info "from Madagaskar") (Qty -8.0 Unit "bean")
+		vanila_shake () (Qty +7.0 Unit "one glass")
+	)
+)
+(
+	TASK1 (Info "this is TASK1") (
+		RSRCA (Info "this is RSRCA") (Info "1-A link")
+		RSRCB (Info "this is RSRCB") (Info "1-B link")
+	)
+	TASK2 (Info "this is TASK2") (
+		RSRCA (Info "this is RSRCA") (Info "2-A link")
+		RSRCB (Info "this is RSRCB") (Info "2-B link")
+	)
+)
+(
+	a (x 0.0) (
+	)
+	b (y 0.0) (
+	)
+)
+(
+)
+(
+	a () (
+	)
+)
+(
+	a () (
+		b () ()
+	)
+)
+(
+	a () (
+		b () ()
+		c () ()
+	)
+	p () (
+		b () ()
+		c () ()
+	)
+)

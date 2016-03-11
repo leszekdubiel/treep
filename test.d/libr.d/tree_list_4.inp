@@ -1,0 +1,93 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+	
+(do 
+	(list_wrte 
+			(tree_list_skip
+				(do (skip) (tree_read))
+			)
+	)
+	(wrte (line))
+)
+(
+	lustro (Dyspozycja DP_9876 Ile -4.0) (
+		wykonac_lustro (Dyspozycja DP_9876 Ile +4.0 Produkt lustro) (
+			lustro (Dyspozycja DP_9876 Ile +4.0 Produkt lustro) (
+			)
+			podklad (Dyspozycja DP_9876 Ile -4.0 Produkt lustro) (
+				ofazowac_podklad (Dyspozycja DP_9876 Ile +4.0 Produkt lustro) (
+					podklad_wyciety (Dyspozycja DP_9876 Ile -4.0 Produkt lustro) (
+						wyciac_podklad (Dyspozycja DP_9876 Ile +1.0 Produkt lustro) (
+							podklad_wyciety (Dyspozycja DP_9876 Ile +4.0 Produkt lustro) (
+							)
+							tafla_lustra (Dyspozycja DP_9876 Ile -0.6 Produkt lustro) (
+							)
+						)
+					)
+					podklad (Dyspozycja DP_9876 Ile +4.0 Produkt lustro) (
+					)
+				)
+			)
+			ozdoba (Dyspozycja DP_9876 Ile -8.0 Produkt lustro) (
+				oszlifowac_ozdobe (Dyspozycja DP_9876 Ile +1.0 Produkt lustro) (
+					ozdoba_wycieta (Dyspozycja DP_9876 Ile -8.0 Produkt lustro) (
+						wyciac_ozdobe (Dyspozycja DP_9876 Ile +1.0 Produkt lustro) (
+							ozdoba_wycieta (Dyspozycja DP_9876 Ile +9.0 Produkt lustro) (
+							)
+							tafla_lustra (Dyspozycja DP_9876 Ile -0.4 Produkt lustro) (
+							)
+						)
+					)
+					ozdoba (Dyspozycja DP_9876 Ile +8.0 Produkt lustro) (
+					)
+				)
+			)
+			naklejka (Dyspozycja DP_9876 Ile -12.0 Produkt lustro) (
+				kupic_naklejke (Dyspozycja DP_9876 Ile +1.0 Produkt lustro) (
+					naklejka (Dyspozycja DP_9876 Ile +100.0 Produkt lustro) (
+					)
+				)
+			)
+		)
+	)
+	lustro (Dyspozycja DP_1234 Ile -8.0) (
+		wykonac_lustro (Dyspozycja DP_1234 Ile +8.0 Produkt lustro) (
+			lustro (Dyspozycja DP_1234 Ile +8.0 Produkt lustro) (
+			)
+			podklad (Dyspozycja DP_1234 Ile -8.0 Produkt lustro) (
+				ofazowac_podklad (Dyspozycja DP_1234 Ile +8.0 Produkt lustro) (
+					podklad_wyciety (Dyspozycja DP_1234 Ile -8.0 Produkt lustro) (
+						wyciac_podklad (Dyspozycja DP_1234 Ile +2.0 Produkt lustro) (
+							podklad_wyciety (Dyspozycja DP_1234 Ile +8.0 Produkt lustro) (
+							)
+							tafla_lustra (Dyspozycja DP_1234 Ile -1.2 Produkt lustro) (
+							)
+						)
+					)
+					podklad (Dyspozycja DP_1234 Ile +8.0 Produkt lustro) (
+					)
+				)
+			)
+			ozdoba (Dyspozycja DP_1234 Ile -16.0 Produkt lustro) (
+				oszlifowac_ozdobe (Dyspozycja DP_1234 Ile +2.0 Produkt lustro) (
+					ozdoba_wycieta (Dyspozycja DP_1234 Ile -16.0 Produkt lustro) (
+						wyciac_ozdobe (Dyspozycja DP_1234 Ile +2.0 Produkt lustro) (
+							ozdoba_wycieta (Dyspozycja DP_1234 Ile +18.0 Produkt lustro) (
+							)
+							tafla_lustra (Dyspozycja DP_1234 Ile -0.8 Produkt lustro) (
+							)
+						)
+					)
+					ozdoba (Dyspozycja DP_1234 Ile +16.0 Produkt lustro) (
+					)
+				)
+			)
+			naklejka (Dyspozycja DP_1234 Ile -24.0 Produkt lustro) (
+			)
+		)
+	)
+)
+	
+
+

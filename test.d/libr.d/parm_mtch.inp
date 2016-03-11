@@ -1,0 +1,69 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		* petla () 
+			(as
+				d (do (skip) (read))
+				(if (is void (d))
+					(void)
+					(as
+						p (do (back (d)) (skip) (parm_read))
+						s (do (skip) (parm_read))
+						(do 
+							(wrte (line))
+							(dump "Porownanie parametrow:")
+							(wrte (line))
+							(parm_wrte (p))
+							(wrte (line))
+							(parm_wrte (s))
+							(wrte (line))
+							(if (parm_mtch (p) (s))
+								(dump "yes")
+								(dump "no")
+							)
+							(wrte (line))
+							(petla)
+						)
+					)
+				)
+			)
+		(petla)
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok")
+		()
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok")
+		(beta +4.5) 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok")
+		(zbeta +4.5) 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok")
+		(beta +99.0) 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok")
+		(beta +99.0 alfa "nie") 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok")
+		(beta +99.0 gamma "ok") 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok")
+		(beta +4.5 gamma "ok") 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 b -2.0))
+		(beta +4.5 mix (a +4.0)) 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 b -2.0))
+		(beta +4.5 mix (a +4.0 b -2.0)) 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 b -2.0))
+		(beta +4.5 x +99.0 mix (a +4.0 b -2.0)) 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 c (u -22.0 v +33.8) b -2.0))
+		(beta +4.5 mix (a +4.0 b -2.0)) 
+
+		(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 c (u -22.0 v +33.8) b -2.0))
+		(beta +4.5 mix (c (u -22.0))) 
+	
+

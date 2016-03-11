@@ -1,0 +1,36 @@
+(info "(as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (prev (frst (t))))) = " (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (prev (frst (t))))))
+
+(info "(new) = " (new))
+(info "(as t (new) (do (t))) = " (as t (new) (do (t))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (t))) = " (as t (new) (do (ins (t) alfa +1.0) (t))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (t))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (t))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (t))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (t))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta (as q (new) (do (ins (q) be +2.1) (ins (q) ta +2.9) (q)))) (ins (t) gamma +3.0) (t))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta (as q (new) (do (ins (q) be +2.1) (ins (q) ta +2.9) (q)))) (ins (t) gamma +3.0) (t))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta (as q (new) (do (ins (q) be +2.1) (ins (q) ta +2.9) (q)))) (ins (t) gamma +3.0) (root (t)))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta (as q (new) (do (ins (q) be +2.1) (ins (q) ta +2.9) (q)))) (ins (t) gamma +3.0) (root (t)))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta (as q (new) (do (ins (q) be +2.1) (ins (q) ta +2.9) (q)))) (ins (t) gamma +3.0) (vlue (root (t))))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta (as q (new) (do (ins (q) be +2.1) (ins (q) ta +2.9) (q)))) (ins (t) gamma +3.0) (vlue (root (t))))))
+
+(info "(as t (new) q (new) (ref (t) (t))) = " (as t (new) q (new) (ref (t) (t))))
+(info "(as t (new) q (new) (ref (t) (q))) = " (as t (new) q (new) (ref (t) (q))))
+
+(info "(as t (new) (do (any (t)))) = " (as t (new) (do (any (t)))))
+(info "(as t (new) (do (qty (t)))) = " (as t (new) (do (qty (t)))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (any (t)))) = " (as t (new) (do (ins (t) alfa +1.0) (any (t)))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (qty (t)))) = " (as t (new) (do (ins (t) alfa +1.0) (qty (t)))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (any (t)))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (any (t)))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (qty (t)))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (qty (t)))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (def (t) beta))) = " (as t (new) (do (ins (t) alfa +1.0) (def (t) beta))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (def (t) beta))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (def (t) beta))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (del (t) alfa) (def (t) beta))) = " (as t (new) (do (ins (t) alfa +1.0) (del (t) alfa) (def (t) beta))))
+
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (t))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (t))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (get (t) beta))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (get (t) beta))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (set (t) beta -99.9))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (set (t) beta -99.9))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (get (root (t))))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (get (root (t))))))
+(info "(as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (set (root (t)) -99.9))) = " (as t (new) (do (ins (t) alfa +1.0) (ins (t) beta +2.0) (ins (t) gamma +3.0) (set (root (t)) -99.9))))
+
+(info "(as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (t))) = " (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (t))))
+(info "(as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (root (t)))) = " (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (root (t)))))
+(info "(as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (frst (t)))) = " (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (frst (t)))))
+(info "(as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (last (t)))) = " (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (last (t)))))
+
+(info "(as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (prev (frst (t))))) = " (as t (new) (do (ins (t) a +1.0) (ins (t) b +2.0) (ins (t) c +3.0) (ins (t) d +4.0) (ins (t) e +5.0) (prev (frst (t))))))

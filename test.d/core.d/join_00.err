@@ -1,0 +1,10 @@
+(join "" "") = ""
+(join "" "b") = "b"
+(join "a" "") = "a"
+(join "a" "b") = "ab"
+(join "alfa" "b") = "alfab"
+(join "a" "beta") = "abeta"
+(join "alfa" "") = "alfa"
+(join "" "beta") = "beta"
+(join "alfa" "beta") = "alfabeta"
+(join a b) = a_b

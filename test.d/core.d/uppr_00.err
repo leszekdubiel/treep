@@ -1,0 +1,10 @@
+(uppr "Alfa beta gamma delta") = "ALFA BETA GAMMA DELTA"
+(uppr "Alfa bEta g!m!a delta") = "ALFA BETA G!M!A DELTA"
+(uppr "Alfa -- beta -- tyle") = "ALFA -- BETA -- TYLE"
+(uppr "beta") = "BETA"
+(uppr "b") = "B"
+(uppr "") = ""
+
+(uppr PN_123132_02_Delta) = PN_123132_02_DELTA
+(uppr an) = AN
+(uppr a) = A

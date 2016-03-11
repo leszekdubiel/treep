@@ -1,0 +1,55 @@
+
+* wypisz (x) 
+	(if 
+		(is name (x)) (wrte (x))
+		(is text (x)) (do 
+			(dump "\"")
+			(dump (escp (x)))
+			(dump "\"")
+		)
+		(is bool (x)) (if (x) 
+			(dump "yes")
+			(dump "no")
+		)
+		(do (info "zly typ...") (exit (no)))
+	)
+
+* na_dwa_sposoby (p q) 
+	(do 
+		(wypisz (p)) (wrte (line))
+		(wypisz (q)) (wrte (line))
+		(wypisz (bfor (p) (q))) (wrte (line))
+		(wrte (line))
+	)
+
+(na_dwa_sposoby alfa alfa)
+(na_dwa_sposoby alfa beta)
+(na_dwa_sposoby beta alfa)
+(na_dwa_sposoby beta beta)
+
+(na_dwa_sposoby Alfa alfa)
+(na_dwa_sposoby Alfa beta)
+(na_dwa_sposoby Beta alfa)
+(na_dwa_sposoby Beta beta)
+
+(na_dwa_sposoby alfa Alfa)
+(na_dwa_sposoby alfa Beta)
+(na_dwa_sposoby beta Alfa)
+(na_dwa_sposoby beta Beta)
+
+(na_dwa_sposoby "alfa 1" "alfa 1")
+(na_dwa_sposoby "alfa 1" "beta 2")
+(na_dwa_sposoby "beta 2" "alfa 1")
+(na_dwa_sposoby "beta 2" "beta 2")
+
+(na_dwa_sposoby "Alfa 1" "alfa 1")
+(na_dwa_sposoby "Alfa 1" "beta 2")
+(na_dwa_sposoby "Beta 2" "alfa 1")
+(na_dwa_sposoby "Beta 2" "beta 2")
+
+(na_dwa_sposoby "alfa 1" "Alfa 1")
+(na_dwa_sposoby "alfa 1" "Beta 2")
+(na_dwa_sposoby "beta 2" "Alfa 1")
+(na_dwa_sposoby "beta 2" "Beta 2")
+
+

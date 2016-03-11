@@ -1,0 +1,31 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			a (do (skip) (list_read))
+			b (do (skip) (list_read))
+			(do 
+				(dump "Pierwsza lista: ")
+				(list_wrte (a))
+				(wrte (line))
+				(dump "Druga lista: ")
+				(list_wrte (b))
+				(wrte (line))
+				(dump "Polaczenie list: ")
+				(list_wrte (list_join (a) (b)))
+				(wrte (line))
+			)
+		)
+		(
+			a1 (info "pierwszy element listy a")
+			a2 ()
+			a3 ()
+		)
+		(
+			b1 (info "pierwszy element listy b")
+			b2 ()
+			b3 ()
+		)
+	
+

@@ -1,0 +1,16 @@
+
+(as
+	t (new) 
+	(do 
+		(info "elementow w pustym drzewie: " (qty (t)))
+		(ins (t) alfa 0.0) 
+		(info "po dodaniu: " (qty (t)))
+		(ins (t) beta 0.0) 
+		(info "po dodaniu: " (qty (t)))
+		(del (t) alfa)
+		(info "po usunieciu: " (qty (t)))
+		(del (t) beta) 
+		(info "po usunieciu: " (qty (t)))
+		(info)
+	)
+)

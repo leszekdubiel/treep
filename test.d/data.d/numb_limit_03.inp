@@ -1,0 +1,34 @@
+
+* test_limit (x y) 
+	(do
+		(info "(mul " (x) " " (y) ") = " (mul (x) (y)))
+		(if (equ (mul (x) (y)) (x))
+			(info "BINGO!")
+			(test_limit (mul (x) (y)) (y))
+		)
+	)
+
+* many_tests (n) 
+	(do 
+		(test_limit (n) +0.9)
+		(test_limit (n) +0.8)
+		(test_limit (n) +0.7)
+		(test_limit (n) +0.6)
+		(test_limit (n) +0.5)
+		(test_limit (n) +0.4)
+		(test_limit (n) +0.3)
+		(test_limit (n) +0.2)
+		(test_limit (n) +0.1)
+	)
+
+(many_tests (mul (min) +1.0))
+(many_tests (mul (min) +2.0))
+(many_tests (mul (min) +3.0))
+(many_tests (mul (min) +4.0))
+(many_tests (mul (min) +5.0))
+(many_tests (mul (min) +6.0))
+(many_tests (mul (min) +7.0))
+(many_tests (mul (min) +8.0))
+(many_tests (mul (min) +9.0))
+
+

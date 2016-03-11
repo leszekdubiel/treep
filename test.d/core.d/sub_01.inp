@@ -1,0 +1,6 @@
+
+* dwie_liczby (a b) 
+	(info (sub (a) (b)))
+
+(dwie_liczby 0.0 (min))
+

@@ -1,0 +1,9 @@
+(info (neg 0.0))
+(info (neg -1.0))
+(info (neg +1.0))
+(info (neg -1.1111111))
+(info (neg (min)))
+(info (neg (max)))
+(info (neg (ops (min))))
+(info (neg (ops (max))))
+

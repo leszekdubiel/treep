@@ -1,0 +1,6 @@
+
+(add +4.5 +2.5) 
+"Treep will read above expression, evaluate it. Result would be \"+7.0\". Then treep will proceed to next expression (this text). Nothing would be output, so we can use function \"wrte\" to print result on standard output or function \"info\" to put result on standard error."
+(wrte (add +4.5 +2.5))
+(info (add +4.5 +2.5))
+

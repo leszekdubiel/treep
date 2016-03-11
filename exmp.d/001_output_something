@@ -1,0 +1,5 @@
+
+
+(wrte "Treep will skip blank characters above until this expression is encountered. Then treep will evaluate this expression -- will execute function \"wrte\", that will output this text to standard output.")
+
+

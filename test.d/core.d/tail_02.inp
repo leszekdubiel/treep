@@ -1,0 +1,5 @@
+
+(wrte (tail Alfa +3.0)) "ok index in range"
+(wrte (tail Alfa +4.0)) "ok index in range"
+(wrte (tail Alfa +5.0)) "no -- out of range"
+

@@ -1,0 +1,32 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			e (do (skip) (list_pass))
+			(do 
+				(list_wrte (e))
+				(wrte (line))
+			)
+		)
+ 	( 
+ 		A (Wnfo "list element A" A +4.5)
+ 		B (Wnfo "list element B" U -5.0)
+ 		C (Wnfo "list element C" Z +2.0)
+		D () 
+ 	) 
+	
+		(as 
+			e (do (skip) (list_pass))
+			(do 
+				(list_wrte (e))
+				(wrte (line))
+			)
+		)
+ 	( 
+ 		A (Wnfo "list element A" A +4.5)
+ 		B (Wnfo "list element B" "U" -5.0)
+ 		C (Wnfo "list element C" Z +2.0)
+		D () 
+ 	) 
+

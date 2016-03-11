@@ -1,0 +1,255 @@
+
+# Parameter is a name-value pair. List of parameters is a list of name-value
+# pairs enclosed in parenthesis. Value can be number, name, text or another
+# list of parameters (recursive definition). Here is example of list of
+# parameters:
+#
+# 	(
+# 		Order_Number "PN/123/90"
+# 		Order_Date (
+# 			Year "2009"
+# 			Month "12"
+# 			Day "24"
+# 		)
+# 		Client "Metron Tech"
+# 		Client_Data (
+# 			Name "Metron_Tech"
+# 			Address (
+# 				Country "Poland"
+# 				City "Krakow"
+# 				Street "Podhalanska 242s"
+# 				Post (
+# 					Code "34-700"
+# 					Name "Poczta Rabka"
+# 				)
+# 			)
+# 			TaxId "7223-1123-132"
+#		)
+#	) .
+
+# Read and write list of parameters.
+* parm_read () 
+	(do 
+		(if (is lpar (read)) 
+			(void) 
+			(do (info "Can not compute \"parm_read\" call. Parenthesis was expected.") (exit (no)))
+		)
+		(parm_read_loop (new) (do (skip) (read)))
+	)
+	* parm_read_loop (p n)
+		(if (is rpar (n))
+			(p) 
+			(do 
+				(if (is name (n)) 
+					(void) 
+					(do (info "Can not compute \"parm_read\" call. Parameter name was expected.") (exit (no)))
+				)
+				(if (def (p) (n))
+					(do (info "Can not compute \"parm_read\" call. Parameter \"" (n) "\" duplicated.") (exit (no)))
+					(void)
+				)
+				(as
+					v (do (skip) (read))
+					(if 
+						(is numb (v)) (ins (p) (n) (v))
+						(is name (v)) (ins (p) (n) (v))
+						(is text (v)) (ins (p) (n) (v))
+						(is lpar (v)) (ins (p) (n) (parm_read_loop (new) (do (skip) (read))))
+						(do (info "Can not compute \"parm_read\" call. Number, name, text or parenthesis was expected.") (exit (no)))
+					)
+				)
+				(parm_read_loop (p) (do (skip) (read)))
+			)
+		)
+* parm_wrte (p) 
+	(do 
+		(wrte (lpar))
+		(parm_wrte_loop (frst (p)))
+		(wrte (rpar))
+		(p)
+	)
+	* parm_wrte_loop (e) 
+		(if (is void (e))
+			(void)
+			(do 
+				(wrte (name (e)))
+				(wrte (spac))
+				(if (is tree (vlue (e)))
+					(parm_wrte (vlue (e)))
+					(wrte (vlue (e)))
+				)
+				(if (is void (next (e)))
+					(void)
+					(wrte (spac))
+				)
+				(parm_wrte_loop (next (e)))
+			)
+		)
+* parm_pass () 
+	(do 
+		(if (is lpar (read)) 
+			(wrte (lpar)) 
+			(do (info "Can not compute \"parm_pass\" call. Parenthesis was expected.") (exit (no)))
+		)
+		(parm_pass_loop (new) (do (skip) (read)))
+	)
+	* parm_pass_loop (p n)
+		(if (is rpar (n))
+			(do (wrte (rpar)) (p))
+			(do 
+				(if (is name (n)) 
+					(do (wrte (n)) (wrte (spac)))
+					(do (info "Can not compute \"parm_pass\" call. Parameter name was expected.") (exit (no)))
+				)
+				(if (def (p) (n))
+					(do (info "Can not compute \"parm_pass\" call. Parameter \"" (n) "\" duplicated.") (exit (no)))
+					(void)
+				)
+				(as
+					v (do (skip) (read))
+					(if 
+						(is numb (v)) (do (ins (p) (n) (v)) (wrte (v)))
+						(is name (v)) (do (ins (p) (n) (v)) (wrte (v)))
+						(is text (v)) (do (ins (p) (n) (v)) (wrte (v)))
+						(is lpar (v)) (do (wrte (lpar)) (ins (p) (n) (parm_pass_loop (new) (do (skip) (read)))))
+						(do (info "Can not compute \"parm_pass\" call. Number, name, text or parenthesis was expected.") (exit (no)))
+					)
+				)
+				(as 
+					n (do (skip) (read))
+					(if (is rpar (n))
+						(do (wrte (rpar)) (p))
+						(do (wrte (spac)) (parm_pass_loop (p) (n)))
+					)
+				)
+			)
+		)
+		
+# Make a copy of list of parameters. 
+* parm_copy (p) 
+	(parm_copy_loop (new) (frst (p)))
+	* parm_copy_loop (p e) 
+		(if (is void (e))
+			(p)
+			(do 
+				(ins 
+					(p)
+					(name (e)) 
+					(if (is tree (vlue (e)))
+						(parm_copy (vlue (e)))
+						(vlue (e))
+					)
+				)
+				(parm_copy_loop (p) (next (e)))
+			)
+		)
+
+# Return "yes" if parameters "s" are subset of parameters "p". Update
+# parameters "p" with parameters "u". Return common set of parameters.
+* parm_mtch (p s) 
+	(parm_mtch_loop (p) (frst (s)))
+	* parm_mtch_loop (p e) 
+		(if (is void (e)) 
+			(yes) 
+			(if (def (p) (name (e)))
+				(if (parm_mtch_vlue (get (p) (name (e))) (vlue (e)))
+					(parm_mtch_loop (p) (next (e)))
+					(no)
+				)
+				(no)
+			)
+		)
+	* parm_mtch_vlue (u v) 
+		(if 
+			(is numb (u)) (if (is numb (v)) (equ (u) (v)) (no))
+			(is name (u)) (if (is name (v)) (same (u) (v)) (no))
+			(is text (u)) (if (is text (v)) (same (u) (v)) (no))
+			(if (is tree (v)) 
+				(parm_mtch (u) (v))
+				(no)
+			)
+		)
+* parm_updt (p u) 
+	(parm_updt_loop (p) (frst (u))) 
+	* parm_updt_loop (p e) 
+		(if (is void (e))
+			(p)
+			(do 
+				(if (def (p) (name (e)))
+					(if (is tree (vlue (e)))
+						(if (is tree (get (p) (name (e)))) 
+							(parm_updt (get (p) (name (e))) (vlue (e)))
+							(set (p) (name (e)) (parm_copy (vlue (e))))
+						)
+						(set (p) (name (e)) (vlue (e)))
+					)
+					(ins (p) (name (e)) (if (is tree (vlue (e))) (parm_copy (vlue (e))) (vlue (e))))
+				)
+				(parm_updt_loop (p) (next (e)))
+			)
+		)
+* parm_comm (p q) 
+	(parm_comm_loop (frst (p)) (q) (new))
+	* parm_comm_loop (e q c)
+		(if (is void (e))
+			(c) 
+			(do 
+				(if (def (q) (name (e)))
+					(parm_comm_copy (name (e)) (vlue (e)) (get (q) (name (e))) (c))
+					(void)
+				)
+				(parm_comm_loop (next (e)) (q) (c))
+			)
+		)
+	* parm_comm_copy (n v w c) 
+		(if 
+			(is numb (v)) (if (is numb (w)) 
+				(if (equ (v) (w)) 
+					(ins (c) (n) (v))
+					(void)
+				)
+				(void)
+			)
+			(is name (v)) (if (is name (w)) 
+				(if (same (v) (w)) 
+					(ins (c) (n) (v))
+					(void)
+				)
+				(void)
+			)
+			(is text (v)) (if (is text (w)) 
+				(if (same (v) (w)) 
+					(ins (c) (n) (v))
+					(void)
+				)
+				(void)
+			)
+			(is tree (v)) (if (is tree (w)) 
+				(ins (c) (n) (parm_comm (v) (w)))
+				(void)
+			)
+			(void)
+		)
+
+# Text representation of list of parameters.
+* parm_text (p) 
+	(join3 "(" (parm_text_loop (frst (p))) ")")
+	* parm_text_loop (e) 
+		(if (is void (e))
+			""
+			(join5
+				(text (name (e)))
+				" "
+				(parm_text_vlue (vlue (e)))
+				(if (is void (next (e))) "" " ")
+				(parm_text_loop (next (e)))
+			)
+		)
+	* parm_text_vlue (v) 
+		(if 
+			(is numb (v)) (text (v))
+			(is name (v)) (text (v))
+			(is text (v)) (join3 "\"" (escp (v)) "\"")
+			(parm_text (v))
+		)
+

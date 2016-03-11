@@ -1,0 +1,17 @@
+
+(info (cil -12.0))
+(info (cil -12.1))
+(info (cil -12.3))
+(info (cil -12.5))
+(info (cil -12.6))
+(info (cil -12.9))
+
+(info (cil 0.0))
+
+(info (cil +12.0))
+(info (cil +12.1))
+(info (cil +12.3))
+(info (cil +12.5))
+(info (cil +12.6))
+(info (cil +12.9))
+

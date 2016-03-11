@@ -1,0 +1,3 @@
+(info (yes) )
+(info (if (yes) +1.0 0.0))
+

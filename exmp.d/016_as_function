@@ -1,0 +1,10 @@
+
+* about_numbers ()
+	(as
+		x (read)
+		y (read)
+		(info "For " (x) " and " (y) " sum is " (add (x) (y)) " and difference is " (sub (x) (y)) ".")
+	)
+
+(about_numbers)+2.0-4.5
+(about_numbers)+6.0+7.5

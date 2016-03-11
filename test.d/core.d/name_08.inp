@@ -1,0 +1,4 @@
+"funkcja name tez daje nazwe wezla, ale nie mozna obliczyc dla wezla typu (void), czyli w zasadzie braku wezla..." 
+
+(ins (main) alfa 0.0)
+(info (name (next (frst (main)))))

@@ -1,0 +1,36 @@
+(
+	t1 (alfa "" this_is_t "") (
+		t11 (beta "" this_is_t "") (
+			t111 (gamma "" this_is_t "") (
+			)
+			t112 (delta "" this_is_t "") (
+			)
+		)
+	)
+	t2 (jeden "" this_is_t "") (
+		t21 (dwa "" this_is_t "") (
+			t211 (this_is_t "" trzy "") (
+			)
+			t212 (cztery "" this_is_t "") (
+			)
+		)
+	)
+)
+(
+	t1 (alfa "" this_is_c "") (
+		t11 (beta "" this_is_c "") (
+			t111 (gamma "" this_is_c "") (
+			)
+			t112 (delta "" this_is_c "") (
+			)
+		)
+	)
+	t2 (jeden "" this_is_c "") (
+		t21 (dwa "" this_is_c "") (
+			t211 (this_is_c "" trzy "") (
+			)
+			t212 (cztery "" this_is_c "") (
+			)
+		)
+	)
+)

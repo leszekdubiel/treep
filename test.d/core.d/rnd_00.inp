@@ -1,0 +1,4 @@
+(info (is numb (rnd)))
+(info (les (rnd) 0.0))
+(info (gre (rnd) +1.0))
+

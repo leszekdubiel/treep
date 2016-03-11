@@ -1,0 +1,7 @@
+(info "no mtch defined...")
+(ptrn Beta)
+(mtch Alfa_Beta_Gamma)
+(info (msta))
+(ptrn Alfa)
+(mtch lf)
+(info (msta))

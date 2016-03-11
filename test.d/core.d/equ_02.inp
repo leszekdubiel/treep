@@ -1,0 +1,1 @@
+(info (equ (add (min) (max)) (max)))

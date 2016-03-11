@@ -1,0 +1,39 @@
+* type (v) 
+	(if 
+		(is void (v)) void
+		(is spac (v)) spac
+		(is tabu (v)) tabu
+		(is line (v)) line
+		(is lpar (v)) lpar
+		(is rpar (v)) rpar
+		(is numb (v)) numb
+		(is name (v)) name
+		(is text (v)) text
+		(is bool (v)) bool
+		(is node (v)) node
+		(is tree (v)) tree
+		(do (info "Can not compute \"type\" call. Wrong value.") (exit (no)))
+	)
+
+* read_all_the_way () 
+	(as
+		r (read) 
+		(do 
+			(info "what has been read ====> (type " (type (r)) "): " (r) )
+			(if (is void (r))
+				(do (info "end of file reached...") (exit (no)))
+				(read_all_the_way)
+			)
+		)
+	)
+(read_all_the_way)
+
+
+alfa
+beta
+"adsfafsdafasf afsd f as fa"
+()()()(
+0.0
+				
+
+					

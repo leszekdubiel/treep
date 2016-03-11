@@ -1,0 +1,4 @@
+(dump "This is space:")
+(wrte (spac))
+(dump ".")
+

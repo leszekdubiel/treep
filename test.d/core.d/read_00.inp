@@ -1,0 +1,9 @@
+(info "space" (read)) 
+(info "tabulator" (read))	
+(info "line" (read))
+(info "lpar" (read)))
+(info "rpar" (read))(
+(info "numb" (read))0.0
+(info "name" (read))alfa
+(info "text" (read))"alfa beta"
+(info "line" (read))

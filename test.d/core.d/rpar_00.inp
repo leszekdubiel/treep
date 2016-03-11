@@ -1,0 +1,4 @@
+(dump "This is right parenthesis:")
+(wrte (rpar))
+(dump ".")
+

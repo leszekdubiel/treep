@@ -1,0 +1,36 @@
+
+"Function \"info\" has two parameters -- some text and \"read\" call. This call will read data that immediately follows parenthesis that close \"info\" call."
+(info "(read)+1.0 = " (read))+1.0
+(info "(read)0.0 = " (read))0.0
+(info "(read)-23.4323234238 = " (read))-23.4323234238
+(info "(read)Alfa = " (read))Alfa
+(info "(read)Alfa_Beta = " (read))Alfa_Beta
+(info "(read)\"Hello World!\" = " (read))"Hello World!"
+(info "(read)\"Some\\\"Odd\\\\Text\" = " (read))"Some\"Odd\\Text"
+(read) (info "(read)\\x20 = " (read)) 
+(info "(read)\\x09 = " (read))	
+(info "(read)\\x0A = " (read))
+(info "(read)( = " (read))(
+(info "(read)) = " (read)))
+
+"Now function \"info\" has two arguments -- some text and \"do\" call. In \"do\" call function \"read\" three times reads data from standard input. This is data that follows \"info\" call immediately."
+(info "(do (read) (read) (read))\"Alfa\"\"Beta\"\"Gamma\" = " (do (read) (read) (read)))"Alfa""Beta""Gamma"
+
+"Tell the sequence of reading..."
+(do (info "first read: " (read)) (info "second read: " (read)) (info "third read: " (read)))"Alfa""Beta""Gamma"
+
+"Function \"back\" puts data back to input stream, so it would be read next time when function \"read\" is called."
+(info "(do (read) (read) (back "Ixi") (read))\"Alfa\"\"Beta\"\"Gamma\" = " (do (read) (read) (back "Ixi") (read)))"Alfa""Beta""Gamma"
+
+"Function \"wrte\" writes data to standard output. "
+(info "(wrte +1.0)") (wrte +1.0)
+(info "(wrte Alfa)") (wrte Alfa)
+(info "(wrte \"Hello World!\")") (wrte "Hello World!")
+
+"Function \"dump\" writes to sandard output text in unescaped, unquoted form."
+(info "(dump \"Hello World!\")") (dump "Hello World!")
+
+"This is to leave new line on stderr and stdout."
+(wrte (line))
+(info "")
+

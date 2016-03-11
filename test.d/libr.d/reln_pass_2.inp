@@ -1,0 +1,16 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+"duplicate relations not allowed"
+
+(do (reln_dump (do (skip) (reln_pass))) (wrte (line)))
+(
+	TASK2 (Info "this is TASK2") (
+		RSRCA (Info "this is RSRCA") (Info "2-A link")
+		RSRCB (Info "this is RSRCB") (Info "2-B link")
+	)
+	TASK2 (Info "again task2") (
+		RSRCA (Info "this is RCRCA") (Info "duplicated 2-A link") 
+	)
+)
+

@@ -1,0 +1,35 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			a (do (skip) (tree_read))
+			b (do (skip) (tree_read))
+			(do 
+				(tree_wrte (tree_join (a) (b)))
+				(wrte (line))
+			)
+		)
+(
+)
+(
+	r1 (Ile -2.0) (
+		r11 (Ile +2.0 Uwagi "starannie zasypac serem") (
+			r111 (Ile -2.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+			)
+			r112 (jedjeddwa "") (
+			)
+		)
+	)
+	r2 (Ile -2.0) (
+		r21 (Ile +2.0 Uwagi "starannie zasypac serem") (
+			r211 (Ile -2.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+			)
+			r212 (dwajeddwa "") (
+			)
+		)
+		
+	)
+)
+	
+

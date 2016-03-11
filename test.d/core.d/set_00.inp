@@ -1,0 +1,15 @@
+(as
+	t (new) 
+	(do 
+		(ins (t) alfa 0.0)
+		(ins (t) beta +1.0)
+		(ins (t) gamma +2.0)
+		(info "beta liczba: " (t))
+		(set (t) beta "jakis tekst")
+		(info "beta tekst: " (t))
+		(set (t) beta nazwa)
+		(info "beta nazwa: " (t))
+		(set (t) beta (new))
+		(info "beta poddrzewo: " (t))
+	)
+)

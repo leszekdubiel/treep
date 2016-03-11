@@ -1,0 +1,13 @@
+
+(as 
+	a +2.0
+	b +3.0
+	(wrte (add (a) (b)))
+)
+
+"symbols are zero-arg" 
+(as
+	a +2.0
+	(add (a 0.0) +12.0)
+)
+

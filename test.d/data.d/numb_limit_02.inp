@@ -1,0 +1,16 @@
+
+* test_limit (x y) 
+	(do
+		(info "(mul " (x) " " (y) ") = " (mul (x) (y)))
+		(if (equ (mul (x) (y)) (x))
+			(info "BINGO!")
+			(test_limit (mul (x) (y)) (y))
+		)
+	)
+
+(test_limit (max) +0.9)
+(test_limit (max) +0.8)
+(test_limit (max) +0.7)
+(test_limit (max) +0.6)
+(test_limit (max) +0.5)
+

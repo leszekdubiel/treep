@@ -1,0 +1,16 @@
+
+"define new function \"average\" that computes average of two numbers..."
+* average (x y) 
+	(div (add (x) (y)) +2.0)
+
+"define new function that pretty prints results to standard error..."
+* info_average (x y) 
+	(info "Average of " (x) " and " (y) " is " (average (x) (y)) ".")
+
+"do some computations"
+(info_average +4.0 +6.0)
+(info_average +5.0 +6.0)
+(info_average +1.0 +8.0)
+(info_average +2.0 +8.0)
+(info_average +3.0 +8.0)
+

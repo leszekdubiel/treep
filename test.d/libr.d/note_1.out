@@ -1,0 +1,16 @@
+(
+	Alfa (
+		(dyspozycja ZM_123) (Uwagi "not1") (Who "Jan Kowalski")
+		(dyspozycja ZM_923) (Uwagi "not2") (Info "not applicable")
+		(dyspozycja ZM_323) (Uwagi "not4") (Who "Jan Kowalski")
+		(dyspozycja ZM_323) (Uwagi "not5") (Info "not applicable")
+	)
+	Beta (
+		(dyspozycja ZM_123) (Uwagi "yyy") (Author "Kowalski Jan" When (D "14" M "01" Y "2010"))
+	)
+	Gamma (
+	)
+	Ixi (
+		() () ()
+	)
+)

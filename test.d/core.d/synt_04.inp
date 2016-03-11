@@ -1,0 +1,13 @@
+
+"names of as are available only in expression" 
+(as
+	a +1.0
+	b +2.0 
+	(wrte (add (a) (b)))
+)
+(as
+	a +1.0
+	b (a) 
+	(wrte (add (a) (b)))
+)
+

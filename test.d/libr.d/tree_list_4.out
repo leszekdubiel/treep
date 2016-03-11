@@ -1,0 +1,13 @@
+(
+	wykonac_lustro (Dyspozycja DP_9876 Ile +4.0 Produkt lustro)
+	ofazowac_podklad (Dyspozycja DP_9876 Ile +4.0 Produkt lustro)
+	wyciac_podklad (Dyspozycja DP_9876 Ile +1.0 Produkt lustro)
+	oszlifowac_ozdobe (Dyspozycja DP_9876 Ile +1.0 Produkt lustro)
+	wyciac_ozdobe (Dyspozycja DP_9876 Ile +1.0 Produkt lustro)
+	kupic_naklejke (Dyspozycja DP_9876 Ile +1.0 Produkt lustro)
+	wykonac_lustro (Dyspozycja DP_1234 Ile +8.0 Produkt lustro)
+	ofazowac_podklad (Dyspozycja DP_1234 Ile +8.0 Produkt lustro)
+	wyciac_podklad (Dyspozycja DP_1234 Ile +2.0 Produkt lustro)
+	oszlifowac_ozdobe (Dyspozycja DP_1234 Ile +2.0 Produkt lustro)
+	wyciac_ozdobe (Dyspozycja DP_1234 Ile +2.0 Produkt lustro)
+)

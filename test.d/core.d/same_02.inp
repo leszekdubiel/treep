@@ -1,0 +1,3 @@
+"dawniej byl trzeci argument, teraz nie moze byc"
+(info (same alfa alfa))
+(info (same alfa alfa (no)))

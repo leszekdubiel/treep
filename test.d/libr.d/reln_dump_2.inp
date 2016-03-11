@@ -1,0 +1,51 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(do (reln_dump (reln_wrte (do (skip) (reln_pass)))) (wrte (line)))
+ (
+ 	Alice (Date_Of_Birth "1952-02-12") (
+ 		John (Surname "Kowalski") (Role "husband")
+ 		AdamX (Age "8 years") (Role "son")
+ 	)
+ 	Adam (Date_Of_Birth "1988-01-23") ( Alice9 (Maiden_Name "Nowak") (Role "mother") John (City "Rabka") (Role "father")
+ 	)		
+	make_vanila_shake (Info "mix for 8 min" Prog +4.0) (
+		vanila () (Qty -8.0) 
+		milk () (Qty -1.55)
+		vanila_shake () (Qty +1.0)
+	) 
+	make_banana_shake (Info "mix for 10 min" Prog +3.0) (
+		banana () (Qty -3.0)
+		milk () (Qty -2.0)
+		banana_shake () (Qty +2.0)
+	)
+	Alice (X +45.0) (
+		Xyz () ()
+	)
+	W () (
+	)
+
+ 	Alice (Date_Of_Birth "1952-02-12") (
+ 		John2 (Surname "Kowalski") (Role "husband")
+ 		AdamX2 (Age "8 years") (Role "son")
+ 	)
+ 	Adam (Date_Of_Birth "1988-01-23") ( Alice8 (Maiden_Name "Nowak") (Role "mother") Johnw (City "Rabka") (Role "father")
+ 	)		
+	make_vanila_shake (Info "mix for 8 min" Prog +4.0) (
+		vanila3 () (Qty -8.0) 
+		milk3 () (Qty -1.55)
+		vanila_shake3 () (Qty +1.0)
+	) 
+	make_banana_shake2 (Info "mix for 10 min" Prog +3.0) (
+		banana () (Qty -3.0)
+		milk () (Qty -2.0)
+		banana_shake () (Qty +2.0)
+	)
+	Alice2 (X +45.0) (
+		Xyz () ()
+	)
+	W2 () (
+	)
+ ) 
+

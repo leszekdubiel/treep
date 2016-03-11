@@ -1,0 +1,12 @@
+
+* oblicz (n) 
+	(do 
+		(dump "(cil ")
+		(wrte (n))
+		(dump ") = ")
+		(wrte (cil (n)))
+		(wrte (line)) 
+	)
+
+(oblicz (min))
+

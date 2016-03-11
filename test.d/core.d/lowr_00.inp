@@ -1,0 +1,22 @@
+
+* disp (t) 
+	(if (is name (t))
+		(t) 
+		(join "\"" (join (escp (t)) "\""))
+	)
+
+* pokaz_lowr (t) 
+	(info "(lowr " (disp (t)) ") = " (disp (lowr (t))))
+
+(pokaz_lowr "Alfa beta GAMMA delta")
+(pokaz_lowr "Alfa bEta g!m!a DeLtA")
+(pokaz_lowr "Alfa -- beta -- tyle")
+(pokaz_lowr "BEtA")
+(pokaz_lowr "B")
+(pokaz_lowr "")
+(info)
+(pokaz_lowr PN_123132_02_DElta)
+(pokaz_lowr AN)
+(pokaz_lowr A)
+
+

@@ -1,0 +1,7 @@
+
+(info "must be name")
+(as
+	"not a name" +1.0 
+	(info "whatever")
+)
+

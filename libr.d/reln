@@ -1,0 +1,367 @@
+
+# Reln stores relations between objects that belong to two disjoint
+# sets. These sets are called "task" and "rsrc".  Every object has name and
+# parameters. Relation between objects has its own parameters too.
+#
+# Here is example of relation, that describes how to make banana or vanila
+# shake. There are two tasks "make_vanila_shake", "make_banana_shake" and
+# five resources  "milk", "vanila", "banana", "vanila_shake", "banana_shake".
+# Objects "make_vanila_shake" and "vanila" are in relation that is described
+# by parameters named "Qty" and "Unit".
+#
+# 	(
+# 		make_vanila_shake (Info "mix for 8 min" Prog +4.0) (
+# 			vanila (Info "from Madagaskar") (Qty -8.0 Unit "bean") 
+# 			milk (Type "EN 123Q, 3%") (Qty -1.55 Unit "litre")
+# 			vanila_shake () (Qty +7.0 Unit "one glass")
+# 		) 
+# 		make_banana_shake (Info "mix for 10 min" Prog +3.0) (
+# 			banana (Info "any type") (Qty -3.0 Unit "kg")
+# 			milk (Type "EN 123Q, 3%") (Qty -2.0 Unit "litre")
+# 			banana_shake () (Qty +8.0 Unit "one glass")
+# 		)
+# 	) 
+#
+# In general text representation of relation is as follows. 	
+#
+# 	(
+# 		TASK2 (Info "this is TASK2") (
+# 			RSRCB (Info "this is RSRCB") (Info "2-B link")
+# 			RSRCA (Info "this is RSRCA") (Info "2-A link")
+# 		)
+# 		TASK1 (Info "this is TASK1") (
+# 			RSRCA (Info "this is RSRCA") (Info "1-A link")
+# 			RSRCB (Info "this is RSRCB") (Info "1-B link")
+# 		)
+# 	) 
+#
+# Structure that describes relations in memory must be very fast, because
+# program often looks what resources are in relation with given task, or
+# what tasks are in relation with given resource.  It is implemented as a
+# tree where nodes are trees also.
+#
+# 	(
+# 		rsrc (
+# 			RSRCA (
+# 				parm (Info "this is RSRCA") 
+# 				task (
+# 					TASK1 (Info "1-A link")
+# 					TASK2 (Info "2-A link")
+# 				)
+# 			)
+# 			RSRCB (
+# 				parm (Info "this is RSRCB") 
+# 				task (
+# 					TASK1 (Info "1-B link")
+# 					TASK2 (Info "2-B link")
+# 				)
+# 			)
+# 		)
+# 		task (
+# 			TASK1 (
+# 				parm (Info "this is TASK1") 
+# 				rsrc (
+# 					RSRCA (Info "1-A link")
+# 					RSRCB (Info "1-B link")
+# 				)
+# 			)
+# 			TASK2 (
+# 				parm (Info "this is TASK2") 
+# 				rsrc (
+# 					RSRCA (Info "2-A link")
+# 					RSRCB (Info "2-B link")
+# 				)
+# 			)
+# 		)
+# 	) 
+#
+# Parameters of relation between given task and given resource are stored
+# in memory only once, but are referenced twice. 
+
+* reln_read () 
+	(do
+		(if (is lpar (read))
+			(void)
+			(do (info "Can not compute \"reln_read\" call. Parenthesis was expected.") (exit (no)))
+		)
+		(as 
+			r (new) 
+			(do 
+				(ins (r) task (new))
+				(ins (r) rsrc (new))
+				(reln_read_task (r) (do (skip) (read)))
+				(r)
+			)
+		)
+	)
+	* reln_read_task (r t) 
+		(if (is rpar (t))
+			(r)
+			(do 
+				(if (is name (t)) 
+					(void)
+					(do (info "Can not compute \"reln_read\" call. Name was expected.") (exit (no)))
+				)
+				# check for duality  
+				(if (def (r.rsrc) (t))
+					(do (info "Can not compute \"reln_read\" call. Duality of \"" (t) "\".") (exit (no)))
+					(void)
+				)
+				# initialize "r.task.t"
+				(if (def (r.task) (t))
+					(void)
+					(do
+						(ins (r.task) (t) (new))
+						(ins (get (r.task) (t)) parm (new))
+						(ins (get (r.task) (t)) rsrc (new))
+					)
+				)
+				# update parameters "r.task.t.parm"
+				(parm_updt (get (get (r.task) (t)) parm) (do (skip) (parm_read)))
+				# read parenthesis
+				(if (is lpar (do (skip) (read)))
+					(void)
+					(do (info "Can not compute \"reln_read\" call. Parenthesis was expected.") (exit (no)))
+				)
+				# read inner objects
+				(reln_read_rsrc (r) (t) (do (skip) (read)))
+				# read outer objects
+				(reln_read_task (r) (do (skip) (read)))
+			)
+		)
+	* reln_read_rsrc (r t s)
+		(if (is rpar (s))
+			(void)
+			(do 
+				(if (is name (s)) 
+					(void)
+					(do (info "Can not compute \"reln_read\" call. Name was expected.") (exit (no)))
+				)
+				# check for duplicate 
+				(if (def (r.task) (s))
+					(do (info "Can not compute \"reln_read\" call. Duality of \"" (s) "\".") (exit (no)))
+					(void)
+				)
+				# initialize "r.rsrc.s"
+				(if (def (r.rsrc) (s))
+					(void)
+					(do
+						(ins (r.rsrc) (s) (new))
+						(ins (get (r.rsrc) (s)) parm (new))
+						(ins (get (r.rsrc) (s)) task (new))
+					)
+				)
+				# duplicate relations not allowed
+				(if (def (get (get (r.task) (t)) rsrc) (s)) 
+					(do (info "Can not compute \"reln_read\" call. Relation from \"" (t) "\" to \"" (s) "\" duplicated.") (exit (no)))
+					(void)
+				)
+				# update parameters "r.rsrc.s.parm"
+				(parm_updt (get (get (r.rsrc) (s)) parm) (do (skip) (parm_read)))
+				# set parameters of relation "r.task.t.rsrc"
+				# and "r.rsrc.s.task"
+				(as
+					p (do (skip) (parm_read))
+					(do 
+						(ins (get (get (r.task) (t)) rsrc) (s) (p))
+						(ins (get (get (r.rsrc) (s)) task) (t) (p))
+					)
+				)
+				# read inner objects
+				(reln_read_rsrc (r) (t) (do (skip) (read)))
+			)
+		)
+* reln_wrte (r)
+	(do 
+		(wrte (lpar)) (wrte (line)) 
+		(reln_wrte_task (r) (frst (r.task)))
+		(wrte (rpar)) 
+		(r)
+	)
+	* reln_wrte_task (r t) 
+		(if (is void (t)) 
+			(void)
+			(do 
+				(wrte (tabu)) (wrte (name (t))) (wrte (spac))
+				(parm_wrte (get (vlue (t)) parm)) (wrte (spac)) 
+				(wrte (lpar)) (wrte (line))
+				(reln_wrte_rsrc (r) (frst (get (vlue (t)) rsrc)))
+				(wrte (tabu)) (wrte (rpar)) (wrte (line))
+				(reln_wrte_task (r) (next (t)))
+			)
+		)
+	* reln_wrte_rsrc (r s) 
+		(if (is void (s)) 
+			(void)
+			(do 
+				(wrte (tabu)) (wrte (tabu)) (wrte (name (s))) (wrte (spac)) 
+				(parm_wrte (get (get (r.rsrc) (name (s))) parm)) (wrte (spac))
+				(parm_wrte (vlue (s))) (wrte (line))
+				(reln_wrte_rsrc (r) (next (s)))
+			)
+		)
+
+* reln_pass () 
+	(do
+		(if (is lpar (read))
+			(do (wrte (lpar)) (wrte (line)))
+			(do (info "Can not compute \"reln_pass\" call. Parenthesis was expected.") (exit (no)))
+		)
+		(as 
+			r (new) 
+			(do 
+				(ins (r) task (new))
+				(ins (r) rsrc (new))
+				(reln_pass_task (r) (do (skip) (read)))
+				(r)
+			)
+		)
+	)
+	* reln_pass_task (r t) 
+		(if (is rpar (t))
+			(do (wrte (rpar)) (r))
+			(do 
+				(if (is name (t)) 
+					(do (wrte (tabu)) (wrte (t)) (wrte (spac)))
+					(do (info "Can not compute \"reln_pass\" call. Name was expected.") (exit (no)))
+				)
+				# check for duality  
+				(if (def (r.rsrc) (t))
+					(do (info "Can not compute \"reln_pass\" call. Duality of \"" (t) "\".") (exit (no)))
+					(void)
+				)
+				# initialize "r.task.t"
+				(if (def (r.task) (t))
+					(void)
+					(do
+						(ins (r.task) (t) (new))
+						(ins (get (r.task) (t)) parm (new))
+						(ins (get (r.task) (t)) rsrc (new))
+					)
+				)
+				# update parameters "r.task.t.parm"
+				(parm_updt (get (get (r.task) (t)) parm) (do (skip) (parm_pass))) (wrte (spac))
+				# read parenthesis
+				(if (is lpar (do (skip) (read)))
+					(do (wrte (lpar)) (wrte (line)))
+					(do (info "Can not compute \"reln_pass\" call. Parenthesis was expected.") (exit (no)))
+				)
+				# read inner objects
+				(reln_pass_rsrc (r) (t) (do (skip) (read)))
+				# read outer objects
+				(reln_pass_task (r) (do (skip) (read)))
+			)
+		)
+	* reln_pass_rsrc (r t s)
+		(if (is rpar (s))
+			(do (wrte (tabu)) (wrte (rpar)) (wrte (line)))
+			(do 
+				(if (is name (s)) 
+					(do (wrte (tabu)) (wrte (tabu)) (wrte (s)) (wrte (spac)))
+					(do (info "Can not compute \"reln_pass\" call. Name was expected.") (exit (no)))
+				)
+				# check for duplicate 
+				(if (def (r.task) (s))
+					(do (info "Can not compute \"reln_pass\" call. Duality of \"" (s) "\".") (exit (no)))
+					(void)
+				)
+				# initialize "r.rsrc.s"
+				(if (def (r.rsrc) (s))
+					(void) 
+					(do
+						(ins (r.rsrc) (s) (new))
+						(ins (get (r.rsrc) (s)) parm (new))
+						(ins (get (r.rsrc) (s)) task (new))
+					)
+				)
+				# duplicate relations not allowed
+				(if (def (get (get (r.task) (t)) rsrc) (s)) 
+					(do (info "Can not compute \"reln_pass\" call. Relation from \"" (t) "\" to \"" (s) "\" duplicated.") (exit (no)))
+					(void)
+				)
+				# update parameters "r.rsrc.s.parm"
+				(parm_updt (get (get (r.rsrc) (s)) parm) (do (skip) (parm_pass))) (wrte (spac))
+				# set parameters of relation "r.task.t.rsrc"
+				# and "r.rsrc.s.task"
+				(as
+					p (do (skip) (parm_pass))
+					(do 
+						(ins (get (get (r.task) (t)) rsrc) (s) (p))
+						(ins (get (get (r.rsrc) (s)) task) (t) (p))
+					)
+				)
+				(wrte (line))
+				# read inner objects
+				(reln_pass_rsrc (r) (t) (do (skip) (read)))
+			)
+		)
+
+* reln_dump (r)
+	(do 
+		# lpar
+		(wrte (lpar)) (wrte (line)) 
+		# outer
+		(wrte (tabu)) (wrte task) (wrte (spac)) (wrte (lpar)) (wrte (line))
+		(reln_dump_task (frst (r.task)))
+		(wrte (tabu)) (wrte (rpar)) (wrte (line))
+		# inner
+		(wrte (tabu)) (wrte rsrc) (wrte (spac)) (wrte (lpar)) (wrte (line))
+		(reln_dump_rsrc (frst (r.rsrc)))
+		(wrte (tabu)) (wrte (rpar)) (wrte (line))
+		# rpar
+		(wrte (rpar))
+		(r)
+	)
+	* reln_dump_task (t) 
+		(if (is void (t)) 
+			(void)
+			(do 
+				(wrte (tabu)) (wrte (tabu))
+				(wrte (name (t))) (wrte (spac)) (wrte (lpar)) (wrte (line))
+				(wrte (tabu)) (wrte (tabu)) (wrte (tabu)) (wrte parm) (wrte (spac))
+				(parm_wrte (get (vlue (t)) parm)) (wrte (spac)) (wrte (line))
+				(wrte (tabu)) (wrte (tabu)) (wrte (tabu)) (wrte rsrc) (wrte (spac)) (wrte (lpar)) (wrte (line))
+				(reln_dump_task_rsrc (frst (get (vlue (t)) rsrc)))
+				(wrte (tabu)) (wrte (tabu)) (wrte (tabu)) (wrte (rpar)) (wrte (line))
+				(wrte (tabu)) (wrte (tabu)) (wrte (rpar)) (wrte (line))
+				(reln_dump_task (next (t)))
+			)
+		)
+	* reln_dump_task_rsrc (s) 
+		(if (is void (s)) 
+			(void)
+			(do 
+				(wrte (tabu)) (wrte (tabu)) (wrte (tabu)) (wrte (tabu))
+				(wrte (name (s))) (wrte (spac)) 
+				(parm_wrte (vlue (s))) (wrte (line))
+				(reln_dump_task_rsrc (next (s)))
+			)
+		)
+	* reln_dump_rsrc (s) 
+		(if (is void (s)) 
+			(void)
+			(do 
+				(wrte (tabu)) (wrte (tabu))
+				(wrte (name (s))) (wrte (spac)) (wrte (lpar)) (wrte (line))
+				(wrte (tabu)) (wrte (tabu)) (wrte (tabu)) (wrte parm) (wrte (spac))
+				(parm_wrte (get (vlue (s)) parm)) (wrte (spac)) (wrte (line))
+				(wrte (tabu)) (wrte (tabu)) (wrte (tabu)) (wrte task) (wrte (spac)) (wrte (lpar)) (wrte (line))
+				(reln_dump_rsrc_task (frst (get (vlue (s)) task)))
+				(wrte (tabu)) (wrte (tabu)) (wrte (tabu)) (wrte (rpar)) (wrte (line))
+				(wrte (tabu)) (wrte (tabu)) (wrte (rpar)) (wrte (line))
+				(reln_dump_rsrc (next (s)))
+			)
+		)
+	* reln_dump_rsrc_task (t) 
+		(if (is void (t)) 
+			(void)
+			(do 
+				(wrte (tabu)) (wrte (tabu)) (wrte (tabu)) (wrte (tabu))
+				(wrte (name (t))) (wrte (spac)) 
+				(parm_wrte (vlue (t))) (wrte (line))
+				(reln_dump_rsrc_task (next (t)))
+			)
+		)
+
+
+

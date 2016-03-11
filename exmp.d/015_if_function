@@ -1,0 +1,19 @@
+
+* fib (n)
+	(if 
+		(equ (n) 0.0) 0.0
+		(equ (n) +1.0) +1.0
+		(add (fib (sub (n) +1.0)) (fib (sub (n) +2.0)))
+	) 
+
+(info (fib 0.0))
+(info (fib +1.0))
+(info (fib +2.0))
+(info (fib +3.0))
+(info (fib +4.0))
+(info (fib +5.0))
+(info (fib +6.0))
+(info (fib +7.0))
+(info (fib +8.0))
+(info (fib +9.0))
+

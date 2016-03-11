@@ -1,0 +1,23 @@
+(part "alfa" "lf") = (yes)
+(part "alfa" "alfabet") = (no)
+(part "alfa" "fa") = (yes)
+(part "alfa" "al") = (yes)
+(part "alfa" "a") = (yes)
+(part "alfa" "l") = (yes)
+(part "alfa" "alfa") = (yes)
+
+(part alfa lf) = (yes)
+(part alfa alfabet) = (no)
+(part alfa fa) = (yes)
+(part alfa al) = (yes)
+(part alfa a) = (yes)
+(part alfa l) = (yes)
+(part alfa alfa) = (yes)
+
+(part "alfa breta gamma" "breta ga") = (yes)
+(part "alfa breta gamma" "bretA ga") = (no)
+
+(part "alfa" "alfa") = (yes)
+(part "alfa" "") = (yes)
+(part "" "alfa") = (no)
+(part "" "") = (yes)

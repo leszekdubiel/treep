@@ -1,0 +1,25 @@
+
+* disp (t) 
+	(if 
+		(is numb (t)) (t)
+		(is name (t)) (t) 
+		(is text (t)) (join "\"" (join (escp (t)) "\""))
+		(if (t) "yes" "no")
+	)
+
+* gdzie (t p) 
+	(info "(indx " (disp (t)) " " (disp (p)) ") = " (indx (t) (p)))
+
+(gdzie "alfabet" "alfa")
+(gdzie "alfabet" "lfabet")
+(gdzie "alfabet" "bet")
+(gdzie "alfabet" "et")
+(gdzie "alfabet" "t")
+(gdzie "alfabet" "")
+
+(gdzie alfabet alfa)
+(gdzie alfabet lfabet)
+(gdzie alfabet bet)
+(gdzie alfabet et)
+(gdzie alfabet t)
+

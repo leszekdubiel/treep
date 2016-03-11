@@ -1,0 +1,12 @@
+
+* disp (t) 
+	(if (is name (t))
+		(t) 
+		(join "\"" (escp (t)) "\"")
+	)
+
+* polacz (a b) 
+	(info "(join " (disp (a)) " " (disp (b)) ") = " (disp (join (a) (b))))
+
+(polacz a b c) "must have exactly two params"
+

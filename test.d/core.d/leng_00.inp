@@ -1,0 +1,6 @@
+(info (leng ""))
+(info (leng "a"))
+(info (leng "alfa"))
+(info (leng a))
+(info (leng alfa))
+(info (leng "alfa beta gamma delta"))

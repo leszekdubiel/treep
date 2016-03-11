@@ -1,0 +1,8 @@
+(info (and (yes) (and (yes) (yes))))
+(info (and (yes) (and (yes) (no))))
+(info (and (yes) (and (no) (yes))))
+(info (and (yes) (and (no) (no))))
+(info (and (no) (and (yes) (yes))))
+(info (and (no) (and (yes) (no))))
+(info (and (no) (and (no) (yes))))
+(info (and (no) (and (no) (no))))

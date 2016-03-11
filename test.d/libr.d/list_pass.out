@@ -1,0 +1,14 @@
+(
+	A (Wnfo "list element A" A +4.5)
+	B (Wnfo "list element B" U -5.0)
+	C (Wnfo "list element C" Z +2.0)
+	D ()
+)(
+	A (A +4.5 Wnfo "list element A")
+	B (U -5.0 Wnfo "list element B")
+	C (Wnfo "list element C" Z +2.0)
+	D ()
+)
+(
+	A (Wnfo "list element A" A +4.5)
+	B (Wnfo "list element B" 

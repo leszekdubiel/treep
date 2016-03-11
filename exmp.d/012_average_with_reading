@@ -1,0 +1,9 @@
+
+"define new function \"average\" that computes average of two numbers..."
+* average (x y) 
+	(div (add (x) (y)) +2.0)
+
+"CAUTION! Numbers +4.0 and +6.0 are read during evaluation of function \"read\" and not by treep directly. This is example where data and expressions to evaluate are in the same input data flow. Treep will read expression \"(info (average (read) (read)))\" and while evaluating it it will two time read from standard input."
+(info (average (read) (read)))+4.0+6.0
+
+

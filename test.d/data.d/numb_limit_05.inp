@@ -1,0 +1,34 @@
+
+* my_round (n p) 
+	(div (int (mul (n) (p))) (p))
+
+* add_many_times (r n t) 
+	(if (pos (t)) 
+		(add_many_times (add (r) (n)) (n) (sub (t) +1.0))
+		(r)
+	)
+
+* my_test (n t) 
+	(as
+		a (add_many_times 0.0 (n) (t))
+		m (mul (n) (t))
+		(do 
+			(info "t = " (t) "; add = " (a) "; mul = " (m) "; sub = " (sub (m) (a)) "; rnd = " (my_round (a) +1000.0))
+		)
+	)
+
+* test_all (n) 
+	(do 
+		(info)
+		(info "n = " (n))
+		(my_test (n) +10.0)
+		(my_test (n) +100.0)
+		(my_test (n) +1000.0)
+		(my_test (n) +10000.0)
+		(my_test (n) +100000.0)
+	)
+
+(test_all +0.1)
+(test_all +0.11)
+(test_all +0.12)
+

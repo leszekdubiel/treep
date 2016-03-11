@@ -1,0 +1,15 @@
+
+(info "(do +1.0 +2.0 +3.0) = " (do +1.0 +2.0 +3.0))
+(info "(do Alfa Beta Gamma) = " (do Alfa Beta Gamma))
+
+"returns zero on division by zero, but warns on standard error about it"
+* safe_divide (x y)
+	(if
+		(equ 0.0 (y)) (do (info "division by zero occured, so zero on division safely returned") 0.0)
+		(div (x) (y))
+	)
+
+(safe_divide +2.0 +5.0)
+(safe_divide +9.99 0.0)
+(safe_divide +4.0 -3.0)
+

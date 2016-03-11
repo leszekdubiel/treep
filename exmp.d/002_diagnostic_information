@@ -1,0 +1,6 @@
+
+
+(info "Function \"info\" writes data to standard error -- it is used to print diagnostic information while program is beeing executed. This is the first difference from function \"wrte\".") 
+(info "Function \"info\" writes new line character at the end of each evaluation. This is second difference from \"wrte\".")
+(info "Function \"info\" can have any nu" "m" "ber of parameters -- zero, one or more...") 
+

@@ -1,0 +1,31 @@
+
+* timinc (t d x) 
+	(if (gre (t) (x))
+		(info endinc)
+		(as
+			rt (repr (t))
+			prt (pars (repr (t)))
+			rprt (repr (pars (repr (t))))
+			(do 
+				(info (t) " ---> " (rt) " ---> " (prt) " ---> " (rprt) "; " (and (same (rt) (rprt)) (equ (prt) (t))))
+				(timinc (add (t) (d)) (d) (x))
+			)
+		)
+	)
+(timinc (pars "2011-03-01 00:00:00") +1234.0 (pars "2011-04-15 00:00:00"))
+
+* timdec (t d i) 
+	(if (les (t) (i))
+		(info enddec)
+		(as
+			rt (repr (t))
+			prt (pars (repr (t)))
+			rprt (repr (pars (repr (t))))
+			(do 
+				(info (t) " ---> " (rt) " ---> " (prt) " ---> " (rprt) "; " (and (same (rt) (rprt)) (equ (prt) (t))))
+				(timdec (add (t) (d)) (d) (i))
+			)
+		)
+	)
+(timdec (pars "2011-11-15 00:00:00") -1238.0 (pars "2011-10-01 00:00:00"))
+

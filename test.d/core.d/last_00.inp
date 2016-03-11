@@ -1,0 +1,11 @@
+(as
+	t (new) 
+	(do 
+		(ins (t) x iks)
+		(ins (t) alfa 0.0)
+		(ins (t) beta +1.0)
+		(info (t)) 
+		(info (last (t)))
+	)
+)
+

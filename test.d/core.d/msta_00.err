@@ -1,0 +1,34 @@
+(msta "alfa" "alf") = 0.0
+(msta "alfa" "fa") = +2.0
+(msta "alfa" "x") = *** error -- doesn't match ***
+(msta "fa" "fa$") = 0.0
+(msta "alfa" "^al") = 0.0
+(msta "lfal" "^al") = *** error -- doesn't match ***
+(msta "alfa beta" "(fa|be)") = +2.0
+(msta "alfa beta" " (fa|be)") = +4.0
+
+(msta "alllllllllllllffffa" "^al*f*a") = 0.0
+(msta "aa" "^al*f*a") = 0.0
+(msta "aa" "^al+f+a") = *** error -- doesn't match ***
+(msta "alfffffa" "^al+f+a") = 0.0
+(msta "ala" "^al+f+a") = *** error -- doesn't match ***
+
+(msta "alfa beta gamma" "be") = +5.0
+(msta "alfa beta gamma" "be") = +5.0
+(msta "alfa beta gamma" "(a|b|g).*a") = 0.0
+
+(msta "alfa beta gamma)))" "(a|b|g).*a)))") = 0.0
+(msta "alfa beta gamma)))" "(l|b|g).*a)))") = +1.0
+(msta "alfa beta gamma)))" "(f|b|g).*a)))") = +2.0
+(msta "alfa beta gamma)))" "(e|b|g).*a)))") = +5.0
+(msta "alfa beta gamma)))" "(t|b|g).*a)))") = +5.0
+
+(msta "alfa" "") = 0.0
+(msta "" "alfa") = *** error -- doesn't match ***
+(msta "alfa" "alfa") = 0.0
+(msta "" "") = 0.0
+
+(msta alfa beta) = *** error -- doesn't match ***
+(msta alfa_beta beta) = +5.0
+(msta alfa_beta a_b) = +3.0
+

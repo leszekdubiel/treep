@@ -1,0 +1,208 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+(do
+	(list_wrte (tree_list_skip (do (skip) (tree_read))))
+	(wrte (line))
+)
+(
+	pizza_bez_dodatkow (Ile -2.0) (
+		zrobic_pizze_bez_dodatkow (Ile +2.0 Uwagi "starannie zasypac serem") (
+			ciasto (Ile -2.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+				przygotowac_ciasto (Ile +2.0 Opis "z maki i wody przygotowac ciasto") (
+					ciasto (Ile +2.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+					)
+					maka (Ile -1000.0 Jednostka "g" Opis "maka tortowa") (
+						kupic_make (Ile +1.0 Opis "kupic 5 kilo maki do pizzy") (
+							maka (Ile +1000.0 Jednostka "g" Opis "maka tortowa") (
+							)
+							zloty (Ile -2.33 Jednostka "Zl") (
+							)
+						)
+					)
+					woda (Ile -0.5 Jednostka "l" Opis "woda niegazowana w butli") (
+						kupic_wode (Ile +1.0 Opis "kupic 10 butelek wody niegazowanej") (
+							woda (Ile +10.0 Jednostka "l" Opis "woda niegazowana w butli") (
+							)
+							zloty (Ile -20.0 Jednostka "Zl") (
+							)
+						)
+					)
+				)
+			)
+			keczup (Ile -0.46 Jednostka "l" Opis "sos pomidorowy") (
+				kupic_keczup (Ile +1.0 Opis "kupic butelke keczupu 0.5l") (
+					keczup (Ile +0.5 Jednostka "l" Opis "sos pomidorowy") (
+					)
+					zloty (Ile -2.4 Jednostka "Zl") (
+					)
+				)
+			)
+			pizza_bez_dodatkow (Ile +2.0 Opis "pizza z keczupem i serem") (
+			)
+			ser (Ile -0.5 Jednostka "g" Opis "ser parmezan do rozpieku") (
+				kupic_ser (Ile +1.0 Opis "kupic kilo sera") (
+					ser (Ile +100.0 Jednostka "g" Opis "ser parmezan do rozpieku") (
+					)
+					zloty (Ile -20.0 Jednostka "Zl") (
+					)
+				)
+			)
+		)
+	)
+	pizza_z_pieczarkami (Ile -3.0) (
+		zrobic_pizze_z_pieczarkami (Ile +3.0) (
+			ciasto (Ile -3.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+				przygotowac_ciasto (Ile +3.0 Opis "z maki i wody przygotowac ciasto") (
+					ciasto (Ile +3.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+					)
+					maka (Ile -1500.0 Jednostka "g" Opis "maka tortowa") (
+						kupic_make (Ile +2.0 Opis "kupic 5 kilo maki do pizzy") (
+							maka (Ile +2000.0 Jednostka "g" Opis "maka tortowa") (
+							)
+							zloty (Ile -4.66 Jednostka "Zl") (
+							)
+						)
+					)
+					woda (Ile -0.75 Jednostka "l" Opis "woda niegazowana w butli") (
+					)
+				)
+			)
+			keczup (Ile -0.69 Jednostka "l" Opis "sos pomidorowy") (
+				kupic_keczup (Ile +2.0 Opis "kupic butelke keczupu 0.5l") (
+					keczup (Ile +1.0 Jednostka "l" Opis "sos pomidorowy") (
+					)
+					zloty (Ile -4.8 Jednostka "Zl") (
+					)
+				)
+			)
+			pieczarka (Ile -12.0 Jednostka "szt" Opis "pieczarka") (
+				kupic_pieczarki (Ile +1.0 Opis "kupic 20 pieczarek") (
+					pieczarka (Ile +20.0 Jednostka "szt" Opis "pieczarka") (
+					)
+					zloty (Ile -8.5 Jednostka "Zl") (
+					)
+				)
+			)
+			pizza_z_pieczarkami (Ile +3.0 Opis "pizza z keczupem, serem i pieczarkami") (
+			)
+			ser (Ile -0.75 Jednostka "g" Opis "ser parmezan do rozpieku") (
+			)
+		)
+	)
+	pizza_z_szynka (Ile -4.0) (
+		zrobic_pizze_z_szynka (Ile +4.0) (
+			ciasto (Ile -4.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+				przygotowac_ciasto (Ile +4.0 Opis "z maki i wody przygotowac ciasto") (
+					ciasto (Ile +4.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+					)
+					maka (Ile -2000.0 Jednostka "g" Opis "maka tortowa") (
+						kupic_make (Ile +2.0 Opis "kupic 5 kilo maki do pizzy") (
+							maka (Ile +2000.0 Jednostka "g" Opis "maka tortowa") (
+							)
+							zloty (Ile -4.66 Jednostka "Zl") (
+							)
+						)
+					)
+					woda (Ile -1.0 Jednostka "l" Opis "woda niegazowana w butli") (
+					)
+				)
+			)
+			keczup (Ile -0.92 Jednostka "l" Opis "sos pomidorowy") (
+				kupic_keczup (Ile +2.0 Opis "kupic butelke keczupu 0.5l") (
+					keczup (Ile +1.0 Jednostka "l" Opis "sos pomidorowy") (
+					)
+					zloty (Ile -4.8 Jednostka "Zl") (
+					)
+				)
+			)
+			pizza_z_szynka (Ile +4.0 Opis "pizza z keczupem, serem i szynka") (
+			)
+			ser (Ile -1.0 Jednostka "g" Opis "ser parmezan do rozpieku") (
+			)
+			szynka (Ile -88.0 Jednostka "g" Opis "szynka pokrojona") (
+				kupic_szynke (Ile +1.0 Opis "kupic 500g szynki") (
+					szynka (Ile +500.0 Jednostka "g" Opis "szynka pokrojona") (
+					)
+					zloty (Ile -15.25 Jednostka "Zl") (
+					)
+				)
+			)
+		)
+	)
+	pizza_jajeczna (Ile -5.0) (
+		zrobic_pizze_jajeczna (Ile +5.0) (
+			ciasto (Ile -5.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+				przygotowac_ciasto (Ile +5.0 Opis "z maki i wody przygotowac ciasto") (
+					ciasto (Ile +5.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+					)
+					maka (Ile -2500.0 Jednostka "g" Opis "maka tortowa") (
+						kupic_make (Ile +2.0 Opis "kupic 5 kilo maki do pizzy") (
+							maka (Ile +2000.0 Jednostka "g" Opis "maka tortowa") (
+							)
+							zloty (Ile -4.66 Jednostka "Zl") (
+							)
+						)
+					)
+					woda (Ile -1.25 Jednostka "l" Opis "woda niegazowana w butli") (
+					)
+				)
+			)
+			jajko (Ile -15.0 Jednostka "szt" Opis "surowe jajko") (
+				kupic_jajka (Ile +2.0 Opis "kupic 10 jajek") (
+					jajko (Ile +20.0 Jednostka "szt" Opis "surowe jajko") (
+					)
+					zloty (Ile -60.0 Jednostka "Zl") (
+					)
+				)
+			)
+			keczup (Ile -1.15 Jednostka "l" Opis "sos pomidorowy") (
+				kupic_keczup (Ile +2.0 Opis "kupic butelke keczupu 0.5l") (
+					keczup (Ile +1.0 Jednostka "l" Opis "sos pomidorowy") (
+					)
+					zloty (Ile -4.8 Jednostka "Zl") (
+					)
+				)
+			)
+			pizza_jajeczna (Ile +5.0 Opis "pizza z keczupem, serem i dwoma jajkami na twardo") (
+			)
+			ser (Ile -1.25 Jednostka "g" Opis "ser parmezan do rozpieku") (
+			)
+		)
+	)
+	pizza_bez_dodatkow (Ile -8.0) (
+		zrobic_pizze_bez_dodatkow (Ile +8.0 Uwagi "starannie zasypac serem") (
+			ciasto (Ile -8.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+				przygotowac_ciasto (Ile +8.0 Opis "z maki i wody przygotowac ciasto") (
+					ciasto (Ile +8.0 Jednostka "szt" Opis "porcja ciasta na pizze") (
+					)
+					maka (Ile -4000.0 Jednostka "g" Opis "maka tortowa") (
+						kupic_make (Ile +4.0 Opis "kupic 5 kilo maki do pizzy") (
+							maka (Ile +4000.0 Jednostka "g" Opis "maka tortowa") (
+							)
+							zloty (Ile -9.32 Jednostka "Zl") (
+							)
+						)
+					)
+					woda (Ile -2.0 Jednostka "l" Opis "woda niegazowana w butli") (
+					)
+				)
+			)
+			keczup (Ile -1.84 Jednostka "l" Opis "sos pomidorowy") (
+				kupic_keczup (Ile +4.0 Opis "kupic butelke keczupu 0.5l") (
+					keczup (Ile +2.0 Jednostka "l" Opis "sos pomidorowy") (
+					)
+					zloty (Ile -9.6 Jednostka "Zl") (
+					)
+				)
+			)
+			pizza_bez_dodatkow (Ile +8.0 Opis "pizza z keczupem i serem") (
+			)
+			ser (Ile -2.0 Jednostka "g" Opis "ser parmezan do rozpieku") (
+			)
+		)
+	)
+)
+	
+

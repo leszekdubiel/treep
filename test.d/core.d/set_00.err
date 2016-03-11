@@ -1,0 +1,4 @@
+beta liczba: (tree alfa 0.0 beta +1.0 gamma +2.0)
+beta tekst: (tree alfa 0.0 beta "jakis tekst" gamma +2.0)
+beta nazwa: (tree alfa 0.0 beta nazwa gamma +2.0)
+beta poddrzewo: (tree alfa 0.0 beta (tree ...) gamma +2.0)

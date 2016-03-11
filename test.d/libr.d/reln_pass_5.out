@@ -1,0 +1,55 @@
+(
+	TASK2 (Info "this is TASK2") (
+		RSRCB (Info "this is RSRCB") (Info "2-B link")
+		RSRCA (Info "this is RSRCA") (Info "2-A link")
+	)
+	TASK1 (Info "this is TASK1") (
+		RSRCA (Info "this is RSRCA") (Info "1-A link")
+		RSRCB (Info "this is RSRCB") (Info "1-B link")
+	)
+	TASK1 (Info "again, this is TASK1" Remarks "this is not an error -- this updates information about TASK1" Qty +2.0) (
+	)
+	XXXXX () (
+		RSRCB (Info "last one about RSRCB" Remarks "this is not an error -- this updates information about RSRCB") (Info "invalid link XXXX-B")
+	)
+)(
+	task (
+		TASK1 (
+			parm (Info "again, this is TASK1" Qty +2.0 Remarks "this is not an error -- this updates information about TASK1") 
+			rsrc (
+				RSRCA (Info "1-A link")
+				RSRCB (Info "1-B link")
+			)
+		)
+		TASK2 (
+			parm (Info "this is TASK2") 
+			rsrc (
+				RSRCA (Info "2-A link")
+				RSRCB (Info "2-B link")
+			)
+		)
+		XXXXX (
+			parm () 
+			rsrc (
+				RSRCB (Info "invalid link XXXX-B")
+			)
+		)
+	)
+	rsrc (
+		RSRCA (
+			parm (Info "this is RSRCA") 
+			task (
+				TASK1 (Info "1-A link")
+				TASK2 (Info "2-A link")
+			)
+		)
+		RSRCB (
+			parm (Info "last one about RSRCB" Remarks "this is not an error -- this updates information about RSRCB") 
+			task (
+				TASK1 (Info "1-B link")
+				TASK2 (Info "2-B link")
+				XXXXX (Info "invalid link XXXX-B")
+			)
+		)
+	)
+)

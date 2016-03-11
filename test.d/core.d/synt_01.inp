@@ -1,0 +1,10 @@
+0.0
+name
+"some text" 
+(add +2.0 +3.0) 
+(min) 
+(ops +2.3)
+
+"name can't be evaluated"
+((if (yes) add sub) +2.0 -932.0)
+

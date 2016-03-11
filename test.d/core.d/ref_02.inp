@@ -1,0 +1,4 @@
+
+(info "void nie moze byc...")
+(ref (void) (new))
+

@@ -1,0 +1,15 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+"rsrc and task vertices must be from disjoint sets"
+
+(do (reln_dump (do (skip) (reln_pass))) (wrte (line)))
+(
+	Alfa (Info "this is task vertex Alfa") ( 
+		Beta (Info "this is rsrc vertex Beta") (Info "relation Alfa-Beta")
+	)
+	Delta (Info "this is task vertex Delta") (
+		Alfa (Info "error -- already as task vertex") (Info "relation Delta-Alfa")
+	)
+)
+

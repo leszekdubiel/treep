@@ -1,0 +1,5 @@
+(info (main))
+(info (qty (main)))
+(ins (main) alfa 0.0) 
+(info (main))
+(info (qty (main)))

@@ -1,0 +1,9 @@
+
+(info "(numb \"0.0\") = " (numb "0.0"))
+(info "(numb \"-1.23456789012345678\") = " (numb "-1.23456789012345678"))
+(info "(name \"Alfa\") = " (name "Alfa"))
+(info "(text -45.213113) = " (text -45.213113))
+(info "(text Alfa) = " (text Alfa))
+(info "(text (time)) = " (text (time)))
+(info "(numb (time)) = " (pars (repr (time))))
+

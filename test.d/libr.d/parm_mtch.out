@@ -1,0 +1,60 @@
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok")
+()
+yes
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok")
+(beta +4.5)
+yes
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok")
+(zbeta +4.5)
+no
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok")
+(beta +99.0)
+no
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok")
+(alfa "nie" beta +99.0)
+no
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok")
+(beta +99.0 gamma "ok")
+no
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok")
+(beta +4.5 gamma "ok")
+yes
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 b -2.0))
+(beta +4.5 mix (a +4.0))
+yes
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 b -2.0))
+(beta +4.5 mix (a +4.0 b -2.0))
+yes
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 b -2.0))
+(beta +4.5 mix (a +4.0 b -2.0) x +99.0)
+no
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 b -2.0 c (u -22.0 v +33.8)))
+(beta +4.5 mix (a +4.0 b -2.0))
+yes
+
+Porownanie parametrow:
+(alfa "aadfadsf" beta +4.5 gamma "ok" mix (a +4.0 b -2.0 c (u -22.0 v +33.8)))
+(beta +4.5 mix (c (u -22.0)))
+yes

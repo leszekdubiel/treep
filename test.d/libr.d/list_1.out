@@ -1,0 +1,6 @@
+(
+	A (Info "list element A" X +4.5)
+	B (Info "list element B" Y -5.0)
+	C (Info "list element C" Z +2.0)
+	D ()
+)

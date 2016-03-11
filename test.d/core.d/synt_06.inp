@@ -1,0 +1,10 @@
+
+"names from one place are not accessible in another"
+* f (a) 
+	(add (d) (a))
+
+(as
+	d +3.0
+	(f +4.0)
+)
+

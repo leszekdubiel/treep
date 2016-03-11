@@ -1,0 +1,10 @@
+
+
+(info (ops 0.0))
+(info (ops +1.0) )
+(info (ops -1.0) )
+(info (ops (min)))
+(info (ops (ops (min))))
+(info (ops (max)))
+(info (ops (ops (max))))
+

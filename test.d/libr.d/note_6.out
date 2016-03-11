@@ -1,0 +1,47 @@
+
+list before: 
+(
+	alfa ()
+	beta ()
+	gamma ()
+	delta ()
+)
+
+list after: 
+(
+	alfa ()
+	beta ()
+	gamma ()
+	delta ()
+)
+
+original notes:
+(
+	xelta (
+		() (uwagi ddd) ()
+	)
+	xeta (
+		() (uwagi bbb) ()
+	)
+	xlfa (
+		() (uwagi aaa) ()
+	)
+)
+
+notes used: 
+(
+)
+
+notes not used: 
+(
+	xelta (
+		() (uwagi ddd) ()
+	)
+	xeta (
+		() (uwagi bbb) ()
+	)
+	xlfa (
+		() (uwagi aaa) ()
+	)
+)
+

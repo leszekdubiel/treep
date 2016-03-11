@@ -1,0 +1,9 @@
+
+* dwie_liczby (a b) 
+	(info (add (a) (b)))
+
+(dwie_liczby +45.0 -22.0)
+(dwie_liczby -13.0 +12.9)
+(dwie_liczby -1.0 +1.0)
+(dwie_liczby +1.0 -9.0)
+

@@ -1,0 +1,9 @@
+
+"new tree.."
+(info (new))
+(info (frst (new)))
+(info (last (new)))
+(info (root (new)))
+
+
+

@@ -1,0 +1,11 @@
+(as
+	t (new) 
+	(do 
+		(ins (t) alfa 0.0)
+		(ins (t) beta +1.0)
+		(ins (t) delta +2.0)
+		(info (t))
+		(info (root (t)))
+		(info (vlue (root (t))))
+	)
+)

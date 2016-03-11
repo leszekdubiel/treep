@@ -1,0 +1,32 @@
+
+* disp (t) 
+	(if 
+		(is name (t)) (t) 
+		(is text (t)) (join "\"" (join (escp (t)) "\""))
+		(is numb (t)) (t) 
+		(if (t) "yes" "no")
+	)
+
+* test (re)
+	(info "(ptrn " (disp (re)) ") = " (ptrn (re)))
+
+(test "alfa")
+(test "b*eta")
+(test "[a-z]olo")
+(info)
+(test "[a-z]olo))") "w zaleznosci od ustawien w czasie kompilacji nawias zamykajacy moze albo i nie moze byc niesparowany"
+(test "[a-z]olo((") "otwierajacy nigdy nie moze byc niesparowany"
+(info)
+(test "alfa****beta")
+(test "[a-]")
+(test "[a-")
+(info)
+(test "$^")
+(test alfa)
+(test a)
+(test "\\")
+(test "\\a")
+(test "\\!\"")
+(info)
+(test "al(fa|ta)gam")
+

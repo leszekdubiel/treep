@@ -1,0 +1,10 @@
+(as
+	t (new) 
+	(do 
+		(info (frst (t)))
+		(ins (t) gamma 0.0) 
+		(info (frst (t)))
+		(ins (t) beta +1.0) 
+		(info (frst (t)))
+	)
+)

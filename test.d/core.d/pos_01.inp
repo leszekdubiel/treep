@@ -1,0 +1,7 @@
+(info (pos (div (min) +2.0)))
+(info (pos (div (min) -2.0)))
+(info (pos (div (min) +1.0)))
+(info (pos (div (min) -1.0)))
+(info (pos (div (min) (div +1.0 (max)))))
+(info (pos (div (min) (div +1.0 (max)))))
+

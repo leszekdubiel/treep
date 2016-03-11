@@ -1,0 +1,17 @@
+* a (i) 
+	(do
+		(info (ptrn "^Id_[0-9]{8}_[0-9]{6}_[0-9]{9}$"))
+		(info (mtch (text (i))))
+		(info (msta))
+		(info (mend))
+		(info (leng (text (i))))
+		(info)
+	)
+
+(a (iden Id))
+(a (iden Id))
+(a (iden Id))
+(a (iden Id))
+(a (iden Id))
+(a (iden Id))
+

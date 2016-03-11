@@ -1,0 +1,164 @@
+
+"given a price list and shopping list -- how much do I pay? "
+
+" skips white chars"
+* skip ()
+	(as
+		d (read) 
+		(if 
+			(is spac (d)) (skip)
+			(is tabu (d)) (skip)
+			(is line (d)) (skip)
+			(back (d))
+		)
+	)
+
+"price list is a set of paris name-number enclosed in parenthesis; " 
+"function returns object where name of product is key, and value is price; "
+"function has almost no error handling for simplicity; "
+"every name can occur only once"
+* read_price_list ()
+	(as
+		x (new) 
+		(do 
+			(skip) (read) "skips lpar"
+			(read_price_list_loop (x) (do (skip) (read)))
+		)
+	)
+	* read_price_list_loop (x n) 
+		(if (is rpar (n))
+			(void)
+			(as
+				v (do (skip) (read))
+				(do 
+					(ins (x) (n) (v))
+					(read_price_list_loop (x) (do (skip) (read)))
+					(x) 
+				)
+			)
+		)
+* wrte_price_list (p) 
+	(do 
+		(wrte (lpar)) (wrte (line))
+		(wrte_price_list_loop (frst (p)))
+		(wrte (rpar)) 
+	)
+	* wrte_price_list_loop (e) 
+		(if (is void (e))
+			(void)
+			(do 
+				(wrte (tabu))
+				(wrte (name (e)))
+				(wrte (spac))
+				(wrte (vlue (e)))
+				(wrte (line))
+				(wrte_price_list_loop (next (e)))
+			)
+		)
+
+"reads shopping list, that is a list of names and quantities; " 
+"it starts with lpar, then paris name-value, then rpar; "
+"names can occur many times; every object has fields name, vlue, next; "
+* read_shopping_list ()
+	(do 
+		(skip) (read) "lpar" 
+		(read_shopping_list_elem (do (skip) (read)))
+	)
+	* read_shopping_list_elem (n)
+		(if (is rpar (n))
+			(void)
+			(as
+				l (new) 
+				(do 
+					(ins (l) name (n))
+					(ins (l) vlue (do (skip) (read)))
+					(ins (l) next (read_shopping_list_elem (do (skip) (read))))
+					(l)
+				)
+			)
+		)
+* wrte_shopping_list (l)
+	(do 
+		(wrte (lpar))
+		(wrte (line))
+		(wrte_shopping_list_elem (l))
+	)
+	* wrte_shopping_list_elem (l) 
+		(if (is void (l))
+			(wrte (rpar))
+			(do 
+				(wrte (tabu))
+				(wrte (get (l) name))
+				(wrte (spac))
+				(wrte (get (l) vlue))
+				(wrte (line))
+				(wrte_shopping_list_elem (get (l) next))
+			)
+		)
+
+
+"look through list and compute how much do we pay;" 
+"s is shopping list, p is price list; "
+* how_much_to_pay (s p) 
+	(if (is void (s))
+		0.0
+		(as
+			price (get (p) (get (s) name))
+			order (get (s) vlue)
+			(do 
+				(info (get (s) name) ": order " (order) " * price " (price) " = total " (mul (price) (order)))
+				(add (mul (price) (order)) (how_much_to_pay (get (s) next) (p)))
+			)
+		)
+	)
+
+"read price list, read shopping list, write result"
+(as
+	pl (read_price_list)
+	sl (read_shopping_list)
+	(do 
+		(wrte (line))
+		(dump "price list is:") (wrte (line))
+		(wrte_price_list (pl)) (wrte (line))
+
+		(wrte (line))
+		(dump "price list is:") (wrte (line))
+		(wrte_shopping_list (sl)) (wrte (line))
+
+		(wrte (line))
+		(as
+			t (how_much_to_pay (sl) (pl))
+			(do
+				(dump "total amount spent: ") 
+				(wrte (t))
+				(wrte (line))
+				(wrte (line))
+			)
+		)
+	)
+)
+(
+	egg +1.5
+	cheese +3.0
+	ham +15.0
+	butter +2.5
+	milk +2.1
+	juice +4.5
+	wine +20.0
+	bread +3.2
+	bananas +4.5
+)
+(
+	bananas +1.5
+	milk +3.0
+	wine +1.0
+	bread +2.0
+	ham +20.0
+	egg +10.0
+	wine +2.0
+)
+
+"as you can see program and data resides in the same file; this is not "
+"mandatory, because one cat use command \"cat\" to join texts from " 
+"different files "
+

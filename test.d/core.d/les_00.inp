@@ -1,0 +1,15 @@
+
+* porownaj (a b) 
+	(do 
+		(info "(les " (a) " " (b) ") = " (les (a) (b)))
+		(info "(les " (b) " " (a) ") = " (les (b) (a)))
+		(info)
+	)
+
+(porownaj 0.0 0.0)
+(porownaj 0.0 +1.0)
+(porownaj 0.0 -1.0)
+(porownaj +1.0 +1.0)
+(porownaj +1.0 -1.0)
+(porownaj -1.0 -1.0)
+

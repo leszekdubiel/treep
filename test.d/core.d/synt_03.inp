@@ -1,0 +1,15 @@
+
+"function parameters are 0-arg; check is done when evaluated" 
+* f (a b c)
+	(if 
+		(a) +1.0
+		(b) +2.0
+		(c 0.0) +3.0
+	)
+
+(wrte (f (yes) (yes) (yes)) )
+(wrte (f (no) (yes) (yes)) )
+(wrte (f (no) (no) (yes)) )
+(wrte (f (no) (no) (no)) )
+
+

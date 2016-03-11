@@ -1,0 +1,19 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		(as 
+			e (do (skip) (list_read))
+			(do 
+				(list_wrte (e))
+				(wrte (line))
+			)
+		)
+ 	( 
+ 		A (Info "list element A" X +4.5)
+ 		B (Info "list element B" Y -5.0)
+ 		C (Info "list element C" Z +2.0)
+		D () 
+ 	) 
+	
+

@@ -1,0 +1,5 @@
+(ptrn "^[0-9]{4}(-[0-9]{2}){2} [0-9]{2}(:[0-9]{2}){2}$")
+(info (leng (repr (time))))
+(info (mtch (repr (time))))
+(info (msta))
+(info (mend))

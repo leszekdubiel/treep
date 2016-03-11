@@ -1,0 +1,11 @@
+(indx "alfabet" "alfa") = 0.0
+(indx "alfabet" "lfabet") = +1.0
+(indx "alfabet" "bet") = +4.0
+(indx "alfabet" "et") = +5.0
+(indx "alfabet" "t") = +6.0
+(indx "alfabet" "") = 0.0
+(indx alfabet alfa) = 0.0
+(indx alfabet lfabet) = +1.0
+(indx alfabet bet) = +4.0
+(indx alfabet et) = +5.0
+(indx alfabet t) = +6.0

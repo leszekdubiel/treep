@@ -1,0 +1,31 @@
+
+INSERT_TREEP_LIBRARY_HERE
+
+		
+		* oznacz_drzewo (t u) 
+			(if (is void (t)) 
+				(void) 
+				(do 
+					(ins (get (t) parm) (u) "")
+					(oznacz_drzewo (get (t) chld) (u))
+					(oznacz_drzewo (get (t) next) (u))
+				)
+			)
+		(as 
+			t (do (skip) (tree_read))
+			(as
+				c (tree_copy (t))
+				(do 
+					(oznacz_drzewo (t) this_is_t)
+					(oznacz_drzewo (c) this_is_c)
+					(tree_wrte (t))
+					(wrte (line))
+					(tree_wrte (c))
+					(wrte (line))
+				)
+			)
+		)
+		(
+		)
+	
+
